@@ -68,7 +68,7 @@ export function ProjectCard({
         )}
       </Link>
       <CardHeader className="px-2">
-        <div className="space-y-1">
+        <div className="space-y-1 p-3 sm:p-0text-pretty font-sans text-sm text-muted-foreground mt-auto flex flex-col px-2">
           <CardTitle className="mt-1 text-base">{title}</CardTitle>
           <time className="font-sans text-xs">{dates}</time>
           <div className="hidden font-sans text-xs underline print:visible">
