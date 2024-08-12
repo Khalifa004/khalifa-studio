@@ -1,6 +1,8 @@
 import React from "react";
 
-// Import the Card components
+
+
+ // Import the Card components
 import { ProjectCard } from "./ui/projectcard";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 import BoxReveal from "./ui/box-reveal";
@@ -30,14 +32,16 @@ const Myworks = () => {
           </div>
         </BoxReveal>
 
-        {/* Add hidden class for mobile and block class for larger screens */}
-        <div className="hidden lg:grid lg:grid-cols-1 lg:gap-3 lg:max-w-[800px] lg:mx-auto">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
           {DATA.projects.map((project) => (
             <BoxReveal key={project.title}>
               {/* Wrap each ProjectCard with CardContainer and CardBody */}
-              <CardContainer containerClassName="rounded-xl shadow-lg">
+              <CardContainer containerClassName="rounded-xl   shadow-lg">
                 <CardBody>
-                  <CardItem translateZ="-50">
+                  <CardItem 
+                    translateZ="-50"
+        
+                  >
                     <ProjectCard
                       href={project.href}
                       title={project.title}
