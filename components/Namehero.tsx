@@ -117,8 +117,8 @@ export default function Namehero() {
     
     <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl">
          <header
-      className='fixed right-0 left-0 top-0 py-4 px-6 bg-white/7 backdrop-blur-lg z-[100] 
-      flex items-center border-b-[1px]  dark:border-neutral-900 justify-between'>
+      className='fixed right-0 left-0 top-0 py-4 px-6  dark:bg-white/7 backdrop-blur-lg z-[100] 
+      flex items-center border-b-[1px] border-black/30  dark:border-neutral-900 justify-between'>
       <aside className='flex items-center gap-4'>
         {/* Other header content */}
       </aside>
