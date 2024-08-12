@@ -148,10 +148,7 @@ projects: [
         "PostgreSQL",
         "Prisma",
         "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
+        
       ],
       links: [
         {

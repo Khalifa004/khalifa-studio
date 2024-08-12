@@ -12,7 +12,7 @@ interface BoxRevealProps {
 
 export const BoxReveal = ({
   children,
-  width = "fit-content",
+
   boxColor,
   duration,
 }: BoxRevealProps) => {
@@ -33,7 +33,7 @@ export const BoxReveal = ({
   }, [isInView, mainControls, slideControls]);
 
   return (
-    <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>
+    <div ref={ref} style={{ position: "relative", overflow: "hidden" }}>
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },

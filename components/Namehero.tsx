@@ -13,14 +13,14 @@ import { FlipWords } from "./ui/flip-words";
 
 interface BoxRevealProps {
   children: JSX.Element;
-  width?: "fit-content" | "100%";
+  width?:  | "100%";
   boxColor?: string;
   duration?: number;
 }
 
 const words = ["3D ", "WebDev", "UX/UI"];
 
-const BoxReveal = memo(({ children, width = "fit-content", boxColor, duration }: BoxRevealProps) => {
+const BoxReveal = memo(({ children, boxColor, duration }: BoxRevealProps) => {
   const mainControls = useAnimation();
   const slideControls = useAnimation();
   const ref = useRef<HTMLDivElement | null>(null);
@@ -38,7 +38,7 @@ const BoxReveal = memo(({ children, width = "fit-content", boxColor, duration }:
   BoxReveal.displayName = 'BoxReveal';
 
   return (
-    <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>
+    <div ref={ref} style={{ position: "relative", overflow: "hidden" }}>
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },
@@ -76,7 +76,7 @@ const BoxReveal = memo(({ children, width = "fit-content", boxColor, duration }:
 export default function Namehero() {
  
   const boxRevealTitle = useMemo(() => (
-    <BoxReveal width="fit-content" boxColor="#c7c7c7" duration={0.5}>
+    <BoxReveal boxColor="#c7c7c7" duration={0.5}>
       <h1 className="text-6xl sm:text-[12rem]  font-semibold  mx-auto text-center mt-6 relative z-20 py-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
         KHALIFA
       </h1>
@@ -84,7 +84,7 @@ export default function Namehero() {
   ), []);
 
   const boxRevealDescription = useMemo(() => (
-    <BoxReveal width="fit-content" boxColor="#c7c7c7" duration={0.5}>
+    <BoxReveal boxColor="#c7c7c7" duration={0.5}>
       
       <p className="  text-neutral-500 text-2xl sm:text-3xl max-w-lg ">
        A multidisciplinary designer specializing
