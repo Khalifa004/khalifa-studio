@@ -253,7 +253,7 @@ export const BlurImage = ({
         className
       )}
       onLoad={() => setLoading(false)}
-      loading="lazy"
+     
       decoding="async"
       blurDataURL={typeof src === "string" ? src : undefined} // Provide blurDataURL if needed
       {...rest} // Spread any additional props

@@ -15,7 +15,7 @@ export function MyServices() {
   return (
     <div id="Services" className="pb-20" >
       <BoxReveal>
-        <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold  font-sans">
+        <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold dark:text-[#BEF264]  font-sans">
           My services
         </h2>
       </BoxReveal>

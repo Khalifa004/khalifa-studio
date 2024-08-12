@@ -125,7 +125,7 @@ export default function Namehero() {
       <aside className='flex items-center'>
         <a href="#" onClick={scrollToTop} className="relative">
           <Image
-            src="/mylogo.png"
+            src="/logocolor.png"
             alt=" Logo"
             width={40} // Adjust width as needed
             height={40} // Adjust height as needed
