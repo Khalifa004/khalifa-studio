@@ -72,10 +72,13 @@
   }
   
 }
-
+::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar */
+}
 
 /* You can apply this font to specific elements or globally */
 body {
+  
   font-family: 'CalSans-SemiBold', sans-serif;
 }
 /* Light theme styles */

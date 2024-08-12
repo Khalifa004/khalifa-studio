@@ -13,7 +13,7 @@ export function MyServices() {
   ));
 
   return (
-    <div id="services" className="pb-20" >
+    <div id="Services" className="pb-20" >
       <BoxReveal>
         <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold  font-sans">
           My services
