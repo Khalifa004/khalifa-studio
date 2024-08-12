@@ -140,7 +140,7 @@ export default function Namehero() {
       </nav>
 
       <Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={100} />
-      <GridBeam className="sm:pl-16 pt-28 pl-4 flex items-start justify-start">
+      <GridBeam className="sm:pl-16 sm:pt-28   flex items-start justify-start">
         <div className="grid gap-2">
           {boxRevealTitle}
           {boxRevealDescription}
@@ -149,7 +149,7 @@ export default function Namehero() {
 
       <div className="mb-40 sm:mb-20 text-center animate-fade-in flex justify-center ">
         <h2 className="text-sm text-zinc-500">
-          {linkPreview} located in Toronto  <span className="relative inline-flex h-2 w-2 mr-6 group">
+          {linkPreview} located in Toronto  <span className="relative inline-flex h-2 w-2  group">
         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
         <span className="relative inline-flex h-2 w-2 rounded-full bg-green-400"></span>
         
