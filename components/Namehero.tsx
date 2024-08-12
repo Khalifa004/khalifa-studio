@@ -86,9 +86,9 @@ export default function Namehero() {
   const boxRevealDescription = useMemo(() => (
     <BoxReveal boxColor="#c7c7c7" duration={0.5}>
       
-      <p className="  text-neutral-500 text-2xl sm:text-3xl max-w-lg ">
+      <p className="  text-neutral-500 text-2xl sm:text-5xl max-w-lg text-center sm:text-left ">
        A multidisciplinary designer specializing
-        in <FlipWords className="dark:text-[#BEF264]" words={words} />
+        in <br></br> <FlipWords className="dark:text-[#BEF264]" words={words} />
       </p>
     </BoxReveal>
   ), []);
