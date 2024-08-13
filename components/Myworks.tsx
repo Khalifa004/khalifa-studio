@@ -4,7 +4,7 @@ import React from "react";
 
  // Import the Card components
 import { ProjectCard } from "./ui/projectcard";
-import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
+
 import BoxReveal from "./ui/box-reveal";
 import { DATA } from "@/data";
 
@@ -32,17 +32,12 @@ const Myworks = () => {
           </div>
         </BoxReveal>
 
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto ">
           {DATA.projects.map((project) => (
             <BoxReveal key={project.title}>
               {/* Wrap each ProjectCard with CardContainer and CardBody */}
-              <CardContainer containerClassName="rounded-xl   shadow-lg">
-                <CardBody>
-                  <CardItem 
-                    translateZ="-50"
-        
-                  >
-                    <ProjectCard
+             
+                    <ProjectCard className="hover:opacity-70"
                       href={project.href}
                       title={project.title}
                       description={project.description}
@@ -52,9 +47,8 @@ const Myworks = () => {
                       video={project.video}
                       links={project.links}
                     />
-                  </CardItem>
-                </CardBody>
-              </CardContainer>
+                
+            
             </BoxReveal>
           ))}
         </div>
