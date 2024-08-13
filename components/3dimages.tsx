@@ -1,7 +1,7 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+
 import { LayoutGrid } from "./ui/layout-grid";
-import { VelocityScroll } from "./ui/scroll-based-velocity";
+
 
 
 export function LayoutGridDemo() {
@@ -86,6 +86,6 @@ const cards = [
     content: <SkeletonFour />,
     className: "md:col-span-2 ",
     thumbnail:
-      "/shoevid.gif",
+      "/cleanshoesize.png",
   },
 ];
