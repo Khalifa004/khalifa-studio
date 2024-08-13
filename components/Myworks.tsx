@@ -37,7 +37,7 @@ const Myworks = () => {
             <BoxReveal key={project.title}>
               {/* Wrap each ProjectCard with CardContainer and CardBody */}
              
-                    <ProjectCard className="hover:opacity-70"
+                    <ProjectCard className="hover:opacity-70 "
                       href={project.href}
                       title={project.title}
                       description={project.description}
