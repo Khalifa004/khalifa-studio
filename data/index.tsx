@@ -75,36 +75,7 @@ export const DATA = {
 
 
 projects: [
-    {
-      title: "KhalifaRenders",
-      href: "https://vision-vault-weld.vercel.app/",
-      dates: "October 2023 - March 2024",
-      active: true,
-      description:
-        "Explore this site to view my latest 3D renders and animations. Here, I share my creative process and showcase detailed models that bring my imaginative designs to life.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "Blender",
-        "TailwindCSS",
-        "Shadcn UI",
-        
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://vision-vault-weld.vercel.app/",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Source",
-          href: "https://github.com/Khalifa004/Vision-Vault",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "",
-      video: "/Krenders.mp4",
-    },
+   
     {
       title: "AI ScriptLab",
       href: "https://ai-generator-woad.vercel.app/",
@@ -136,6 +107,36 @@ projects: [
       
     },
     {
+      title: "KhalifaRenders",
+      href: "https://k-renders-weld.vercel.app/",
+      dates: "October 2023 - March 2024",
+      active: true,
+      description:
+        "Explore this site to view my latest 3D renders and animations. Here, I share my creative process and showcase detailed models that bring my imaginative designs to life.",
+      technologies: [
+        "Next.js",
+        "Typescript",
+        "Blender",
+        "TailwindCSS",
+        "Shadcn UI",
+        
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://k-renders-weld.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Source",
+          href: "https://github.com/Khalifa004/Vision-Vault",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "",
+      video: "/Krenders.mp4",
+    },
+    {
       title: "Expense Tracker(Coming Soon)",
       href: "https://llm.report",
       dates: "August 2024",
@@ -162,8 +163,9 @@ projects: [
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
-      video: "https://www.dropbox.com/scl/fi/99p4gyyczz4l4b1g4ujlq/AIscriptlabsized.mp4?rlkey=29blr1nhcv55wqy0xdd9ncsuk&st=mz5xqkav&raw=1",
+      image: "", 
+      
+      video: "/comingsoon.png",
     },
     {
       title: "Portfolio",
