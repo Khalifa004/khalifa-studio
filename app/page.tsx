@@ -10,6 +10,8 @@ import Compareandlogo from "@/components/Compareandlogo";
 import { MyServices } from "@/components/Myservices";
 import Poweredby from "@/components/Poweredby";
 import Footer from "@/components/Footer";
+import { LayoutGridDemo } from "@/components/3dimages";
+import Textpass from "@/components/Textpass";
 
 // Uncomment if needed
 // import Study from "@components/Study";
@@ -58,8 +60,10 @@ const Home = () => {
 
      
 
-      <div className="max-w-full w-full">
+      <div className="max-w-full w-full ">
         <Compareandlogo />
+    <Textpass/>
+        <LayoutGridDemo />
       </div>
 
       <MyServices />
