@@ -12,6 +12,7 @@ import Poweredby from "@/components/Poweredby";
 import Footer from "@/components/Footer";
 import { LayoutGridDemo } from "@/components/3dimages";
 import Textpass from "@/components/Textpass";
+import Expandable from "@/components/ui/expandable";
 
 // Uncomment if needed
 // import Study from "@components/Study";
@@ -63,14 +64,22 @@ const Home = () => {
       <div className="max-w-full w-full ">
         <Compareandlogo />
     <Textpass/>
-        <LayoutGridDemo />
-      </div>
+    <div className="flex items-center justify-center">
+  <div className="max-w-4xl max-h-8xl w-full ">
+  <LayoutGridDemo />
+  </div>
+</div>
 
+       
+      </div>
+     
+      
       <MyServices />
       <Poweredby />
       <Footer />
+     
     </main>
-  );
+         );
 };
 
 export default Home;

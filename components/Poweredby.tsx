@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
     
       <div className="text-center">
   <p className="opacity-70 text-black dark:text-white">Powered by Vercel</p>
-  <div className="relative mx-auto w-full max-w-[40rem]">
+  <div className="relative mx-auto max-w-[5rem]  sm:max-w-[40rem]">
     {/* Gradients */}
     <div className="absolute inset-x-4 sm:inset-x-5 md:inset-x-20 top-[calc(100%+0.5rem)] bg-gradient-to-r from-transparent via-[#6f8f3b] to-transparent h-[2px] w-3/4 blur-sm" />
     <div className="absolute inset-x-4 sm:inset-x-5 md:inset-x-20 top-[calc(100%+0.5rem)] bg-gradient-to-r from-transparent via-[#76963f] to-transparent h-px w-3/4" />

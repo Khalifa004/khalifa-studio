@@ -3,7 +3,7 @@ import { VelocityScroll } from './ui/scroll-based-velocity'
 
 const Textpass = () => {
   return (
-    <div>
+    <div >
           <VelocityScroll
       text="3D and animations"
       default_velocity={5}
