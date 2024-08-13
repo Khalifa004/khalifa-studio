@@ -116,7 +116,7 @@ const RandomQuestionCard = () => {
     return (
       <BentoCard className="flex flex-col bg-orange-300 h-48 w-64">
         <Bot className="size-8 md:size-12" />
-        <strong className="mt-1 inline-block text-sm">Integrated AI</strong>
+        <strong className="mt-1 inline-block text-sm">Frequent Questions</strong>
 
         <div className="mt-auto">
           <div className="text-sm font-medium">{questions[currentIndex]}</div>
