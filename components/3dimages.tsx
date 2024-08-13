@@ -71,7 +71,7 @@ const cards = [
     id: 2,
     content: <SkeletonTwo />,
     className: "col-span-1",
-    thumbnail: "madridseat.png",
+    thumbnail: "Madridseat.png",
   },
   {
     id: 3,
