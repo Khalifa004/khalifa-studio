@@ -1,10 +1,8 @@
-"use client";
-
-
+"use client"
+import React, { useRef } from "react";
 import { cn } from "@/utils/cn";
 import { cva, type VariantProps } from "class-variance-authority";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import React, { PropsWithChildren, useRef } from "react";
 
 export interface DockProps extends VariantProps<typeof dockVariants> {
   className?: string;
@@ -46,12 +44,15 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
       });
     };
 
+    // Remove mouseX from props
+  
+
     return (
       <motion.div
         ref={ref}
         onMouseMove={(e) => mouseX.set(e.pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
-        {...props}
+      
         className={cn(dockVariants({ className }))}
       >
         {renderChildren()}

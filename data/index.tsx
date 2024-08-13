@@ -166,12 +166,12 @@ projects: [
       video: "https://www.dropbox.com/scl/fi/99p4gyyczz4l4b1g4ujlq/AIscriptlabsized.mp4?rlkey=29blr1nhcv55wqy0xdd9ncsuk&st=mz5xqkav&raw=1",
     },
     {
-      title: "North Star (Concept)",
+      title: "Portfolio",
       href: "/",
-      dates: "February 2024",
+      dates: "May 2024",
       active: true,
       description:
-        "Revolutionary bullet train experience, where high-speed transportation meets immersive virtual reality.",
+        "Built with Next.js, this portfolio showcases my projects and skills with a focus on performance and user experience. Explore my work and see how I leverage modern web technologies to create innovative solutions.",
       technologies: [
         "Next.js",
         "Typescript",
@@ -190,6 +190,6 @@ projects: [
       ],
       image: "",
       video:
-        "thenorthstar.mp4",
+        "portfolio.mp4",
     },
   ],}
