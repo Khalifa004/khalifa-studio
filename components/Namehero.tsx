@@ -140,7 +140,7 @@ export default function Namehero() {
       </nav>
 
       <Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={100} />
-      <GridBeam className="sm:pl-16 sm:pt-28   flex items-start justify-start">
+      <GridBeam className="sm:pl-16 sm:pt-28   flex items-start justify-center sm:justify-start">
         <div className="grid gap-2">
           {boxRevealTitle}
           {boxRevealDescription}

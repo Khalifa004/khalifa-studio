@@ -55,11 +55,12 @@ const Home = () => {
         <Eight />
         <Myworks />
       </div>
-
+     
       <div className="max-w-full w-full ">
+      <Textpass />
         <Compareandlogo />
         <div className="p-0">
-          <Textpass />
+        
         </div>
         <div className="flex items-center justify-center">
           <div className=" max-h-8xl w-full ">

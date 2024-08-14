@@ -92,7 +92,7 @@ projects: [
       ],
       links: [
         {
-          type: "Website",
+          type: "Live Preview",
           href: "https://ai-generator-woad.vercel.app/",
           icon: <Icons.globe className="size-3" />,
         },
@@ -123,7 +123,7 @@ projects: [
       ],
       links: [
         {
-          type: "Website",
+          type: "Live Preview",
           href: "https://k-renders-weld.vercel.app/",
           icon: <Icons.globe className="size-3" />,
         },
@@ -153,7 +153,7 @@ projects: [
       ],
       links: [
         {
-          type: "Website",
+          type: "Live Preview",
           href: "",
           icon: <Icons.globe className="size-3" />,
         },
@@ -165,7 +165,7 @@ projects: [
       ],
       image: "", 
       
-      video: "/comingsoon.png",
+      video: "/trackervideo.mp4",
     },
     {
       title: "Portfolio",
@@ -185,7 +185,7 @@ projects: [
       ],
       links: [
         {
-          type: "Website",
+          type: "Live Preview",
           href: "https://automatic.chat",
           icon: <Icons.globe className="size-3" />,
         },
