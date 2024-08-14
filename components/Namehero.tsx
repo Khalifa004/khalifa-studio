@@ -76,11 +76,14 @@ const BoxReveal = memo(({ children, boxColor, duration }: BoxRevealProps) => {
 export default function Namehero() {
  
   const boxRevealTitle = useMemo(() => (
+    
     <BoxReveal boxColor="#c7c7c7" duration={0.5}>
+      
       <h1 className="text-6xl sm:text-[12rem]  font-semibold  mx-auto text-center mt-6 relative z-20 py-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
         KHALIFA
       </h1>
     </BoxReveal>
+    
   ), []);
 
   const boxRevealDescription = useMemo(() => (
@@ -139,7 +142,7 @@ export default function Namehero() {
         </ul>
       </nav>
 
-      <Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={100} />
+      <Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={200} />
       <GridBeam className="sm:pl-16 sm:pt-28   flex items-start justify-center sm:justify-start">
         <div className="grid gap-2">
           {boxRevealTitle}

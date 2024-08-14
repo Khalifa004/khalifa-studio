@@ -187,7 +187,7 @@ export const Compare = ({
               maxSize={1}
               particleDensity={1200}
               className="w-full h-full"
-              particleColor="#FFFFFF"
+              particleColor="#BEF264"
             />
           </div>
           {showHandlebar && (
