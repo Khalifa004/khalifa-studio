@@ -117,6 +117,9 @@ export default function Namehero() {
     });
   };
   return (
+
+
+    
     
     <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl">
          <header
@@ -144,10 +147,16 @@ export default function Namehero() {
 
       <Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={200} />
       <GridBeam className="sm:pl-16 sm:pt-28   flex items-start justify-center sm:justify-start">
-        <div className="grid gap-2">
-          {boxRevealTitle}
-          {boxRevealDescription}
-        </div>
+      <div className="relative grid gap-2">
+  <div className="relative text-container">
+    {boxRevealTitle}
+    <span className="absolute -top-1 -left-1 z-10 rotate-3 whitespace-nowrap rounded-full bg-neutral-800 px-2.5 py-1 text-[31px] font-semibold uppercase leading-5 tracking-wide text-white">
+      hi!
+    </span>
+  </div>
+  {boxRevealDescription}
+</div>
+
       </GridBeam>
 
       <div className="mb-40 sm:mb-20 text-center animate-fade-in flex justify-center ">
