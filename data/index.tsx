@@ -186,7 +186,7 @@ projects: [
       links: [
         {
           type: "Live Preview",
-          href: "https://automatic.chat",
+          href: "https://khalifa.studio",
           icon: <Icons.globe className="size-3" />,
         },
       ],
