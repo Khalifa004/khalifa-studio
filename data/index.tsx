@@ -137,8 +137,8 @@ projects: [
       video: "/Krenders.mp4",
     },
     {
-      title: "Expense Tracker(Coming Soon)",
-      href: "https://llm.report",
+      title: "UX/UI",
+      href: "/",
       dates: "August 2024",
       active: true,
       description:
