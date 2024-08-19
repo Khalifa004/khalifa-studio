@@ -153,15 +153,11 @@ projects: [
       ],
       links: [
         {
-          type: "Live Preview",
+          type: "See more",
           href: "",
           icon: <Icons.globe className="size-3" />,
         },
-        {
-          type: "Source",
-          href: "",
-          icon: <Icons.github className="size-3" />,
-        },
+       
       ],
       image: "", 
       

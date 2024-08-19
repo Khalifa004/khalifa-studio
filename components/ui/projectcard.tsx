@@ -68,7 +68,7 @@ export function ProjectCard({
         )}
       </Link>
       <CardHeader className="px-2">
-        <div className="space-y-1 p-3 sm:p-0text-pretty font-sans text-sm text-muted-foreground mt-auto flex flex-col px-2">
+        <div className="space-y-1  pt-3 pr-3 pb-3 sm:p-0text-pretty font-sans text-sm text-muted-foreground mt-auto flex flex-col ">
           <CardTitle className="mt-1 text-base">{title}</CardTitle>
           <time className="font-sans text-xs">{dates}</time>
           <div className="hidden font-sans text-xs underline print:visible">
@@ -79,7 +79,7 @@ export function ProjectCard({
           </Markdown>
         </div>
       </CardHeader>
-      <CardContent className="mt-auto flex flex-col px-2">
+      <CardContent className="mt-auto flex flex-col pr-2">
         {tags && tags.length > 0 && (
           <div className="mt-2 flex flex-wrap gap-1">
             {tags?.map((tag) => (
