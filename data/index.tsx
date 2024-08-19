@@ -1,7 +1,6 @@
 
-
 import { Icons } from "@/components/ui/icons";
-import { CodeIcon, HomeIcon, NotebookIcon, PencilLine } from "lucide-react";
+import { CodeIcon, HomeIcon, PencilLine } from "lucide-react";
 export const companies = [
     {
       id: 1,
@@ -159,9 +158,9 @@ projects: [
         },
        
       ],
-      image: "", 
+      image: "/Pushups.png" , 
       
-      video: "/trackervideo.mp4",
+    
     },
     {
       title: "Portfolio",
