@@ -18,7 +18,7 @@ interface BoxRevealProps {
   duration?: number;
 }
 
-const words = ["3D ", "WebDev", "UX/UI"];
+const words = ["3D ", "FrontEnd", "UX/UI"];
 
 const BoxReveal = memo(({ children, boxColor, duration }: BoxRevealProps) => {
   const mainControls = useAnimation();
