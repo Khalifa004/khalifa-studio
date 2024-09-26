@@ -17,7 +17,7 @@ const Compareandlogo = () => {
     <section id="about" className="sm:flex justify-center items-center w-full pb-20">
       <div >
       <h1 className="text-3xl md:text-4xl lg:text-6xl font-semibold max-w-7xl mx-auto text-center  relative z-20 py-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
-       On my free time I make 3D renders <br /> on <Cover href="https://vision-vault-weld.vercel.app/" className="dark:text-[#BEF264]">this site</Cover>
+       On my free time I make 3D renders <br /> on <Cover href="https://k-renders-weld.vercel.app/" className="dark:text-[#BEF264]">this site</Cover>
       </h1>
     </div>
       <div className="mt-10 flex justify-center items-center  h-[300px] md:w-[700px] md:h-[700px] sm:ml-20">
