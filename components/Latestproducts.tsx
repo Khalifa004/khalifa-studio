@@ -12,53 +12,28 @@ interface Product {
   description: string;
   image: string;
   href: string;
-  incoming?: boolean;
 }
 
 const ProductItem: React.FC<{ product: Product }> = React.memo(({ product }) => (
   <Link href={product.href}>
     <motion.div
-      className={`group relative rounded-lg overflow-hidden backdrop-blur-xl border shadow-lg hover:shadow-2xl transition-all duration-500 h-full ${
-        product.incoming 
-          ? "bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200/50" 
-          : "bg-[hsl(0,0%,98%)] border-white/30"
-      }`}
+      className="group relative rounded-lg overflow-hidden backdrop-blur-xl border shadow-lg hover:shadow-2xl transition-all duration-500 h-full bg-[hsl(0,0%,98%)] border-white/30"
       variants={itemVariants}
     >
-      <div className="aspect-square overflow-hidden relative">
-        {product.incoming ? (
-          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-100 to-indigo-100">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-blue-600 mb-2">Coming Soon</div>
-              <div className="text-sm text-blue-500 font-medium">{product.name}</div>
-            </div>
-          </div>
-        ) : (
-          <>
-            <Image
-              src={product.image}
-              alt={product.name}
-              layout="fill"
-              objectFit="cover"
-              className="transform transition-transform duration-700 group-hover:scale-110"
-            />
-            <div className="absolute inset-0  group-hover:bg-black/10 transition-all duration-300" />
-          </>
-        )}
-        {product.incoming && (
-          <div className="absolute top-2 right-2 bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
-            Incoming
-          </div>
-        )}
+      <div className="aspect-[4/3] overflow-hidden relative">
+        <Image
+          src={product.image}
+          alt={product.name}
+          layout="fill"
+          objectFit="cover"
+          className="transform transition-transform duration-700 group-hover:scale-110"
+        />
+        <div className="absolute inset-0  group-hover:bg-black/10 transition-all duration-300" />
       </div>
       <div className="p-4">
         <div className="flex justify-between items-start mb-2">
           <h3 className="text-lg font-bold text-gray-900 line-clamp-2">{product.name}</h3>
-          <span className={`px-2 py-1 text-xs font-semibold rounded-full flex-shrink-0 ${
-            product.incoming 
-              ? "text-blue-700 bg-blue-100" 
-              : "text-gray-700 bg-gray-100"
-          }`}>
+          <span className="px-2 py-1 text-xs font-semibold rounded-full flex-shrink-0 text-gray-700 bg-gray-100">
             {product.price}
           </span>
         </div>
@@ -115,12 +90,11 @@ const LatestProducts: React.FC = () => {
       href: "/allwork/Lapomora",
     },
     {
-      name: "Scriptlab",
+      name: "EchoBoard",
       price: "Tool",
       description: "AI-powered scripting tool for automation and workflow optimization.",
-      image: "/images/aiscript.png",
-      href: "/allwork/Scriptlab",
-      incoming: true,
+      image: "/images/echoboard.png",
+      href: "/allwork/EchoBoard",
     },
   ];
 
@@ -150,7 +124,7 @@ const LatestProducts: React.FC = () => {
             </motion.div>
           </div>
 
-          <div className="grid gap-4 sm:gap-6 grid-cols-2 w-full">
+          <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 w-full">
             {products.map((product, index) => (
               <ProductItem key={index} product={product} />
             ))}
