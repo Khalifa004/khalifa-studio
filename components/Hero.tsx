@@ -91,7 +91,7 @@ const Hero: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-neutral-900">Front‑end Development</div>
-                      <div className="text-xs text-neutral-600">Modern web experiences</div>
+                      <div className="text-xs text-neutral-600">Modern experiences</div>
                     </div>
                   </motion.div>
                 </div>
@@ -104,7 +104,7 @@ const Hero: React.FC = () => {
                   className="mt-6"
                 >
                   <a
-                    href="https://linkedin.com/in/your-profile"
+                    href="https://www.linkedin.com/in/khalifa-seck/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-neutral-900 text-white font-medium hover:bg-neutral-800 transition-all duration-200 border border-neutral-300"
