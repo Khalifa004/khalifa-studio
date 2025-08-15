@@ -6,13 +6,13 @@ import ClientLayout from "@/components/ClientLayout";
 
 export const metadata: Metadata = {
   title: {
-    default: "Khalifa Studio — Front‑end Developer & UI Designer",
+    default: "Khalifa Studio — Developer & UI Designer",
     template: "%s · Khalifa Studio",
   },
   description:
     "Front‑end developer and UI designer building fast, accessible, animated web apps with Next.js, TypeScript, Tailwind, and Framer Motion.",
   openGraph: {
-    title: "Khalifa Studio — Front‑end Developer & UI Designer",
+    title: "Khalifa Studio —  Developer & UI Designer",
     description:
       "Front‑end developer and UI designer building fast, accessible, animated web apps with Next.js, TypeScript, Tailwind, and Framer Motion.",
     url: "https://khalifa.studio",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Khalifa Studio — Front‑end Developer & UI Designer",
+    title: "Khalifa Studio — Developer & UI Designer",
     description:
       "Front‑end developer and UI designer building fast, accessible, animated web apps with Next.js, TypeScript, Tailwind, and Framer Motion.",
     images: ["/images/Cover.png"],
