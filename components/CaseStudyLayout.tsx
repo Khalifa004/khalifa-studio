@@ -33,7 +33,7 @@ export default function CaseStudyLayout({ header, sections, children }: CaseStud
     <div className="bg-[hsl(0,0%,98%)] text-gray-900">
       <section className="relative min-h-[70vh] flex flex-col justify-center px-6 pt-24 overflow-hidden isolate">
         {header.backgroundVideo && shouldPlayVideo ? (
-          <video className="absolute inset-0 w-full h-full object-cover opacity-70 pointer-events-none z-0" autoPlay muted loop playsInline preload="none" aria-hidden="true">
+          <video className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0" autoPlay muted loop playsInline preload="none" aria-hidden="true">
             <source src={header.backgroundVideo} type="video/mp4" />
           </video>
         ) : null}

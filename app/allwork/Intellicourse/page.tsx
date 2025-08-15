@@ -18,6 +18,7 @@ const ComingSoonPage = () => {
           { label: 'Toolkit', value: 'Next.js, TypeScript, Tailwind, Framer Motion, Figma' },
           { label: 'Year', value: '2024' },
         ],
+    
         backgroundVideo: '/images/intellianimblackbg.mp4',
       }}
       sections={[

@@ -3,6 +3,7 @@
 // Tailwind CSS required. No external UI libs.
 
 import React from "react";
+import Image from "next/image";
 
 // --- Content you can edit quickly ---
 const meta = {
@@ -52,6 +53,49 @@ export default function EchoBoardIntroAndProblem() {
         <p className="mt-6 max-w-3xl text-pretty text-lg leading-7 text-gray-700">
           {meta.context}
         </p>
+
+        {/* Problem Visualization */}
+        <div className="mt-12 mb-12">
+          <div className="relative mx-auto max-w-4xl overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+            <div className="mb-6 text-center">
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Fragmented Collaboration Tools</h3>
+              <p className="text-gray-600">Teams constantly switch between multiple disconnected applications</p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="flex flex-col items-center p-4 rounded-lg border border-gray-200 bg-gray-50">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-2">
+                  <span className="text-blue-600 font-bold text-lg">💬</span>
+                </div>
+                <span className="text-sm font-medium text-gray-700">Chat App</span>
+              </div>
+              <div className="flex flex-col items-center p-4 rounded-lg border border-gray-200 bg-gray-50">
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-2">
+                  <span className="text-green-600 font-bold text-lg">📝</span>
+                </div>
+                <span className="text-sm font-medium text-gray-700">Whiteboard</span>
+              </div>
+              <div className="flex flex-col items-center p-4 rounded-lg border border-gray-200 bg-gray-50">
+                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-2">
+                  <span className="text-purple-600 font-bold text-lg">🤖</span>
+                </div>
+                <span className="text-sm font-medium text-gray-700">AI Assistant</span>
+              </div>
+              <div className="flex flex-col items-center p-4 rounded-lg border border-gray-200 bg-gray-50">
+                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-2">
+                  <span className="text-orange-600 font-bold text-lg">📓</span>
+                </div>
+                <span className="text-sm font-medium text-gray-700">Notes</span>
+              </div>
+            </div>
+            <div className="mt-6 text-center">
+              <div className="inline-flex items-center gap-2 text-red-600 font-medium">
+                <span>↔️</span>
+                <span>Context switching breaks flow</span>
+                <span>↔️</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
           {meta.pains.map((p) => (

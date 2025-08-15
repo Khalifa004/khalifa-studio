@@ -3,6 +3,7 @@
 // Solo project tone, white background by default
 
 import React from "react";
+import Image from "next/image";
 
 const meta = {
   outcome: {
@@ -65,6 +66,33 @@ export default function EchoBoardOutcomesAndLearnings() {
         <p className="mt-4 max-w-3xl text-base leading-7 text-black/70 md:text-lg">Solo project — delivery from architecture to UI polish.</p>
       </section>
 
+      {/* Impact Overview Visualization */}
+      <section className="mx-auto max-w-6xl px-6 pb-8">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-black/10 bg-white p-8 shadow-sm">
+          <div className="mb-6 text-center">
+            <h3 className="text-xl font-semibold text-black mb-2">Project Impact Overview</h3>
+            <p className="text-black/70">Measurable improvements in team collaboration and productivity</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="text-center p-6 rounded-xl bg-green-50 border border-green-200">
+              <div className="text-4xl font-bold text-green-600 mb-2">-40%</div>
+              <h4 className="font-medium text-black mb-1">Fewer Context Switches</h4>
+              <p className="text-sm text-black/70">Less tool switching reported in pilot sessions</p>
+            </div>
+            <div className="text-center p-6 rounded-xl bg-blue-50 border border-blue-200">
+              <div className="text-4xl font-bold text-blue-600 mb-2">+25%</div>
+              <h4 className="font-medium text-black mb-1">Faster Decisions</h4>
+              <p className="text-sm text-black/70">Time to consensus during whiteboard sessions</p>
+            </div>
+            <div className="text-center p-6 rounded-xl bg-purple-50 border border-purple-200">
+              <div className="text-4xl font-bold text-purple-600 mb-2">&lt;2min</div>
+              <h4 className="font-medium text-black mb-1">Setup Time</h4>
+              <p className="text-sm text-black/70">From invite to first collaborative action</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 12. Outcome / Impact */}
       <section className="mx-auto max-w-6xl px-6">
         <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">12. Outcome / Impact</h2>
@@ -109,6 +137,87 @@ export default function EchoBoardOutcomesAndLearnings() {
       <div className="mx-auto max-w-6xl px-6 py-8">
         <hr className="border-black/10" />
       </div>
+
+      {/* Learning Journey Visualization */}
+      <section className="mx-auto max-w-6xl px-6 pb-8">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-black/10 bg-white p-8 shadow-sm">
+          <div className="mb-6 text-center">
+            <h3 className="text-xl font-semibold text-black mb-2">Development Journey</h3>
+            <p className="text-black/70">Key learnings and challenges overcome during development</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="space-y-4">
+              <h4 className="font-medium text-black">Challenges Faced</h4>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-red-50 border border-red-200">
+                  <div className="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-sm">⚖️</span>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-black">Consistency vs UX</h5>
+                    <p className="text-sm text-black/70">Balancing conflict resolution with smooth UI</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-red-50 border border-red-200">
+                  <div className="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-sm">🧠</span>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-black">AI Context Boundaries</h5>
+                    <p className="text-sm text-black/70">Room-scoped memory management</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <h4 className="font-medium text-black">What Worked Well</h4>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-green-50 border border-green-200">
+                  <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-sm">⚡</span>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-black">Streaming SSR</h5>
+                    <p className="text-sm text-black/70">Responsive, calm user experience</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-green-50 border border-green-200">
+                  <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-sm">🧩</span>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-black">CVA Variants</h5>
+                    <p className="text-sm text-black/70">Tidy component state management</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <h4 className="font-medium text-black">Future Iterations</h4>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-blue-50 border border-blue-200">
+                  <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-sm">📊</span>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-black">Audit Logging</h5>
+                    <p className="text-sm text-black/70">Granular tracking for enterprise</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-blue-50 border border-blue-200">
+                  <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-sm">🎬</span>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-black">Session Replay</h5>
+                    <p className="text-sm text-black/70">Replayable whiteboard sessions</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* 13. Reflection & Learnings */}
       <section className="mx-auto max-w-6xl px-6 pb-20" id="learnings">

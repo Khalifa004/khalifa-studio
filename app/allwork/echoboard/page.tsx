@@ -18,6 +18,7 @@ const page = () => {
           { label: 'Toolkit', value: 'Next.js, TypeScript, Tailwind, Framer Motion, Figma' },
           { label: 'Year', value: '2025 • Ongoing' },
         ],
+    
       }}
       sections={[
         { title: "Introduction & Problem", body: <EchoBoardIntroAndProblem /> },

@@ -1,8 +1,5 @@
-// app/echoboard/data-and-realtime.tsx
-// Sections 7–8: Database & Data Model + Real‑time Collaboration — Apple‑style Next.js + Tailwind
-// Solo project tone, light/white look for portfolio consistency
-
 import React from "react";
+import Image from "next/image";
 
 const meta = {
   role: "Solo Project — I designed the schema, wrote policies, and wired realtime.",
@@ -17,16 +14,7 @@ const meta = {
     { name: "notifications", desc: "Event notifications with read state" },
   ],
   security: [
-    {
-      title: "Row Level Security (RLS)",
-      points: [
-        "Profiles: users can read self + room‑related public details",
-        "Rooms: visibility filter; private rooms restricted to members",
-        "Memberships: only owners can grant/revoke roles",
-        "Messages: only room members can read; authors can edit within a window",
-        "Journals/Entries: only the owner; optional public flag honored by policy",
-      ],
-    },
+  
     {
       title: "RBAC & Constraints",
       points: [
@@ -66,6 +54,82 @@ export default function EchoBoardDataAndRealtime() {
           Database & Data Model · Real‑time Collaboration
         </h1>
         <p className="mt-4 max-w-3xl text-base leading-7 text-black/70 md:text-lg">{meta.role}</p>
+      </section>
+
+      {/* Database Architecture Overview */}
+      <section className="mx-auto max-w-6xl px-6 pb-8">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-black/10 bg-white p-8 shadow-sm">
+          <div className="mb-6 text-center">
+            <h3 className="text-xl font-semibold text-black mb-2">Database Architecture</h3>
+            <p className="text-black/70">PostgreSQL with Row Level Security and real-time subscriptions</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <h4 className="font-medium text-black">Core Tables</h4>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-blue-50 border border-blue-200">
+                  <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-xs font-bold">👥</span>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-black">profiles</h5>
+                    <p className="text-sm text-black/70">User profiles & metadata</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-green-50 border border-green-200">
+                  <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-xs font-bold">🏠</span>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-black">rooms</h5>
+                    <p className="text-sm text-black/70">Collaborative spaces</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-purple-50 border border-purple-200">
+                  <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-xs font-bold">💬</span>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-black">messages</h5>
+                    <p className="text-sm text-black/70">Chat with AI citations</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <h4 className="font-medium text-black">Security & Permissions</h4>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-orange-50 border border-orange-200">
+                  <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-xs font-bold">🔒</span>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-black">Row Level Security</h5>
+                    <p className="text-sm text-black/70">Granular access control</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-red-50 border border-red-200">
+                  <div className="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-xs font-bold">👑</span>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-black">Role-Based Access</h5>
+                    <p className="text-sm text-black/70">OWNER/EDITOR/VIEWER roles</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-indigo-50 border border-indigo-200">
+                  <div className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-xs font-bold">⚡</span>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-black">Real-time Sync</h5>
+                    <p className="text-sm text-black/70">WebSocket subscriptions</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* 7. Database & Data Model */}
@@ -128,6 +192,87 @@ export default function EchoBoardDataAndRealtime() {
       <div className="mx-auto max-w-6xl px-6 py-8">
         <hr className="border-black/10" />
       </div>
+
+      {/* Real-time Architecture Visualization */}
+      <section className="mx-auto max-w-6xl px-6 pb-8">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-black/10 bg-white p-8 shadow-sm">
+          <div className="mb-6 text-center">
+            <h3 className="text-xl font-semibold text-black mb-2">Real-time Collaboration Architecture</h3>
+            <p className="text-black/70">Multi-user synchronization with conflict resolution</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="space-y-4">
+              <h4 className="font-medium text-black">Presence & Cursors</h4>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-blue-50 border border-blue-200">
+                  <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-sm">👤</span>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-black">Live Presence</h5>
+                    <p className="text-sm text-black/70">See who's online</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-blue-50 border border-blue-200">
+                  <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-sm">🖱️</span>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-black">Multi-cursor</h5>
+                    <p className="text-sm text-black/70">Real-time cursor tracking</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <h4 className="font-medium text-black">Whiteboard Sync</h4>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-green-50 border border-green-200">
+                  <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-sm">📝</span>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-black">tldraw Integration</h5>
+                    <p className="text-sm text-black/70">Multi-user drawing</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-green-50 border border-green-200">
+                  <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-sm">🔄</span>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-black">Conflict Resolution</h5>
+                    <p className="text-sm text-black/70">Last-writer-wins strategy</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <h4 className="font-medium text-black">AI Streaming</h4>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-purple-50 border border-purple-200">
+                  <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-sm">🤖</span>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-black">NDJSON Streaming</h5>
+                    <p className="text-sm text-black/70">Token-by-token responses</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-purple-50 border border-purple-200">
+                  <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-sm">⚡</span>
+                  </div>
+                  <div>
+                    <h5 className="font-medium text-black">Optimistic UI</h5>
+                    <p className="text-sm text-black/70">Instant feedback</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* 8. Real‑time Collaboration */}
       <section className="mx-auto max-w-6xl px-6 pb-20" id="realtime">

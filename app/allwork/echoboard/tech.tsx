@@ -3,6 +3,7 @@
 // Solo project tone, white background by default
 
 import React from "react";
+import Image from "next/image";
 
 const meta = {
   role: "Solo Project — Designer, Engineer, and Product Owner",
@@ -83,6 +84,79 @@ export default function EchoBoardTechAndDesign() {
         </p>
       </section>
 
+      {/* Tech Stack Overview */}
+      <section className="mx-auto max-w-6xl px-6 pb-8">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-black/10 bg-white p-8 shadow-sm">
+          <div className="mb-6 text-center">
+            <h3 className="text-xl font-semibold text-black mb-2">Technology Stack</h3>
+            <p className="text-black/70">Modern, scalable architecture built with cutting-edge tools</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="space-y-4">
+              <h4 className="font-medium text-black">Frontend</h4>
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 p-2 rounded-lg bg-blue-50">
+                  <Image src="/images/react1.png" alt="React" width={24} height={24} className="rounded" />
+                  <span className="text-sm font-medium">Next.js 15 + React 19</span>
+                </div>
+                <div className="flex items-center gap-2 p-2 rounded-lg bg-blue-50">
+                  <Image src="/images/typescript1.png" alt="TypeScript" width={24} height={24} className="rounded" />
+                  <span className="text-sm font-medium">TypeScript 5</span>
+                </div>
+                <div className="flex items-center gap-2 p-2 rounded-lg bg-blue-50">
+                  <Image src="/images/tailcss.png" alt="Tailwind CSS" width={24} height={24} className="rounded" />
+                  <span className="text-sm font-medium">Tailwind CSS 4</span>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <h4 className="font-medium text-black">Backend</h4>
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 p-2 rounded-lg bg-green-50">
+                  <div className="w-6 h-6 bg-green-500 rounded flex items-center justify-center">
+                    <span className="text-white text-xs font-bold">DB</span>
+                  </div>
+                  <span className="text-sm font-medium">PostgreSQL</span>
+                </div>
+                <div className="flex items-center gap-2 p-2 rounded-lg bg-green-50">
+                  <Image src="/images/clerk.png" alt="Clerk" width={24} height={24} className="rounded" />
+                  <span className="text-sm font-medium">Clerk Auth</span>
+                </div>
+                <div className="flex items-center gap-2 p-2 rounded-lg bg-green-50">
+                  <div className="w-6 h-6 bg-green-500 rounded flex items-center justify-center">
+                    <span className="text-white text-xs font-bold">⚡</span>
+                  </div>
+                  <span className="text-sm font-medium">Supabase</span>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <h4 className="font-medium text-black">AI & Real-time</h4>
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 p-2 rounded-lg bg-purple-50">
+                  <div className="w-6 h-6 bg-purple-500 rounded flex items-center justify-center">
+                    <span className="text-white text-xs font-bold">AI</span>
+                  </div>
+                  <span className="text-sm font-medium">GPT-4o</span>
+                </div>
+                <div className="flex items-center gap-2 p-2 rounded-lg bg-purple-50">
+                  <div className="w-6 h-6 bg-purple-500 rounded flex items-center justify-center">
+                    <span className="text-white text-xs font-bold">🔍</span>
+                  </div>
+                  <span className="text-sm font-medium">Tavily Search</span>
+                </div>
+                <div className="flex items-center gap-2 p-2 rounded-lg bg-purple-50">
+                  <div className="w-6 h-6 bg-purple-500 rounded flex items-center justify-center">
+                    <span className="text-white text-xs font-bold">📝</span>
+                  </div>
+                  <span className="text-sm font-medium">tldraw</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Technical Architecture */}
       <section className="mx-auto max-w-6xl px-6 pb-4">
         <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">5. Technical Architecture</h2>
@@ -161,6 +235,59 @@ export default function EchoBoardTechAndDesign() {
       {/* UI/UX Design */}
       <section className="mx-auto max-w-6xl px-6 pb-20">
         <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">6. UI/UX Design System</h2>
+        
+        {/* Design Philosophy Visualization */}
+        <div className="mt-8 mb-12">
+          <div className="relative mx-auto max-w-4xl overflow-hidden rounded-2xl border border-black/10 bg-white p-8 shadow-sm">
+            <div className="mb-6 text-center">
+              <h3 className="text-xl font-semibold text-black mb-2">Design Principles</h3>
+              <p className="text-black/70">Clean, accessible, and performant user experience</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-gray-50 border border-gray-200">
+                  <div className="w-8 h-8 bg-gray-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-sm">🎨</span>
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-black">Minimal Design</h4>
+                    <p className="text-sm text-black/70">Clean surfaces with generous white space</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-gray-50 border border-gray-200">
+                  <div className="w-8 h-8 bg-gray-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-sm">♿</span>
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-black">Accessible First</h4>
+                    <p className="text-sm text-black/70">WCAG compliant, keyboard-first flows</p>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-gray-50 border border-gray-200">
+                  <div className="w-8 h-8 bg-gray-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-sm">⚡</span>
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-black">Performance</h4>
+                    <p className="text-sm text-black/70">Streaming SSR and optimized loading</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-gray-50 border border-gray-200">
+                  <div className="w-8 h-8 bg-gray-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-sm">🌙</span>
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-black">Dark Mode Ready</h4>
+                    <p className="text-sm text-black/70">OKLCH tokens for consistent theming</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
           {/* Philosophy */}
           <article className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">

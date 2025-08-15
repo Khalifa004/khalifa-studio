@@ -82,8 +82,8 @@ const LatestWork: React.FC = () => {
 
       {/* Projects Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 md:gap-12 w-full">
-        {projects.map((project: Project) => (
-          <div key={project.name}>
+        {projects.map((project: Project) => {
+          const ProjectCard = (
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -145,23 +145,30 @@ const LatestWork: React.FC = () => {
                     >
                       {project.price}
                     </motion.span>
-                    {project.url.startsWith('http') ? (
-                      <a href={project.url} target="_blank" rel="noreferrer" className="group flex items-center gap-1 sm:gap-2 text-white hover:text-lime-200 transition-colors duration-300">
-                        <span className="text-xs sm:text-sm font-medium">Visit Site</span>
-                        <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
-                      </a>
-                    ) : (
-                      <Link href={project.url} className="group flex items-center gap-1 sm:gap-2 text-white hover:text-lime-200 transition-colors duration-300">
-                        <span className="text-xs sm:text-sm font-medium">View Project</span>
-                        <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
-                      </Link>
-                    )}
+                    <div className="flex items-center gap-1 sm:gap-2 text-white">
+                      <span className="text-xs sm:text-sm font-medium">View Project</span>
+                      <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+                    </div>
                   </div>
                 </motion.div>
               </div>
             </motion.div>
-          </div>
-        ))}
+          );
+
+          return (
+            <div key={project.name}>
+              {project.url.startsWith('http') ? (
+                <a href={project.url} target="_blank" rel="noreferrer">
+                  {ProjectCard}
+                </a>
+              ) : (
+                <Link href={project.url}>
+                  {ProjectCard}
+                </Link>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
