@@ -92,8 +92,8 @@ const LatestProducts: React.FC = () => {
     {
       name: "EchoBoard",
       price: "Tool",
-      description: "AI-powered scripting tool for automation and workflow optimization.",
-      image: "/images/echoboard.png",
+      description: "A tool for creating and sharing interactive boards with AI-powered content.",
+      image: "/images/Echoboard.png",
       href: "/allwork/echoboard",
     },
   ];
