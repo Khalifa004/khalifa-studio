@@ -35,22 +35,37 @@ const Horizontalscroll = () => {
     });
   
     return (
-      <div
-        id="scroll__start"
-        className="h-[300vh] overflow-x-hidden mr-10 lg:block hidden" // Hide on small screens
-      >
-        <div className="h-screen flex justify-start items-center">
-          <div id="scroll__pin" className="flex justify-start gap-x-48">
-            {cardsData.map((d) => (
-              <div key={d.id} className="aspect-square w-[700px]">
-                <img
-                  className="w-full h-full object-cover object-top rounded-[40px]"
-                  alt="3d work"
-                  src={d.image}
-                  loading="lazy"
-                />
-              </div>
-            ))}
+      <div className="lg:block hidden"> {/* Hide on small screens */}
+        {/* Title Section */}
+        <div className="h-screen flex items-center justify-center">
+          <div className="text-center space-y-6">
+            <h2 className="text-6xl md:text-8xl font-bold text-gray-900 tracking-tight">
+              My 3D Work
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-600 font-light max-w-2xl mx-auto">
+              Exploring digital art and creative expression through three-dimensional design
+            </p>
+          </div>
+        </div>
+
+        {/* Horizontal Scroll Section */}
+        <div
+          id="scroll__start"
+          className="h-[300vh] overflow-x-hidden mr-10"
+        >
+          <div className="h-screen flex justify-start items-center">
+            <div id="scroll__pin" className="flex justify-start gap-x-48">
+              {cardsData.map((d) => (
+                <div key={d.id} className="aspect-square w-[700px]">
+                  <img
+                    className="w-full h-full object-cover object-top rounded-[40px]"
+                    alt="3d work"
+                    src={d.image}
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
