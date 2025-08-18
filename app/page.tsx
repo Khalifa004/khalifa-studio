@@ -33,11 +33,6 @@ export default function Home() {
 
         {/* Footer */}
    
-
-      <div className="fixed bottom-0 right-0 z-20 p-4 shadow-md">
-     
-        <Index />
-      </div>
     </div>
   );
 }
