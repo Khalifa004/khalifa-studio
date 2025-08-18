@@ -39,7 +39,7 @@ const projects: Project[] = [
     name: "EchoBoard",
     price: "Platform",
     description: "A unified workspace that blends real‑time chat, AI assistance, interactive whiteboards, and personal journaling.",
-    image: "/images/echoboard.png",
+    image: "/images/Echoboard.png",
       url: "/allwork/echoboard",
       role: "Front-end + UI",
       year: "2025",
