@@ -26,8 +26,8 @@ export default function Home() {
       </div>
       
       {/* UI Showcase Section */}
-      <UIShowcase />
-      
+      {/* <UIShowcase />
+       */}
       {/* 3D Work Horizontal Scroll */}
       <Horizontalscroll/>
 
