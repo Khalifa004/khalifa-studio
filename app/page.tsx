@@ -4,6 +4,7 @@ import { Bigtext } from "@/components/bigtext";
 import Hero from "@/components/Hero";
 import Horizontalscroll from "@/components/Horizontalscroll";
 import LatestProducts from "@/components/Latestproducts";
+import UIShowcase from "@/components/UIShowcase";
 import Index from "@/components/ui/ScanMe/Index";
 
 export default function Home() {
@@ -15,15 +16,21 @@ export default function Home() {
       </div>
       
       {/* Hero Section - Full Width */}
-      <div className="w-full max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full">
         <Hero />
       </div>
 
       {/* Main Container for Other Sections */}
       <div className="mx-auto px-4 max-w-[100rem] sm:px-6 lg:px-8 ">
         {/* Latest Products */}
-        <LatestProducts />   </div>
-        <Horizontalscroll/>
+        <LatestProducts />   
+      </div>
+      
+      {/* UI Showcase Section */}
+      <UIShowcase />
+      
+      {/* 3D Work Horizontal Scroll */}
+      <Horizontalscroll/>
 
         {/* Footer */}
    
