@@ -1,5 +1,4 @@
 "use client"
-import Work3d from "@/components/3Dwork";
 import { Bigtext } from "@/components/bigtext";
 import Hero from "@/components/Hero";
 import Horizontalscroll from "@/components/Horizontalscroll";

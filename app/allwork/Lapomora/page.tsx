@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { LogoMarquee } from '@/components/logoroulette';
 import { BarChart, Clock, CheckSquare, Smartphone } from 'lucide-react'
 import ProjectHeader from '@/components/project-header';
-import Dashboard from '@/components/3grid';
+
 import { AnimatedSection } from '@/components/animated-section';
 import EnhancedProjectDevelopmentProcess from '@/components/pomoraprocess';
 import Pomoraprocess2 from '@/components/pomoraprocess2';
