@@ -22,7 +22,7 @@ const NavBar = () => {
   }, [pathname]);
 
   return (
-    <div className="fixed top-4 left-0 right-0 flex justify-center z-50">
+    <div className="fixed top-4 left-1/2 transform -translate-x-1/2 flex justify-center z-50">
       <motion.nav 
         className="backdrop-blur-md bg-white border border-gray-200 rounded-full overflow-hidden"
         initial={{ y: -100, opacity: 0 }}

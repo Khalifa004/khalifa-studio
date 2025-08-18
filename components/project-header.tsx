@@ -33,7 +33,7 @@ export default function ProjectHeader({
         backgroundImage: backgroundImage ? `url(${backgroundImage})` : 'none',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        width: '100vw',
+        width: '100%',
       }}
     >
       {/* Conditional rendering for video background */}

@@ -20,7 +20,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
   return (
     <>
-      <div className="flex justify-center">
+      <div className="flex justify-center w-full">
         <Navbar />
       </div>
       {children}

@@ -2,22 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  scroll-behavior: smooth;
+/* ==========================================================================
+   Base Reset
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+/* ==========================================================================
+   HTML & Body Styles
+   ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: hsl(var(--background));
+}
+
+body {
+  font-family: 'ClashDisplay', sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) 70%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease;
+}
+
+/* ==========================================================================
+   Custom Scrollbar - Hidden
+   ========================================================================== */
 
 ::-webkit-scrollbar {
-  width: 10px;
+  display: none;
 }
 
-::-webkit-scrollbar-track {
-  background: rgba(233, 15, 15, 0);
+/* Hide scrollbar for Firefox */
+html {
+  scrollbar-width: none;
 }
 
-::-webkit-scrollbar-thumb {
-  background: rgb(255, 255, 255); /* Solid white color */
-  border-radius: 10px; /* Rounded corners */
+/* Hide scrollbar for IE and Edge */
+html {
+  -ms-overflow-style: none;
 }
+
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
 
 @font-face {
   font-family: 'ClashDisplay';
@@ -25,48 +66,83 @@
   font-weight: normal;
   font-style: normal;
 }
-body {
 
-  background: var(--background);
-  color: var(--foreground);
-  font-family: 'ClashDisplay', sans-serif; /* Apply it globally */
-}
-
-
+/* ==========================================================================
+   CSS Variables
+   ========================================================================== */
 
 @layer base {
   :root {
-    --background: 0 0% 98%; /* Off-white background */
-    --border: 0 0% 80%; /* Light gray */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 3.9%;
+    --border: 0 0% 80%;
+    --scrollbar-width: 0px;
+  }
+  
+  /* Calculate scrollbar width for desktop */
+  @media (hover: hover) and (pointer: fine) {
+    :root {
+      --scrollbar-width: calc(100vw - 100%);
+    }
   }
 }
+
+/* ==========================================================================
+   Utility Classes
+   ========================================================================== */
 
 @layer components {
   .border-border {
-    border: solid hsl(var(--border)); /* Define border-border */
+    border: solid hsl(var(--border));
   }
 
   .bg-background {
-    background-color: hsl(var(--background)); /* Black background */
+    background-color: hsl(var(--background));
   }
 
   .text-foreground {
-    color: hsl(var(--foreground)); /* Define text-foreground */
+    color: hsl(var(--foreground));
   }
 }
 
-@layer base {
-  body {
+/* ==========================================================================
+   Glass Effects
+   ========================================================================== */
 
-  
-    font-family: 'ClashDisplay', sans-serif; /* Apply it globally */
-    scroll-behavior: smooth;
-  }
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.neumorphic-card {
+  background: #1a1a1a;
+  box-shadow: 5px 5px 10px #0d0d0d, -5px -5px 10px #272727;
+}
+
+/* ==========================================================================
+   Loading Animations
+   ========================================================================== */
 
 .loading-container {
   transition: opacity 0.5s ease-in-out;
 }
+
+.loading-container img {
+  animation: fadeInOut 1s infinite;
+}
+
+/* ==========================================================================
+   Keyframe Animations
+   ========================================================================== */
 
 @keyframes fadeInOut {
   0%, 100% {
@@ -75,44 +151,6 @@ body {
   50% {
     opacity: 1;
   }
-}
-
-.loading-container img {
-  animation: fadeInOut 1s infinite;
-}
-
-body {
- 
-  
-  
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) 70%);
-  background-position: top right;
-  background-repeat: no-repeat;
-  background-size: 900px 900px;
-  transition: background-image 0.5s ease; /* Smooth transition for gradient */
-}
-
-
-
-/* Add this to your global CSS file */
-.glass-morphism {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.neumorphic-card {
-  background: #1a1a1a;
-  box-shadow: 5px 5px 10px #0d0d0d, -5px -5px 10px #272727;
-}
-
-
-.glass-effect {
-  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
-  backdrop-filter: blur(10px); /* Blurring effect */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  border: 1px solid rgba(255, 255, 255, 0.5); /* Light border */
 }
 
 @keyframes scroll {
@@ -124,20 +162,26 @@ body {
   }
 }
 
-.animate-scroll {
-  animation: scroll 20s linear infinite;
-}
-
-
 @keyframes text-reveal {
   0% {
-    clip-path: inset(50% 0 50% 0 );
+    clip-path: inset(50% 0 50% 0);
   }
   100% {
     clip-path: inset(0 0 0 0);
   }
 }
 
+/* ==========================================================================
+   Animation Classes
+   ========================================================================== */
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+
 .animate-text-reveal {
   animation: text-reveal 2s ease-out forwards;
 }
+
+
+

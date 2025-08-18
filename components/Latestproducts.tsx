@@ -100,12 +100,12 @@ const LatestProducts: React.FC = () => {
 
   return (
     <motion.main
-      className="flex justify-center items-center flex-col w-full min-h-[160px] overflow-visible bg-[hsl(0,0%,98%)]"
+      className="flex justify-center items-center flex-col w-full min-h-[160px] overflow-x-hidden bg-[hsl(0,0%,98%)]"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
-      <div className="flex flex-col items-center justify-start gap-6 sm:gap-8 w-full max-w-9xl mx-auto py-6 sm:py-12">
+      <div className="flex flex-col items-center justify-start gap-6 sm:gap-8 w-full max-w-7xl mx-auto py-6 sm:py-12">
         <section className="flex flex-col items-start justify-start gap-4 sm:gap-6 w-full">
           <div className="flex justify-between items-center w-full">
             <motion.p 

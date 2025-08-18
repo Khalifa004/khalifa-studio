@@ -51,12 +51,12 @@ const Horizontalscroll = () => {
         {/* Horizontal Scroll Section */}
         <div
           id="scroll__start"
-          className="h-[300vh] overflow-x-hidden mr-10"
+          className="h-[300vh] overflow-x-hidden relative"
         >
-          <div className="h-screen flex justify-start items-center">
-            <div id="scroll__pin" className="flex justify-start gap-x-48">
+          <div className="h-screen flex justify-start items-center overflow-hidden">
+            <div id="scroll__pin" className="flex justify-start gap-x-8 md:gap-x-16 lg:gap-x-24 xl:gap-x-48">
               {cardsData.map((d) => (
-                <div key={d.id} className="aspect-square w-[700px]">
+                <div key={d.id} className="aspect-square w-[400px] md:w-[500px] lg:w-[600px] xl:w-[700px]">
                   <img
                     className="w-full h-full object-cover object-top rounded-[40px]"
                     alt="3d work"

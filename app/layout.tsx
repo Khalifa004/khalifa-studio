@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="light">
-      <body className="min-h-screen bg-gray-50">
+      <body className="min-h-screen bg-gray-50 w-full overflow-x-hidden">
         <ClientLayout>
           {children}
           <Analytics />

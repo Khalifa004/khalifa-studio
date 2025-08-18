@@ -8,7 +8,7 @@ import Index from "@/components/ui/ScanMe/Index";
 
 export default function Home() {
   return (
-    <div className="relative bg-[hsl(0,0%,98%)]">
+    <div className="relative bg-[hsl(0,0%,98%)] w-full overflow-x-hidden">
       {/* Animated Logo */}
       <div className="absolute top-4 \ z-10">
         {/* Uncomment the AnimatedLogo when ready */}
@@ -20,7 +20,7 @@ export default function Home() {
       </div>
 
       {/* Main Container for Other Sections */}
-      <div className="mx-auto px-4 max-w-[100rem] sm:px-6 lg:px-8 ">
+      <div className="mx-auto px-4 max-w-7xl sm:px-6 lg:px-8">
         {/* Latest Products */}
         <LatestProducts />   
       </div>
