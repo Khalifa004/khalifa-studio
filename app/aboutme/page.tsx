@@ -53,7 +53,7 @@ const intro = {
   title: "Design Engineer",
   kicker: "Toronto → Building clean, fast, human interfaces",
   blurb:
-    "I design and build thoughtful interfaces—from concept to production. I’m a UI engineer and designer who ships with React, Next.js, TypeScript, and Tailwind, and I care a lot about clarity, motion, and accessibility. Recently I’ve been growing IntelliCourse (AI-powered learning) and IntelliCore (a real‑time, privacy‑aware work assistant).",
+    "I design and build thoughtful interfaces—from concept to production. I’m a UI engineer and designer who ships with React, Next.js, TypeScript, and Tailwind, and I care a lot about clarity, motion, and accessibility. Recently I’ve been growing IntelliCourse (AI-powered learning).",
 };
 
 const education = {
