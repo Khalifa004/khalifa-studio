@@ -53,12 +53,6 @@ export function DraggableCardDemo() {
             alt={item.title}
             className="pointer-events-none relative z-10 h-80 w-80 object-cover rounded-xl"
           />
-          <h3 
-            className="mt-4 text-center text-2xl font-bold"
-            style={{ color: '#111827' }}
-          >
-            {item.title}
-          </h3>
         </DraggableCardBody>
       ))}
     </DraggableCardContainer>
