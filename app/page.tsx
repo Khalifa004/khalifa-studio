@@ -5,6 +5,7 @@ import Horizontalscroll from "@/components/Horizontalscroll";
 import LatestProducts from "@/components/Latestproducts";
 import UIShowcase from "@/components/UIShowcase";
 import Index from "@/components/ui/ScanMe/Index";
+import { DraggableCardDemo } from "@/components/dag3d";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
       {/* UI Showcase Section */}
       {/* <UIShowcase />
        */}
+       <DraggableCardDemo/>
       {/* 3D Work Horizontal Scroll */}
       <Horizontalscroll/>
 
