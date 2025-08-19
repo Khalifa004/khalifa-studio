@@ -30,8 +30,7 @@ export default function Home() {
       {/* <UIShowcase />
        */}
        <DraggableCardDemo/>
-      {/* 3D Work Horizontal Scroll */}
-      <Horizontalscroll/>
+  
 
         {/* Footer */}
    
