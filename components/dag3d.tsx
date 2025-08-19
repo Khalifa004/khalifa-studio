@@ -26,11 +26,7 @@ export function DraggableCardDemo() {
       image: "/images/art-4.jpg",
       className: "absolute top-32 left-[55%] rotate-[10deg]",
     },
-    {
-      title: "Niche",
-      image: "/images/art-5.jpg",
-      className: "absolute top-20 right-[35%] rotate-[2deg]",
-    },
+  
     {
       title: "Drone",
       image: "/images/art-6.jpg",
