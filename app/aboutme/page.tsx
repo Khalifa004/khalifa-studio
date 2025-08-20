@@ -23,6 +23,8 @@ import {
   IconLayoutGrid,
   IconBolt,
   IconFrame,
+  IconRocket,
+  IconTarget,
 } from "@tabler/icons-react";
 import { Frame } from "lucide-react";
 
@@ -62,46 +64,72 @@ const education = {
   focus: "Business & Social Innovation",
 };
 
-const languages = ["English", "French"] as const;
+const languages = [
+  { name: "French", level: "Native", description: "First language" },
+  { name: "English", level: "Fluent", description: "Professional proficiency" }
+] as const;
 
 const skills = {
   Design: [
-    { label: "Figma", icon: IconBrandFigma },
-    { label: "Prototyping", icon: IconBrandFramer },
-    { label: "3D / Blender", icon: IconBrandBlender },
+    { label: "Figma", icon: IconBrandFigma, level: 95, description: "Advanced prototyping & design systems" },
+    { label: "Prototyping", icon: IconBrandFramer, level: 90, description: "Interactive prototypes & animations" },
+    { label: "3D / Blender", icon: IconBrandBlender, level: 80, description: "3D modeling & visualization" },
   ],
   Development: [
-    { label: "Next.js", icon: IconBrandNextjs },
-    { label: "React", icon: IconBrandReact },
-    { label: "TypeScript / JS", icon: IconBrandJavascript },
-    { label: "Tailwind", icon: IconBrandTailwind },
-    { label: "CSS", icon: IconBrandCss3 },
+    { label: "Next.js", icon: IconBrandNextjs, level: 95, description: "Full-stack React framework" },
+    { label: "React", icon: IconBrandReact, level: 90, description: "Modern component architecture" },
+    { label: "TypeScript / JS", icon: IconBrandJavascript, level: 88, description: "Type-safe development" },
+    { label: "Tailwind", icon: IconBrandTailwind, level: 92, description: "Utility-first CSS framework" },
+    { label: "CSS", icon: IconBrandCss3, level: 85, description: "Advanced styling & animations" },
   ],
   Expertise: [
-    "Design systems",
-    "Motion & micro‑interactions",
-    "Accessible, responsive UI",
-    "Interactive dashboards",
-    "Figma → Code workflows",
-    "Performance & DX",
+    { label: "Design systems", icon: IconLayoutGrid, level: 90 },
+    { label: "Motion & micro‑interactions", icon: IconBolt, level: 88 },
+    { label: "Accessible, responsive UI", icon: IconDeviceLaptop, level: 85 },
+    { label: "Interactive dashboards", icon: IconSparkles, level: 90 },
+    { label: "Figma → Code workflows", icon: IconFrame, level: 92 },
+    { label: "Performance & DX", icon: IconSparkles, level: 85 },
   ],
+};
+
+const currentFocus = {
+  upcoming: [
+    {
+      title: "Portfolio v3.0",
+      description: "Redesigning portfolio with advanced 3D interactions and performance optimizations",
+      timeline: "",
+      icon: IconRocket
+    },
+    {
+      title: "Open Source Components",
+      description: "Publishing reusable React component library for modern web applications",
+      timeline: "", 
+      icon: IconLayoutGrid
+    }
+  ]
 };
 
 const services = [
   {
-    title: "Front‑end Engineering",
-    desc: "Production Next.js apps with TypeScript, accessibility, and performance baked in.",
+    title: "Product Development",
+    desc: "End-to-end product development from concept to launch. I've built IntelliCourse (AI-powered learning platform) and multiple web applications with modern tech stacks.",
     icon: IconDeviceLaptop,
+    highlights: ["Next.js & React", "TypeScript", "Database Design", "API Integration"],
+    recent: "IntelliCourse - AI Learning Platform"
   },
   {
-    title: "UI/UX Design",
-    desc: "From architecture and wireframes to high‑fidelity design systems and prototypes.",
+    title: "Design Systems & UI",
+    desc: "Creating cohesive design systems and component libraries. From Figma designs to production-ready React components with accessibility and responsive design.",
     icon: IconLayoutGrid,
+    highlights: ["Component Libraries", "Figma to Code", "Responsive Design", "Accessibility"],
+    recent: "Portfolio Component System"
   },
   {
-    title: "Motion & Interactions",
-    desc: "Framer Motion systems, tasteful transitions, and interaction polish that feels native.",
+    title: "Performance & Optimization",
+    desc: "Optimizing web applications for speed and user experience. Core Web Vitals, bundle optimization, and smooth animations with Framer Motion.",
     icon: IconBolt,
+    highlights: ["Core Web Vitals", "Bundle Optimization", "Framer Motion", "SEO"],
+    recent: "Portfolio Performance Optimization"
   },
 ];
 
@@ -216,12 +244,51 @@ export default function About() {
               <div className="mb-2 flex items-center gap-2 text-sm text-neutral-500">
                 <IconLanguage size={18} /> Languages
               </div>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-col gap-3">
                 {languages.map((l) => (
-                  <span key={l} className={`${chip}`}>{l}</span>
+                  <div key={l.name} className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className={`${chip} font-medium`}>{l.name}</span>
+                      <span className="text-xs text-neutral-500">({l.level})</span>
+                    </div>
+                    <span className="text-xs text-neutral-600">{l.description}</span>
+                  </div>
                 ))}
               </div>
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Current Focus */}
+      <section className="mx-auto max-w-7xl px-6 py-20 bg-gradient-to-br from-neutral-50 to-neutral-100">
+        <motion.div className="text-center mb-12" {...fade}>
+          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl mb-4">Coming Next</h2>
+          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+            Projects and improvements I'm working on
+          </p>
+        </motion.div>
+
+        <div className="max-w-4xl mx-auto">
+          <motion.div className={card} {...fade}>
+            <div className="flex items-center gap-2 mb-6">
+              <IconTarget size={24} className="text-emerald-600" />
+              <h3 className="text-xl font-semibold">Upcoming Projects</h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {currentFocus.upcoming.map(({ title, description, timeline, icon: I }) => (
+                <div key={title} className="flex items-start gap-4 p-4 rounded-lg bg-neutral-50 border border-neutral-200 hover:border-neutral-300 transition-colors">
+                  <I size={20} className="text-emerald-600 mt-1 flex-shrink-0" />
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between mb-2">
+                      <h4 className="font-medium text-sm">{title}</h4>
+                      <span className="text-xs text-neutral-500 font-medium bg-neutral-200 px-2 py-1 rounded-full">{timeline}</span>
+                    </div>
+                    <p className="text-sm text-neutral-600 leading-relaxed">{description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
@@ -235,44 +302,104 @@ export default function About() {
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* Design */}
           <motion.div className={card} {...fade}>
-            <div className="mb-4 flex items-center gap-2 text-sm text-neutral-500">
+            <div className="mb-6 flex items-center gap-2 text-sm text-neutral-500">
               <IconSparkles size={18} /> Design
             </div>
-            <ul className="flex flex-wrap gap-4">
-              {skills.Design.map(({ label, icon: I }) => (
-                <li key={label} className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm">
-                  <I size={18} />
-                  {label}
-                </li>
+            <ul className="space-y-4">
+              {skills.Design.map(({ label, icon: I, level, description }) => (
+                <motion.li 
+                  key={label} 
+                  className="group cursor-pointer"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4 transition-all hover:border-neutral-300 hover:shadow-md">
+                    <div className="flex items-center gap-3 mb-2">
+                      <I size={20} className="text-neutral-600 group-hover:text-neutral-900 transition-colors" />
+                      <span className="font-medium text-neutral-900">{label}</span>
+                      <span className="ml-auto text-xs font-medium text-neutral-500">{level}%</span>
+                    </div>
+                    <div className="w-full bg-neutral-200 rounded-full h-1.5 mb-2">
+                      <motion.div 
+                        className="bg-gradient-to-r from-indigo-500 to-purple-500 h-1.5 rounded-full"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${level}%` }}
+                        transition={{ duration: 1, delay: 0.2 }}
+                        viewport={{ once: true }}
+                      />
+                    </div>
+                    <p className="text-xs text-neutral-600 group-hover:text-neutral-700 transition-colors">{description}</p>
+                  </div>
+                </motion.li>
               ))}
             </ul>
           </motion.div>
 
           {/* Dev */}
           <motion.div className={card} {...fade}>
-            <div className="mb-4 flex items-center gap-2 text-sm text-neutral-500">
+            <div className="mb-6 flex items-center gap-2 text-sm text-neutral-500">
               <IconDeviceLaptop size={18} /> Development
             </div>
-            <ul className="flex flex-wrap gap-4">
-              {skills.Development.map(({ label, icon: I }) => (
-                <li key={label} className="flex items-center gap-2 rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm">
-                  <I size={18} />
-                  {label}
-                </li>
+            <ul className="space-y-4">
+              {skills.Development.map(({ label, icon: I, level, description }) => (
+                <motion.li 
+                  key={label} 
+                  className="group cursor-pointer"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4 transition-all hover:border-neutral-300 hover:shadow-md">
+                    <div className="flex items-center gap-3 mb-2">
+                      <I size={20} className="text-neutral-600 group-hover:text-neutral-900 transition-colors" />
+                      <span className="font-medium text-neutral-900">{label}</span>
+                      <span className="ml-auto text-xs font-medium text-neutral-500">{level}%</span>
+                    </div>
+                    <div className="w-full bg-neutral-200 rounded-full h-1.5 mb-2">
+                      <motion.div 
+                        className="bg-gradient-to-r from-blue-500 to-cyan-500 h-1.5 rounded-full"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${level}%` }}
+                        transition={{ duration: 1, delay: 0.3 }}
+                        viewport={{ once: true }}
+                      />
+                    </div>
+                    <p className="text-xs text-neutral-600 group-hover:text-neutral-700 transition-colors">{description}</p>
+                  </div>
+                </motion.li>
               ))}
             </ul>
           </motion.div>
 
           {/* Expertise */}
           <motion.div className={card} {...fade}>
-            <div className="mb-4 flex items-center gap-2 text-sm text-neutral-500">
+            <div className="mb-6 flex items-center gap-2 text-sm text-neutral-500">
               <Frame size={18} /> Expertise
             </div>
-            <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-              {skills.Expertise.map((s) => (
-                <li key={s} className="rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm">
-                  {s}
-                </li>
+            <ul className="space-y-3">
+              {skills.Expertise.map(({ label, icon: I, level }) => (
+                <motion.li 
+                  key={label} 
+                  className="group cursor-pointer"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-3 transition-all hover:border-neutral-300 hover:shadow-md">
+                    <div className="flex items-center gap-3 mb-2">
+                      <I size={18} className="text-neutral-600 group-hover:text-neutral-900 transition-colors" />
+                      <span className="font-medium text-neutral-900 text-sm">{label}</span>
+                      <span className="ml-auto text-xs font-medium text-neutral-500">{level}%</span>
+                    </div>
+                    <div className="w-full bg-neutral-200 rounded-full h-1">
+                      <motion.div 
+                        className="bg-gradient-to-r from-emerald-500 to-teal-500 h-1 rounded-full"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${level}%` }}
+                        transition={{ duration: 1, delay: 0.4 }}
+                        viewport={{ once: true }}
+                      />
+                    </div>
+                  </div>
+                </motion.li>
               ))}
             </ul>
           </motion.div>
@@ -282,16 +409,45 @@ export default function About() {
       {/* Services */}
       <section className="mx-auto max-w-7xl px-6 pb-24">
         <motion.h2 className="text-center text-3xl font-semibold tracking-tight md:text-4xl" {...fade}>
-          Services
+          What I Do
         </motion.h2>
-        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {services.map(({ title, desc, icon: I }) => (
-            <motion.article key={title} className={card} {...fade}>
-              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-neutral-900/90 text-white">
-                <I size={18} />
+        <motion.p className="text-center text-lg text-neutral-600 mt-4 max-w-3xl mx-auto" {...fade}>
+          Specialized services combining design thinking with technical expertise
+        </motion.p>
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+          {services.map(({ title, desc, icon: I, highlights, recent }) => (
+            <motion.article 
+              key={title} 
+              className={`${card} hover:shadow-lg transition-all duration-300`} 
+              {...fade}
+              whileHover={{ y: -4 }}
+            >
+              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-700 text-white shadow-lg">
+                <I size={20} />
               </div>
-              <h3 className="text-lg font-semibold">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-neutral-600">{desc}</p>
+              <h3 className="text-xl font-semibold mb-3">{title}</h3>
+              <p className="text-sm leading-relaxed text-neutral-600 mb-4">{desc}</p>
+              
+              <div className="mb-4">
+                <h4 className="text-xs font-medium text-neutral-500 mb-2 uppercase tracking-wide">Key Skills</h4>
+                <div className="flex flex-wrap gap-2">
+                  {highlights.map((skill) => (
+                    <span 
+                      key={skill} 
+                      className="inline-flex items-center px-2 py-1 rounded-md bg-neutral-100 text-neutral-700 text-xs font-medium"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-neutral-200">
+                <div className="flex items-center gap-2 text-xs text-neutral-500">
+                  <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                  <span>Recent: {recent}</span>
+                </div>
+              </div>
             </motion.article>
           ))}
         </div>
