@@ -35,21 +35,22 @@ export function DraggableCardDemo() {
   return (
     <DraggableCardContainer className="relative flex min-h-screen w-full items-center justify-center overflow-clip">
       <p className="absolute top-1/2 mx-auto max-w-2xl -translate-y-3/4 text-center text-5xl md:text-7xl lg:text-8xl font-black leading-tight tracking-tight z-20">
-        <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent drop-shadow-2xl">
+        <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent font-bold drop-shadow-2xl">
           Sometimes I do
         </span>
         <br />
-        <span className="bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 bg-clip-text text-transparent drop-shadow-2xl">
+        <span className="bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 bg-clip-text text-transparent font-bold drop-shadow-2xl">
           3D artworks
         </span>
         <div className="mt-4 h-1 w-32 mx-auto bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
       </p>
-      {items.map((item) => (
-        <DraggableCardBody className={item.className}>
+      {items.map((item, index) => (
+        <DraggableCardBody key={item.title} className={`${item.className} z-40`}>
           <img
             src={item.image}
             alt={item.title}
-            className="pointer-events-none relative z-10 h-80 w-80 object-cover rounded-xl"
+            className="pointer-events-none relative z-50 h-80 w-80 object-cover rounded-xl opacity-100"
+            style={{ opacity: 1 }}
           />
         </DraggableCardBody>
       ))}

@@ -14,6 +14,12 @@ interface Product {
   href: string;
 }
 
+interface BlogPost {
+  title: string;
+  date: string;
+  href: string;
+}
+
 const ProductItem: React.FC<{ product: Product }> = React.memo(({ product }) => (
   <Link href={product.href}>
     <motion.div
@@ -98,6 +104,44 @@ const LatestProducts: React.FC = () => {
     },
   ];
 
+  // Centralized blog data - same as in app/blog/page.tsx
+  const allBlogPosts: BlogPost[] = [
+    {
+      title: 'Building IntelliCourse — My Journey into AI-Powered Learning',
+      date: 'August 08, 2025',
+      href: '/blog/building-intellicourse',
+    },
+    {
+      title: 'The Evolution of My Career Through AI Innovation',
+      date: 'July 13, 2024',
+      href: '/blog/new-milestone-in-my-career',
+    },
+    {
+      title: 'Navigating the Digital Futures: My Journey Through OCAD University and Self-Taught Coding',
+      date: 'December 19, 2023',
+      href: '/blog/OCADJourney',
+    },
+    {
+      title: 'Harnessing Framer Motion for Dynamic Web Experiences',
+      date: 'September 09, 2023',
+      href: '/blog/Framermotion',
+    },
+    {
+      title: 'My Pomodoro Journey: Creating Pomora',
+      date: 'November 09, 2024',
+      href: '/blog/pomora',
+    },
+  ];
+
+  // Sort blogs by date (latest first) and take the first 2
+  const latestBlogs = allBlogPosts
+    .sort((a, b) => {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+      return dateB.getTime() - dateA.getTime();
+    })
+    .slice(0, 2);
+
   return (
     <motion.main
       className="flex justify-center items-center flex-col w-full min-h-[160px] overflow-x-hidden bg-[hsl(0,0%,98%)]"
@@ -152,25 +196,29 @@ const LatestProducts: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full mb-8 sm:mb-12">
-            <Link className="flex Posts_hover__Vc6hP px-2 sm:px-4 bg-transparent rounded-lg transition-colors duration-300 relative group" href="/blog/new-milestone-in-my-career">
-              <div className="flex items-start relative">
-                <motion.div className="flex bg-gray-300 w-4 sm:w-6 h-[0.125rem] absolute top-1/2 transform -translate-y-1/2 transition-transform duration-300" initial={{ rotate: 90 }} whileHover={{ rotate: 0 }} />
-                <motion.div className="ml-6 sm:ml-8 flex flex-col" whileHover={{ x: 10 }} transition={{ type: "spring", stiffness: 300 }}>
-                  <h2 className="text-sm sm:text-base font-bold text-gray-800 pb-1 sm:pb-2">The Evolution of My Career Through AI Innovation</h2>
-                  <span className="text-xs text-gray-600">July 13, 2024</span>
-                </motion.div>
-              </div>
-            </Link>
-
-            <Link className="flex Posts_hover__Vc6hP px-2 sm:px-4 bg-transparent rounded-lg transition-colors duration-300 relative group" href="/blog/Framermotion">
-              <div className="flex items-start relative">
-                <motion.div className="flex bg-gray-300 w-4 sm:w-6 h-[0.125rem] absolute top-1/2 transform -translate-y-1/2 transition-transform duration-300" initial={{ rotate: 90 }} whileHover={{ rotate: 0 }} />
-                <motion.div className="ml-6 sm:ml-8 flex flex-col" whileHover={{ x: 10 }} transition={{ type: "spring", stiffness: 300 }}>
-                  <h2 className="text-sm sm:text-base font-bold text-gray-800 pb-1 sm:pb-2">Harnessing Framer Motion for Dynamic Web Experiences</h2>
-                  <span className="text-xs text-gray-600">September 9, 2023</span>
-                </motion.div>
-              </div>
-            </Link>
+            {latestBlogs.map((blog, index) => (
+              <Link 
+                key={index}
+                className="flex Posts_hover__Vc6hP px-2 sm:px-4 bg-transparent rounded-lg transition-colors duration-300 relative group" 
+                href={blog.href}
+              >
+                <div className="flex items-start relative">
+                  <motion.div 
+                    className="flex bg-gray-300 w-4 sm:w-6 h-[0.125rem] absolute top-1/2 transform -translate-y-1/2 transition-transform duration-300" 
+                    initial={{ rotate: 90 }} 
+                    whileHover={{ rotate: 0 }} 
+                  />
+                  <motion.div 
+                    className="ml-6 sm:ml-8 flex flex-col" 
+                    whileHover={{ x: 10 }} 
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <h2 className="text-sm sm:text-base font-bold text-gray-800 pb-1 sm:pb-2">{blog.title}</h2>
+                    <span className="text-xs text-gray-600">{blog.date}</span>
+                  </motion.div>
+                </div>
+              </Link>
+            ))}
           </div>
         </section>
       </div>
