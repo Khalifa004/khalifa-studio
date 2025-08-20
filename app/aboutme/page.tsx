@@ -260,39 +260,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Current Focus */}
-      <section className="mx-auto max-w-7xl px-6 py-20 bg-gradient-to-br from-neutral-50 to-neutral-100">
-        <motion.div className="text-center mb-12" {...fade}>
-          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl mb-4">Coming Next</h2>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            Projects and improvements I'm working on
-          </p>
-        </motion.div>
-
-        <div className="max-w-4xl mx-auto">
-          <motion.div className={card} {...fade}>
-            <div className="flex items-center gap-2 mb-6">
-              <IconTarget size={24} className="text-emerald-600" />
-              <h3 className="text-xl font-semibold">Upcoming Projects</h3>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {currentFocus.upcoming.map(({ title, description, timeline, icon: I }) => (
-                <div key={title} className="flex items-start gap-4 p-4 rounded-lg bg-neutral-50 border border-neutral-200 hover:border-neutral-300 transition-colors">
-                  <I size={20} className="text-emerald-600 mt-1 flex-shrink-0" />
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-medium text-sm">{title}</h4>
-                      <span className="text-xs text-neutral-500 font-medium bg-neutral-200 px-2 py-1 rounded-full">{timeline}</span>
-                    </div>
-                    <p className="text-sm text-neutral-600 leading-relaxed">{description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Skills & Tools */}
       <section className="mx-auto max-w-7xl px-6 py-20">
         <motion.h2 className="text-center text-3xl font-semibold tracking-tight md:text-4xl" {...fade}>
@@ -450,6 +417,39 @@ export default function About() {
               </div>
             </motion.article>
           ))}
+        </div>
+      </section>
+
+      {/* Current Focus */}
+      <section className="mx-auto max-w-7xl px-6 py-20 bg-gradient-to-br from-neutral-50 to-neutral-100">
+        <motion.div className="text-center mb-12" {...fade}>
+          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl mb-4">Coming Next</h2>
+          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+            Projects and improvements I'm working on
+          </p>
+        </motion.div>
+
+        <div className="max-w-4xl mx-auto">
+          <motion.div className={card} {...fade}>
+            <div className="flex items-center gap-2 mb-6">
+              <IconTarget size={24} className="text-emerald-600" />
+              <h3 className="text-xl font-semibold">Upcoming Projects</h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {currentFocus.upcoming.map(({ title, description, timeline, icon: I }) => (
+                <div key={title} className="flex items-start gap-4 p-4 rounded-lg bg-neutral-50 border border-neutral-200 hover:border-neutral-300 transition-colors">
+                  <I size={20} className="text-emerald-600 mt-1 flex-shrink-0" />
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between mb-2">
+                      <h4 className="font-medium text-sm">{title}</h4>
+                      <span className="text-xs text-neutral-500 font-medium bg-neutral-200 px-2 py-1 rounded-full">{timeline}</span>
+                    </div>
+                    <p className="text-sm text-neutral-600 leading-relaxed">{description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
