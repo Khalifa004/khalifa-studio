@@ -125,8 +125,8 @@ const LatestProducts: React.FC = () => {
       {/* Subtle background pattern */}
       <div className="absolute inset-0 bg-gray-50 opacity-30" />
       <div className="absolute inset-0" />
-      <div className="relative flex flex-col items-center justify-start gap-6 sm:gap-8 w-full max-w-7xl mx-auto py-6 sm:py-12 z-10">
-        <section className="flex flex-col items-start justify-start gap-4 sm:gap-6 w-full">
+      <div className="relative flex flex-col items-center justify-start gap-4 sm:gap-6 md:gap-8 w-full max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-6 md:py-12 z-10">
+        <section className="flex flex-col items-start justify-start gap-3 sm:gap-4 md:gap-6 w-full">
           <div className="flex justify-between items-center w-full">
             <motion.p 
               className="text-sm sm:text-base font-medium text-gray-900"
@@ -161,7 +161,7 @@ const LatestProducts: React.FC = () => {
           variants={itemVariants}
         />
 
-        <section className="flex flex-col items-center justify-center gap-4 w-full">
+        <section className="flex flex-col items-center justify-center gap-3 sm:gap-4 w-full">
           <div className="flex justify-between mb-2 sm:mb-4 w-full">
             <p className="text-xs sm:text-sm text-gray-600">Blogs</p>
             <Link href="/blog" className="text-xs sm:text-sm text-gray-800 hover:text-lime-600 transition-colors duration-300 cursor-pointer">
@@ -169,7 +169,7 @@ const LatestProducts: React.FC = () => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full mb-8 sm:mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6 w-full mb-6 sm:mb-8 md:mb-12">
             {latestBlogs.map((blog, index) => (
               <Link 
                 key={index}
@@ -178,16 +178,16 @@ const LatestProducts: React.FC = () => {
               >
                 <div className="flex items-start relative">
                   <motion.div 
-                    className="flex bg-gray-300 w-4 sm:w-6 h-[0.125rem] absolute top-1/2 transform -translate-y-1/2 transition-transform duration-300" 
+                    className="flex bg-gray-300 w-3 sm:w-4 md:w-6 h-[0.125rem] absolute top-1/2 transform -translate-y-1/2 transition-transform duration-300" 
                     initial={{ rotate: 90 }} 
                     whileHover={{ rotate: 0 }} 
                   />
                   <motion.div 
-                    className="ml-6 sm:ml-8 flex flex-col" 
+                    className="ml-4 sm:ml-6 md:ml-8 flex flex-col" 
                     whileHover={{ x: 10 }} 
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <h2 className="text-sm sm:text-base font-bold text-gray-800 pb-1 sm:pb-2">{blog.title}</h2>
+                    <h2 className="text-xs sm:text-sm md:text-base font-bold text-gray-800 pb-1 sm:pb-2 leading-tight">{blog.title}</h2>
                     <span className="text-xs text-gray-600">{blog.date}</span>
                   </motion.div>
                 </div>

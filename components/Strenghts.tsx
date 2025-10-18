@@ -30,30 +30,30 @@ const strengths = [
 
 export function StrengthsSection() {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 pt-20 gap-4 max-w-7xl mx-auto w-full">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-8 sm:pt-12 md:pt-16 lg:pt-20 gap-3 sm:gap-4 max-w-7xl mx-auto w-full px-4 sm:px-6">
       {strengths.map((strength, index) => (
         <WobbleCard
           key={index}
-          containerClassName={`col-span-1 ${index === 0 ? 'lg:col-span-2' : ''} min-h-[300px] bg-black`}
-          className="p-6"
+          containerClassName={`col-span-1 ${index === 0 ? 'md:col-span-2 lg:col-span-2' : ''} min-h-[250px] sm:min-h-[300px] bg-black`}
+          className="p-4 sm:p-6"
         >
-          <strength.icon className="h-12 w-12 text-white mb-4" />
-          <h2 className="text-left text-balance text-xl lg:text-2xl font-semibold tracking-[-0.015em] text-white mb-3">
+          <strength.icon className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-white mb-3 sm:mb-4" />
+          <h2 className="text-left text-balance text-lg sm:text-xl lg:text-2xl font-semibold tracking-[-0.015em] text-white mb-2 sm:mb-3">
             {strength.title}
           </h2>
-          <p className="text-left text-base text-gray-300">
+          <p className="text-left text-sm sm:text-base text-gray-300 leading-relaxed">
             {strength.description}
           </p>
         </WobbleCard>
       ))}
      <WobbleCard
-  containerClassName="hidden md:block col-span-1 min-h-[300px]"
-  className="p-6"
+  containerClassName="hidden md:block col-span-1 min-h-[250px] sm:min-h-[300px]"
+  className="p-4 sm:p-6"
 >
-  <h2 className="text-left text-balance text-4xl lg:text-7xl font-semibold tracking-[-0.015em] text-white mb-3">
+  <h2 className="text-left text-balance text-2xl sm:text-3xl md:text-4xl lg:text-7xl font-semibold tracking-[-0.015em] text-white mb-2 sm:mb-3">
     My Strengths
   </h2>
-  <p className="text-left text-base text-gray-300">
+  <p className="text-left text-sm sm:text-base text-gray-300 leading-relaxed">
   These skills fuel my passion for crafting amazing digital experiences that leave a lasting impression.
   </p>
 </WobbleCard>
