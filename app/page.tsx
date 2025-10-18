@@ -9,7 +9,7 @@ import { DraggableCardDemo } from "@/components/dag3d";
 
 export default function Home() {
   return (
-    <div className="relative bg-[hsl(0,0%,98%)] w-full overflow-x-hidden">
+    <div className="relative bg-white w-full overflow-x-hidden">
       {/* Animated Logo */}
       <div className="absolute top-4 \ z-10">
         {/* Uncomment the AnimatedLogo when ready */}
@@ -26,10 +26,10 @@ export default function Home() {
         <LatestProducts />   
       </div>
       
-      {/* UI Showcase Section */}
-      {/* <UIShowcase />
-       */}
-       <DraggableCardDemo/>
+      {/* Sticky Cards Section - Full Width */}
+      <div className="w-full">
+        <DraggableCardDemo/>
+      </div>
   
 
         {/* Footer */}

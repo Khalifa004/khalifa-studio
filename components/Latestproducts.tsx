@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { StrengthsSection } from "./Strenghts";
+import HoverExpand from "./HoverExpand";
 
 interface Product {
   name: string;
@@ -20,34 +21,6 @@ interface BlogPost {
   href: string;
 }
 
-const ProductItem: React.FC<{ product: Product }> = React.memo(({ product }) => (
-  <Link href={product.href}>
-    <motion.div
-      className="group relative rounded-lg overflow-hidden backdrop-blur-xl border shadow-lg hover:shadow-2xl transition-all duration-500 h-full bg-[hsl(0,0%,98%)] border-white/30"
-      variants={itemVariants}
-    >
-      <div className="aspect-[4/3] overflow-hidden relative">
-        <Image
-          src={product.image}
-          alt={product.name}
-          layout="fill"
-          objectFit="cover"
-          className="transform transition-transform duration-700 group-hover:scale-110"
-        />
-        <div className="absolute inset-0  group-hover:bg-black/10 transition-all duration-300" />
-      </div>
-      <div className="p-4">
-        <div className="flex justify-between items-start mb-2">
-          <h3 className="text-lg font-bold text-gray-900 line-clamp-2">{product.name}</h3>
-          <span className="px-2 py-1 text-xs font-semibold rounded-full flex-shrink-0 text-gray-700 bg-gray-100">
-            {product.price}
-          </span>
-        </div>
-        <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">{product.description}</p>
-      </div>
-    </motion.div>
-  </Link>
-));
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -144,12 +117,15 @@ const LatestProducts: React.FC = () => {
 
   return (
     <motion.main
-      className="flex justify-center items-center flex-col w-full min-h-[160px] overflow-x-hidden bg-[hsl(0,0%,98%)]"
+      className="relative flex justify-center items-center flex-col w-full min-h-[160px] overflow-x-hidden bg-white"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
-      <div className="flex flex-col items-center justify-start gap-6 sm:gap-8 w-full max-w-7xl mx-auto py-6 sm:py-12">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 bg-gray-50 opacity-30" />
+      <div className="absolute inset-0" />
+      <div className="relative flex flex-col items-center justify-start gap-6 sm:gap-8 w-full max-w-7xl mx-auto py-6 sm:py-12 z-10">
         <section className="flex flex-col items-start justify-start gap-4 sm:gap-6 w-full">
           <div className="flex justify-between items-center w-full">
             <motion.p 
@@ -168,10 +144,8 @@ const LatestProducts: React.FC = () => {
             </motion.div>
           </div>
 
-          <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 w-full">
-            {products.map((product, index) => (
-              <ProductItem key={index} product={product} />
-            ))}
+          <div className="w-full">
+            <HoverExpand projects={products} />
           </div>
         </section>
 

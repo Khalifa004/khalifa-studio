@@ -58,7 +58,7 @@ const projects: Project[] = [
 
 const LatestWork: React.FC = () => {
   return (
-    <div className="min-h-screen p-4 sm:p-8 pt-16 sm:pt-20 md:pt-32 bg-gray-50">
+    <div className="min-h-screen p-4 sm:p-8 pt-16 sm:pt-20 md:pt-32 bg-white">
       {/* Header */}
       <motion.div 
         className="flex flex-col items-start justify-start max-w-[840px] w-full mb-8 sm:mb-12"

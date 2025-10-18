@@ -24,7 +24,7 @@ const NavBar = () => {
   return (
     <div className="fixed top-4 left-1/2 transform -translate-x-1/2 flex justify-center z-50">
       <motion.nav 
-        className="relative bg-black/40 backdrop-blur-md border border-black/50 rounded-full overflow-hidden shadow-xl hover:bg-black/50 transition-all duration-500 mix-blend-multiply dark:mix-blend-normal"
+        className="relative bg-white/90 backdrop-blur-md border border-gray-200 rounded-full overflow-hidden shadow-lg hover:bg-white transition-all duration-500"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, type: 'spring', stiffness: 120 }}
@@ -35,8 +35,8 @@ const NavBar = () => {
               <motion.div
                 className={`cursor-pointer flex items-center space-x-2 py-2 px-3 rounded-full transition-all duration-300 
                   ${activeItem === item.href 
-                    ? 'bg-black/30 text-white shadow-lg dark:bg-white/20' 
-                    : 'text-black/90 hover:bg-black/20 hover:text-black dark:text-white/80 dark:hover:bg-white/10 dark:hover:text-white'}`}
+                    ? 'bg-gray-100 text-gray-900 shadow-md' 
+                    : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}
                 aria-pressed={activeItem === item.href}
                 whileHover={{ scale: 1.05 }} 
                 whileTap={{ scale: 0.95 }} 
