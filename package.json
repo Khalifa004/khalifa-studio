@@ -80,6 +80,22 @@
     "@radix-ui/react-accordion": {
       "@types/react": "^18.2.0",
       "@types/react-dom": "^18.2.0"
+    },
+    "react-device-frameset": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-element-to-jsx-string": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-native": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-spinners": {
+      "react": "$react",
+      "react-dom": "$react-dom"
     }
   }
 }
