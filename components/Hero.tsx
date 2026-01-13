@@ -1,197 +1,87 @@
 "use client";
 
-import type React from "react";
-import { memo } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { AnimatedButton } from "./AnimatedButton";
-import { LiquidButton } from "./ui/liquidglassbutton";
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center w-full overflow-hidden bg-white">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white opacity-50" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-screen py-20">
-            
-            {/* Left Column - Main Content */}
-            <div className="flex flex-col justify-center space-y-8 text-center lg:text-left">
-              {/* Status Badge */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-200 text-gray-700 text-sm font-medium w-fit mx-auto lg:mx-0"
-              >
-                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                Available
-              </motion.div>
-
-              {/* Main Heading */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="space-y-4"
-              >
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.9] tracking-tight text-gray-900">
-                  <span className="block">Frontend</span>
-                  <span className="block bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500 bg-clip-text text-transparent">
-                    Engineer
-                  </span>
-                  <span className="block text-gray-600 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light">
-                    & UI Designer
-                  </span>
-                </h1>
-              </motion.div>
-
-              {/* Description */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-xl sm:text-2xl text-gray-600 max-w-2xl leading-relaxed"
-              >
-                Crafting exceptional digital experiences through thoughtful design and modern development practices.
-              </motion.p>
-
-              {/* Action Buttons */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full"
-              >
-                <Link href="/allwork" className="flex justify-center lg:justify-start">
-                  <AnimatedButton className="text-base px-8 py-3">
-                    View My Work
-                  </AnimatedButton>
-                </Link>
-                <Link href="/aboutme" className="flex justify-center lg:justify-start">
-                  <LiquidButton size="xxl" className="text-lg font-medium text-gray-900">
-                    About Me
-                  </LiquidButton>
-                </Link>
-              </motion.div>
-
-              {/* Quick Stats */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                className="flex flex-wrap gap-8 pt-8 border-t border-gray-200 justify-center lg:justify-start"
-              >
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900">3+</div>
-                  <div className="text-gray-600 text-sm">Years Experience</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900">6+</div>
-                  <div className="text-gray-600 text-sm">Projects Completed</div>
-                </div>
-              
-              </motion.div>
-            </div>
-
-            {/* Right Column - Professional Info Card */}
-            <div className="flex items-center justify-center">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3, type: "spring", stiffness: 100 }}
-                className="w-full max-w-md"
-              >
-                <div className="relative">
-                  {/* Main Card */}
-                  <div className="relative bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-500 shadow-lg hover:border-gray-300">
-                    {/* Header */}
-                    <div className="mb-8">
-                      <div className="flex items-center gap-3 mb-6">
-                        <div className="w-1 h-8 bg-gray-800 rounded-full" />
-                        <div>
-                          <h3 className="text-xl font-semibold text-gray-900">Expertise</h3>
-                          <p className="text-gray-600 text-sm">Core competencies</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Skills List */}
-                    <div className="space-y-6 mb-8">
-                      <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.5 }}
-                        className="flex items-start gap-4"
-                      >
-                        <div className="w-2 h-2 rounded-full bg-gray-800 mt-2 flex-shrink-0" />
-                        <div>
-                          <div className="text-gray-900 font-medium mb-1">UX/UI Design</div>
-                          <div className="text-gray-600 text-sm leading-relaxed">User-centered design solutions, wireframing, prototyping</div>
-                        </div>
-                      </motion.div>
-                      
-                      <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.6 }}
-                        className="flex items-start gap-4"
-                      >
-                        <div className="w-2 h-2 rounded-full bg-gray-800 mt-2 flex-shrink-0" />
-                        <div>
-                          <div className="text-gray-900 font-medium mb-1">Frontend Development</div>
-                          <div className="text-gray-600 text-sm leading-relaxed">React, Next.js, TypeScript, modern web standards</div>
-                        </div>
-                      </motion.div>
-
-                      <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.7 }}
-                        className="flex items-start gap-4"
-                      >
-                        <div className="w-2 h-2 rounded-full bg-gray-800 mt-2 flex-shrink-0" />
-                        <div>
-                          <div className="text-gray-900 font-medium mb-1">Performance Optimization</div>
-                          <div className="text-gray-600 text-sm leading-relaxed">Core Web Vitals, accessibility, responsive design</div>
-                        </div>
-                      </motion.div>
-                    </div>
-
-                    {/* Divider */}
-                    <div className="h-px bg-gray-200 mb-6" />
-
-                    {/* Contact Button */}
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 0.8 }}
-                    >
-                      <a
-                        href="https://www.linkedin.com/in/khalifa-seck/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full inline-flex items-center justify-center gap-3 px-6 py-3 rounded-xl border border-gray-300 text-gray-900 font-medium hover:bg-gray-100 hover:border-gray-400 transition-all duration-300 group"
-                      >
-                        <svg className="w-4 h-4 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                        Connect on LinkedIn
-                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                      </a>
-                    </motion.div>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </div>
+    <section className="relative min-h-[90vh] flex flex-col justify-center w-full bg-white overflow-hidden">
+      
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full h-full flex flex-col justify-center relative z-10">
+        
+        {/* Top Identifier */}
+        <div className="absolute top-10 left-6 lg:left-8 mb-20">
+          <span className="text-xs font-bold uppercase tracking-widest text-black">
+            Khalifa Seck — Portfolio
+          </span>
         </div>
-      </section>
+
+        <div className="flex flex-col items-start gap-y-8 mt-20">
+            {/* Status Status - Minimal */}
+            <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "circOut" }}
+            className="flex items-center gap-3 mb-4"
+            >
+            <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            <span className="text-sm font-medium text-gray-500 tracking-wide">
+                Available for new projects
+            </span>
+            </motion.div>
+
+            {/* Massive Headline */}
+            <div className="relative">
+            <motion.h1 
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="text-[12vw] sm:text-[10vw] lg:text-[9vw] font-bold text-black leading-[0.85] tracking-tighter"
+            >
+                BUILDING
+                <br />
+                DIGITAL
+                <br />
+                <span className="text-gray-300">PRODUCTS</span>
+            </motion.h1>
+            </div>
+
+            {/* Subtitle & Actions */}
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between w-full border-t border-gray-100 pt-8 mt-12 gap-8">
+            <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: "circOut" }}
+                className="max-w-md"
+            >
+                <p className="text-xl sm:text-2xl font-light text-gray-600 leading-tight">
+                Frontend Engineer & UI Designer crafting polished, high-performance interfaces.
+                </p>
+            </motion.div>
+
+            <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4, ease: "circOut" }}
+                className="flex items-center gap-8"
+            >
+                <Link href="/allwork" className="text-lg font-medium text-black hover:text-gray-600 transition-colors uppercase tracking-tight">
+                View Work
+                </Link>
+                <Link href="/aboutme" className="text-lg font-medium text-gray-400 hover:text-black transition-colors uppercase tracking-tight">
+                About Me
+                </Link>
+            </motion.div>
+            </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
-export default memo(Hero);
+export default Hero;
 

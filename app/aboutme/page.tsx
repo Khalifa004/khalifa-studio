@@ -51,11 +51,12 @@ const card =
   "group relative rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md";
 
 // ---- Content strings (tailored) ------------------------------------------
+// ---- Content strings (tailored) ------------------------------------------
 const intro = {
   title: "Design Engineer",
   kicker: "Toronto → Building clean, fast, human interfaces",
   blurb:
-    "I design and build thoughtful interfaces—from concept to production. I’m a UI engineer and designer who ships with React, Next.js, TypeScript, and Tailwind, and I care a lot about clarity, motion, and accessibility. Recently I’ve been growing IntelliCourse (AI-powered learning).",
+    "I design and build thoughtful interfaces—from concept to production. I’m a specialized frontend engineer who ships with the React ecosystem (Next.js) and modern TypeScript. I care deeply about component architecture, performance optimization, and the details that make software feel alive.",
 };
 
 const education = {
@@ -71,35 +72,28 @@ const languages = [
 
 const skills = {
   Design: [
-    { label: "Figma", icon: IconBrandFigma, level: 95, description: "Advanced prototyping & design systems" },
-    { label: "Prototyping", icon: IconBrandFramer, level: 90, description: "Interactive prototypes & animations" },
-    { label: "3D / Blender", icon: IconBrandBlender, level: 80, description: "3D modeling & visualization" },
+    { label: "Product Design", icon: IconLayoutGrid, level: 95, description: "End-to-end design systems & UI architecture" },
+    { label: "Interaction", icon: IconBolt, level: 90, description: "Complex micro-interactions & motion design" },
+    { label: "Figma", icon: IconBrandFigma, level: 95, description: "Advanced prototyping & tokens" },
   ],
   Development: [
-    { label: "Next.js", icon: IconBrandNextjs, level: 95, description: "Full-stack React framework" },
-    { label: "React", icon: IconBrandReact, level: 90, description: "Modern component architecture" },
-    { label: "TypeScript / JS", icon: IconBrandJavascript, level: 88, description: "Type-safe development" },
-    { label: "Tailwind", icon: IconBrandTailwind, level: 92, description: "Utility-first CSS framework" },
-    { label: "CSS", icon: IconBrandCss3, level: 85, description: "Advanced styling & animations" },
+    { label: "React Ecosystem", icon: IconBrandReact, level: 95, description: "Next.js, Server Components, Patterns" },
+    { label: "Frontend Architecture", icon: IconDeviceLaptop, level: 90, description: "State management, API integration" },
+    { label: "TypeScript", icon: IconBrandJavascript, level: 90, description: "Type-safe robust architecture" },
+    { label: "UI Engineering", icon: IconBrandTailwind, level: 92, description: "Tailwind, CSS Modules, Framer Motion" },
   ],
   Expertise: [
-    { label: "Design systems", icon: IconLayoutGrid, level: 90 },
-    { label: "Motion & micro‑interactions", icon: IconBolt, level: 88 },
-    { label: "Accessible, responsive UI", icon: IconDeviceLaptop, level: 85 },
-    { label: "Interactive dashboards", icon: IconSparkles, level: 90 },
-    { label: "Figma → Code workflows", icon: IconFrame, level: 92 },
-    { label: "Performance & DX", icon: IconSparkles, level: 85 },
+    { label: "Design Systems", icon: IconLayoutGrid, level: 90 },
+    { label: "Web Performance", icon: IconSparkles, level: 90 },
+    { label: "Accessibility (a11y)", icon: IconDeviceLaptop, level: 88 },
+    { label: "Component Logic", icon: IconRocket, level: 88 },
+    { label: "Responsive Layouts", icon: IconFrame, level: 95 },
   ],
 };
 
 const currentFocus = {
   upcoming: [
-    {
-      title: "Portfolio v3.0",
-      description: "Redesigning portfolio with advanced 3D interactions and performance optimizations",
-      timeline: "",
-      icon: IconRocket
-    },
+ 
     {
       title: "Open Source Components",
       description: "Publishing reusable React component library for modern web applications",
@@ -192,7 +186,7 @@ export default function About() {
             className="mt-8 flex flex-wrap items-center gap-2 text-sm text-neutral-600"
             {...fade}
           >
-            {["React", "Next.js", "TypeScript", "Tailwind", "Framer Motion"].map(
+            {["React Ecosystem", "TypeScript", "Frontend Arch", "System Design"].map(
               (t) => (
                 <li key={t} className={`${chip} px-3 py-1`}>{t}</li>
               )
@@ -260,116 +254,58 @@ export default function About() {
         </div>
       </section>
 
-      {/* Skills & Tools */}
-      <section className="mx-auto max-w-7xl px-6 py-20">
-        <motion.h2 className="text-center text-3xl font-semibold tracking-tight md:text-4xl" {...fade}>
-          Skills & Tools
-        </motion.h2>
-
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-          {/* Design */}
-          <motion.div className={card} {...fade}>
-            <div className="mb-6 flex items-center gap-2 text-sm text-neutral-500">
-              <IconSparkles size={18} /> Design
-            </div>
-            <ul className="space-y-4">
-              {skills.Design.map(({ label, icon: I, level, description }) => (
-                <motion.li 
-                  key={label} 
-                  className="group cursor-pointer"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4 transition-all hover:border-neutral-300 hover:shadow-md">
-                    <div className="flex items-center gap-3 mb-2">
-                      <I size={20} className="text-neutral-600 group-hover:text-neutral-900 transition-colors" />
-                      <span className="font-medium text-neutral-900">{label}</span>
-                      <span className="ml-auto text-xs font-medium text-neutral-500">{level}%</span>
-                    </div>
-                    <div className="w-full bg-neutral-200 rounded-full h-1.5 mb-2">
-                      <motion.div 
-                        className="bg-gradient-to-r from-indigo-500 to-purple-500 h-1.5 rounded-full"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${level}%` }}
-                        transition={{ duration: 1, delay: 0.2 }}
-                        viewport={{ once: true }}
-                      />
-                    </div>
-                    <p className="text-xs text-neutral-600 group-hover:text-neutral-700 transition-colors">{description}</p>
-                  </div>
-                </motion.li>
+      {/* Skills & Tools - Redesigned Minimal */}
+      <section className="mx-auto max-w-7xl px-6 py-24 border-t border-neutral-100">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+          
+          {/* Design Column */}
+          <div className="flex flex-col gap-8">
+            <h3 className="text-xs font-bold text-neutral-400 uppercase tracking-widest">Design</h3>
+            <ul className="flex flex-col gap-4">
+              {skills.Design.map(({ label, description }) => (
+                <li key={label} className="group flex flex-col items-start gap-1">
+                  <span className="text-xl font-medium text-neutral-900 group-hover:text-neutral-600 transition-colors">
+                    {label}
+                  </span>
+                  <span className="text-sm text-neutral-500 font-light leading-relaxed">
+                    {description}
+                  </span>
+                </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
-          {/* Dev */}
-          <motion.div className={card} {...fade}>
-            <div className="mb-6 flex items-center gap-2 text-sm text-neutral-500">
-              <IconDeviceLaptop size={18} /> Development
-            </div>
-            <ul className="space-y-4">
-              {skills.Development.map(({ label, icon: I, level, description }) => (
-                <motion.li 
-                  key={label} 
-                  className="group cursor-pointer"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-4 transition-all hover:border-neutral-300 hover:shadow-md">
-                    <div className="flex items-center gap-3 mb-2">
-                      <I size={20} className="text-neutral-600 group-hover:text-neutral-900 transition-colors" />
-                      <span className="font-medium text-neutral-900">{label}</span>
-                      <span className="ml-auto text-xs font-medium text-neutral-500">{level}%</span>
-                    </div>
-                    <div className="w-full bg-neutral-200 rounded-full h-1.5 mb-2">
-                      <motion.div 
-                        className="bg-gradient-to-r from-blue-500 to-cyan-500 h-1.5 rounded-full"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${level}%` }}
-                        transition={{ duration: 1, delay: 0.3 }}
-                        viewport={{ once: true }}
-                      />
-                    </div>
-                    <p className="text-xs text-neutral-600 group-hover:text-neutral-700 transition-colors">{description}</p>
-                  </div>
-                </motion.li>
+          {/* Development Column */}
+          <div className="flex flex-col gap-8">
+            <h3 className="text-xs font-bold text-neutral-400 uppercase tracking-widest">Development</h3>
+            <ul className="flex flex-col gap-4">
+              {skills.Development.map(({ label, description }) => (
+                <li key={label} className="group flex flex-col items-start gap-1">
+                  <span className="text-xl font-medium text-neutral-900 group-hover:text-neutral-600 transition-colors">
+                    {label}
+                  </span>
+                  <span className="text-sm text-neutral-500 font-light leading-relaxed">
+                    {description}
+                  </span>
+                </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
-          {/* Expertise */}
-          <motion.div className={card} {...fade}>
-            <div className="mb-6 flex items-center gap-2 text-sm text-neutral-500">
-              <Frame size={18} /> Expertise
-            </div>
-            <ul className="space-y-3">
-              {skills.Expertise.map(({ label, icon: I, level }) => (
-                <motion.li 
-                  key={label} 
-                  className="group cursor-pointer"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-3 transition-all hover:border-neutral-300 hover:shadow-md">
-                    <div className="flex items-center gap-3 mb-2">
-                      <I size={18} className="text-neutral-600 group-hover:text-neutral-900 transition-colors" />
-                      <span className="font-medium text-neutral-900 text-sm">{label}</span>
-                      <span className="ml-auto text-xs font-medium text-neutral-500">{level}%</span>
-                    </div>
-                    <div className="w-full bg-neutral-200 rounded-full h-1">
-                      <motion.div 
-                        className="bg-gradient-to-r from-emerald-500 to-teal-500 h-1 rounded-full"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${level}%` }}
-                        transition={{ duration: 1, delay: 0.4 }}
-                        viewport={{ once: true }}
-                      />
-                    </div>
-                  </div>
-                </motion.li>
+          {/* Expertise Column */}
+          <div className="flex flex-col gap-8">
+            <h3 className="text-xs font-bold text-neutral-400 uppercase tracking-widest">Expertise</h3>
+            <ul className="flex flex-col gap-4">
+              {skills.Expertise.map(({ label }) => (
+                <li key={label} className="group flex flex-col items-start gap-1">
+                  <span className="text-xl font-medium text-neutral-900 group-hover:text-neutral-600 transition-colors">
+                    {label}
+                  </span>
+                </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
+
         </div>
       </section>
 

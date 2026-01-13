@@ -61,9 +61,10 @@ html {
    ========================================================================== */
 
 @font-face {
-  font-family: 'ClashDisplay';
-  src: url('/fonts/ClashDisplay.ttf') format('truetype');
-  font-weight: normal;
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Variable.woff2') format('woff2');
+  font-weight: 300 900;
+  font-display: swap;
   font-style: normal;
 }
 
@@ -78,110 +79,17 @@ html {
     --border: 0 0% 80%;
     --scrollbar-width: 0px;
   }
-  
-  /* Calculate scrollbar width for desktop */
-  @media (hover: hover) and (pointer: fine) {
-    :root {
-      --scrollbar-width: calc(100vw - 100%);
-    }
-  }
 }
 
-/* ==========================================================================
-   Utility Classes
-   ========================================================================== */
-
-@layer components {
-  .border-border {
-    border: solid hsl(var(--border));
-  }
-
-  .bg-background {
-    background-color: hsl(var(--background));
-  }
-
-  .text-foreground {
-    color: hsl(var(--foreground));
-  }
+body {
+  font-family: 'Satoshi', sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: radial-gradient(circle at top right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) 70%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease;
 }
-
-/* ==========================================================================
-   Glass Effects
-   ========================================================================== */
-
-.glass-morphism {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.glass-effect {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-.neumorphic-card {
-  background: #1a1a1a;
-  box-shadow: 5px 5px 10px #0d0d0d, -5px -5px 10px #272727;
-}
-
-/* ==========================================================================
-   Loading Animations
-   ========================================================================== */
-
-.loading-container {
-  transition: opacity 0.5s ease-in-out;
-}
-
-.loading-container img {
-  animation: fadeInOut 1s infinite;
-}
-
-/* ==========================================================================
-   Keyframe Animations
-   ========================================================================== */
-
-@keyframes fadeInOut {
-  0%, 100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes text-reveal {
-  0% {
-    clip-path: inset(50% 0 50% 0);
-  }
-  100% {
-    clip-path: inset(0 0 0 0);
-  }
-}
-
-/* ==========================================================================
-   Animation Classes
-   ========================================================================== */
-
-.animate-scroll {
-  animation: scroll 20s linear infinite;
-}
-
-.animate-text-reveal {
-  animation: text-reveal 2s ease-out forwards;
-}
-
-
-
