@@ -397,7 +397,7 @@ export default function About() {
           </p>
           <div className="flex flex-wrap items-center gap-3">
             <Link
-              href="mailto:khalifaseckbiz@gmail.com"
+              href="mailto:khalifa.seck@outlook.com"
               className="inline-flex items-center gap-2 rounded-full bg-neutral-900 px-5 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-neutral-800"
             >
               <IconMail size={18} />
