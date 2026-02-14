@@ -1,460 +1,254 @@
 "use client";
 
-import React from "react";
-import { motion, Variants } from "framer-motion";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { DeviceFrameset } from "react-device-frameset";
-import "react-device-frameset/styles/marvel-devices.min.css";
-import "swiper/css";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Train, Crown, Briefcase, Gift, Layout, Mouse, Users, Search, Map, Globe, MessageSquare, Bot, Settings, Clock, MapPin, Calendar, CreditCard, Gem, Zap, Target, TypeIcon as type, LucideIcon, Camera, Plane, Building } from 'lucide-react';
+import { ArrowLeft, Train, Map, Globe, Clock, Zap, Target, Users, Layout, Mouse, CreditCard, Bot, Settings, Briefcase, Plane, Camera, Building } from "lucide-react";
 
-import { HowItWorks } from "@/components/how-it-works";
-import CaseStudyLayout from "@/components/CaseStudyLayout";
-import { AnimatedSection } from "@/components/animated-section";
+const organicEase = [0.4, 0, 0.2, 1];
 
-interface FeatureItem {
-  icon: LucideIcon;
-  text: string;
-}
-
-const features: FeatureItem[] = [
-  { icon: Search, text: "Efficient search" },
-  { icon: Layout, text: "Customizable options" },
-  { icon: Map, text: "Destination highlights" },
-  { icon: Globe, text: "Multilingual support" },
-  { icon: MessageSquare, text: "User feedback" },
-  { icon: Users, text: "Inclusive design" }
-];
-
-const loyaltyFeatures: FeatureItem[] = [
-  { icon: Train, text: "Earn Points" },
-  { icon: Crown, text: "Membership Tiers" },
-  { icon: Briefcase, text: "Exclusive Benefits" },
-  { icon: Gift, text: "Bonus Opportunities" }
-];
-
-const smartBookingFeatures: FeatureItem[] = [
-  { icon: Clock, text: "Preferred travel times" },
-  { icon: MapPin, text: "Destination details" },
-  { icon: Users, text: "Group size" },
-  { icon: Calendar, text: "Travel dates" },
-  { icon: CreditCard, text: "Budget range" }
-];
-
-const fadeInUp: Variants = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-};
-
-const staggerChildren: Variants = {
-  animate: { transition: { staggerChildren: 0.1 } },
-};
-
-const images = [
-  "/images/Northstar1.jpg",
-  "/images/Northstar2.png",
-  "/images/Northstar3.png",
-];
-
-const Page: React.FC = () => {
-  const handleCtaClick = () => {
-    console.log("CTA clicked");
-  };
-
+const Section = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
   return (
-    <CaseStudyLayout
-      header={{
-        title: 'NorthStar',
-        description:
-          'Bullet train service concept blending efficient transport with immersive VR experiences across cities.',
-        meta: [
-          { label: 'Type', value: 'Personal Project' },
-          { label: 'Timeframe', value: '21 days' },
-          { label: 'Toolkit', value: 'Figma' },
-          { label: 'Year', value: '2024' },
-        ],
-      }}
-      sections={[
-        {
-          title: 'Overview',
-          body: (
-            <p className="text-lg text-gray-600">A conceptual UX case study exploring ticketing, loyalty, and smart booking flows.</p>
-          ),
-        },
-      ]}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-10%" }}
+      transition={{ duration: 0.8, ease: organicEase }}
+      className={`relative ${className}`}
     >
-
-      <AnimatedSection>
-        <HowItWorks
-          title="A case study"
-          subtitle=""
-          steps={[
-            {
-              icon: Zap,
-              title: "Project Overview",
-              description:
-                "NorthStar is a cutting-edge bullet train service that combines efficient transportation with immersive VR experiences, revolutionizing the concept of travel through cities.",
-              bulletPoints: [],
-            },
-            {
-              icon: Target,
-              title: "Key Features",
-              description:
-                "Monitor your productivity trends with our insightful analytics, identifying peak performance times.",
-              bulletPoints: [
-                "Advanced AI-driven navigation systems",
-                "Eco-friendly propulsion mechanisms",
-                "Seamless integration with existing infrastructure",
-              ],
-            },
-          ]}
-          ctaText="Get Started Now"
-          onCtaClick={handleCtaClick}
-        />
-      </AnimatedSection>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 px-4 sm:px-6 lg:px-8">
-        <ProblemSolution />
-        </div>
-
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 px-4 sm:px-6 lg:px-8">
-
-
-
-<div className="text-center sm:text-left p-9">
-<span className="text-red-700 font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl block">Northstar</span>
-<span className="text-white opacity-20 font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl block mt-2">a ride to enjoy.</span>
-
-<div className="w-full max-w-4xl p-4 text-center">
-<div>
-  <iframe src="https://player.vimeo.com/video/982739111?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-          allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="Northstar™"></iframe>
-</div>
-<script src="https://player.vimeo.com/api/player.js"></script>
-</div>
-</div>
-
-<div>
-
-
-
-<AnimatedSection className="text-black p-4 rounded">
-  <div className="text-black p-6 md:p-8 rounded-3xl  ">
-    <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-red-500">Target Audience</h2>
-
-    <div className="mb-10 text-center">
-      <p className="text-gray-700 text-lg italic leading-relaxed">
-        By defining our target audience, we craft a journey that's as unique as each passenger. Our train service isn't just transportation; it's a tailored experience that resonates with the rhythm of urban life.
-      </p>
-    </div>
-
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-      <FeatureCard
-        icon={Building}
-        text="Urban Commuters"
-        description="City dwellers who ride the pulse of public transit daily."
-      />
-      <FeatureCard
-        icon={Briefcase}
-        text="Business Professionals"
-        description="Movers and shakers needing swift, reliable city connections."
-      />
-      <FeatureCard
-        icon={Plane}
-        text="Air Travellers"
-        description="Globetrotters seeking seamless airport links via rapid rail."
-      />
-    </div>
-
-    <div className="bg-gray-100 rounded-3xl p-8 space-y-8 shadow-inner">
-      <h3 className="text-3xl font-semibold text-gray-800 text-center mb-6">Beyond the Commute</h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <FeatureCard
-          icon={Camera}
-          text="Tourists"
-          description="Explorers navigating city wonders with ease and excitement."
-        />
-        <FeatureCard
-          icon={Users}
-          text="Events Attendees"
-          description="Revelers and conference-goers riding the rails to their next big moment."
-        />
-      </div>
-    </div>
-
-    <div className="mt-12 text-center">
-      <p className="text-gray-600 text-sm font-light tracking-wide">
-        Every journey tells a story. We're here to make yours unforgettable...
-      </p>
-    </div>
-  </div>
-</AnimatedSection>
-
-
-
-
-
-
-
-
-
-</div>
-
-</div>
-
-
-  
-
-
-
-
-
-        
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 px-4 sm:px-6 lg:px-8">
-
-        <VisualDesign images={images} />
-        <UIUXDesign features={features} />
-        <SmartBooking features={smartBookingFeatures} />
-        <SmartBookingImg features={smartBookingFeatures} />
-      
-      </div>
-  
-
-
-      <BusinessModel />
-    </CaseStudyLayout>
+      {children}
+    </motion.div>
   );
 };
 
-
-const FeatureCard: React.FC<FeatureItem & { description?: string }> = ({ icon: Icon, text, description }) => (
-  <div className="bg-gray-100 rounded-2xl p-4 space-y-3">
-    <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center shadow-md">
-      <Icon className="w-5 h-5 text-red-500" />
+const GridItem = ({ icon: Icon, title, desc }: { icon: any, title: string, desc: string }) => (
+  <div className="group relative p-6 rounded-xl bg-gray-50/50 border border-black/[0.03] hover:border-black/[0.08] transition-colors duration-500 h-full">
+    <div className="absolute inset-0 bg-gradient-to-br from-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
+    <div className="relative z-10 flex flex-col h-full">
+      <div className="mb-4 inline-flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100/80 text-gray-600 group-hover:text-black group-hover:scale-110 transition-all duration-500 ease-out">
+        <Icon size={20} />
+      </div>
+      <h3 className="text-sm font-medium text-gray-900 mb-2 tracking-wide">{title}</h3>
+      <p className="text-sm text-gray-500 leading-relaxed font-light">{desc}</p>
     </div>
-    <h3 className="text-gray-800 sm:text-xl text-sm font-medium">{text}</h3>
-    {description && <p className="text-gray-600 text-sm">{description}</p>}
   </div>
 );
 
-const ProblemSolution: React.FC = () => (
-  <>
-    <AnimatedSection className="text-black p-4">
-      <div className="text-black p-4">
-        <h3 className="text-black text-7xl font-medium mb-4">The Problem</h3>
-        <h4 className="text-red-500 text-xl font-medium mb-2">Too far to drive, too close to fly</h4>
-        <p className="text-gray-600 text-lg mb-4">
-          The Windsor-Quebec corridor in Canada and the Northeast corridor in the US are home to over 68 million people. With over 600 daily short-haul flights between these cities, there's a significant environmental impact and a lack of efficient alternatives.
-        </p>
-        <div className="w-full h-48 relative rounded-xl overflow-hidden"></div>
-      </div>
-    </AnimatedSection>
-
-    <AnimatedSection className="text-black p-4 rounded">
-      <div className="text-black p-4 rounded">
-        <h3 className="text-black text-7xl font-medium mb-4">The Solution</h3>
-        <h4 className="text-gray-700 text-xl font-medium mb-2">Connecting 70+ million people with over 5,000km of new tracks</h4>
-        <p className="text-gray-600 text-lg mb-4">
-          <span className="text-red-500 font-medium">North Star Express</span> NorthStar introduces a revolutionary transportation system that combines AI, clean energy, and smart infrastructure to create efficient, sustainable, and accessible mobility for all.
-        </p>
-        <p className="text-gray-600 text-lg mb-4">
-          <span className="text-blue-500 font-medium">Star Connector</span> is the local service Connecting smaller communities, without compromising speed and comfort.
-        </p>
-        <div className="w-full h-96 relative rounded-xl overflow-hidden">
-          <Image
-            src="/images/northstarmap.png"
-            alt="Futuristic, clean transportation system"
-            fill
-            sizes="100vw"
-            className="object-cover"
-          />
-        </div>
-      </div>
-    </AnimatedSection>
-  </>
+const StatItem = ({ label, value }: { label: string, value: string }) => (
+  <div className="border-l border-black/10 pl-6 py-2">
+    <div className="text-[10px] uppercase tracking-[0.2em] text-gray-400 mb-1">{label}</div>
+    <div className="text-lg font-light text-gray-900 tracking-tight">{value}</div>
+  </div>
 );
 
+export default function NorthStarCaseStudy() {
+  const containerRef = useRef<HTMLDivElement>(null);
 
-const VisualDesign: React.FC<{ images: string[] }> = ({ images }) => (
-  <AnimatedSection className="text-white p-4 rounded">
-    <motion.section className="max-w-6xl mx-auto mb-20" variants={fadeInUp}>
-      <h2 className="text-4xl font-bold text-center mb-10">Visual Design</h2>
-      <div className="flex items-center justify-center relative">
-        <div className="scale-75 transform-gpu">
-          <DeviceFrameset device="iPhone X" color="gold">
-            <Swiper spaceBetween={10} slidesPerView={1} loop={true}>
-              {images.map((image, index) => (
-                <SwiperSlide key={index}>
-                  <div className="w-full h-full flex items-center justify-center">
-                    <img
-                      src={image}
-                      alt={`Prototype Screenshot ${index + 1}`}
-                     
-                      className="rounded-lg object-cover"
+  return (
+    <div ref={containerRef} className="min-h-screen bg-[#FAFAFA] text-gray-600 selection:bg-red-100 selection:text-red-900 font-sans antialiased overflow-x-hidden">
+
+      {/* Background Ambience - Light Mode (Red/Warm tint for NorthStar) */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-red-100/20 blur-[150px] rounded-full mix-blend-multiply opacity-30" />
+        <div className="absolute bottom-[-20%] right-[-20%] w-[50%] h-[50%] bg-orange-100/20 blur-[150px] rounded-full mix-blend-multiply opacity-30" />
+        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.015] mix-blend-multiply" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-20">
+
+        {/* Navigation */}
+        <motion.div
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: organicEase, delay: 0.1 }}
+          className="mb-20 md:mb-32 flex justify-between items-center"
+        >
+          <Link href="/allwork" className="group inline-flex items-center gap-3 text-xs uppercase tracking-widest text-gray-500 hover:text-black transition-colors duration-300">
+            <ArrowLeft className="w-3 h-3 transition-transform group-hover:-translate-x-1" />
+            <span>Return</span>
+          </Link>
+          <div className="hidden md:block text-[10px] uppercase tracking-[0.3em] text-gray-400">
+            Case Study 003
+          </div>
+        </motion.div>
+
+        {/* Hero Section */}
+        <motion.header
+          className="mb-32 md:mb-48"
+        >
+          <div className="flex flex-col md:flex-row md:items-end gap-12 md:gap-24 mb-16">
+            <div className="md:flex-1">
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: organicEase }}
+                className="text-6xl md:text-9xl font-medium text-gray-900 tracking-tighter leading-none mb-8"
+              >
+                NorthStar
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, ease: organicEase, delay: 0.2 }}
+                className="text-lg md:text-xl font-light text-gray-500 max-w-2xl leading-relaxed"
+              >
+                Bullet train service concept blending efficient transport with immersive VR experiences across cities.
+              </motion.p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-y-8 gap-x-12">
+              {[
+                { l: "Type", v: "Concept" },
+                { l: "Time", v: "21 Days" },
+                { l: "Tool", v: "Figma" },
+                { l: "Year", v: "2024" }
+              ].map((item, i) => (
+                <motion.div
+                  key={item.l}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, ease: organicEase, delay: 0.3 + (i * 0.1) }}
+                >
+                  <StatItem label={item.l} value={item.v} />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: organicEase, delay: 0.4 }}
+            className="relative w-full aspect-video rounded-2xl overflow-hidden border border-black/[0.05] shadow-2xl shadow-gray-200/50 bg-black"
+          >
+            <div className="absolute inset-0 flex items-center justify-center">
+              <iframe
+                src="https://player.vimeo.com/video/982739111?autoplay=1&loop=1&title=0&byline=0&portrait=0&muted=0&controls=1"
+                className="w-full h-full object-cover"
+                allow="autoplay; fullscreen; picture-in-picture"
+                title="Northstar™"
+              />
+            </div>
+            <div className="absolute inset-0 bg-black/10 mix-blend-overlay pointer-events-none" />
+          </motion.div>
+        </motion.header>
+
+        <main className="space-y-32 md:space-y-48">
+
+          {/* Overview / Problem */}
+          <Section className="grid md:grid-cols-[1fr_2fr] gap-12 md:gap-24">
+            <div>
+              <h2 className="text-xs font-medium text-gray-900 uppercase tracking-[0.2em] mb-4">The Challenge</h2>
+              <div className="h-px w-12 bg-black/10" />
+            </div>
+            <div className="space-y-12">
+              <div>
+                <h3 className="text-xl font-medium text-gray-900 mb-4">Too far to drive, too close to fly</h3>
+                <p className="text-xl md:text-2xl font-light leading-relaxed text-gray-800">
+                  The Windsor-Quebec corridor is home to 68 million people. With 600+ daily short-haul flights, there is a lack of efficient, sustainable alternatives.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <GridItem icon={Zap} title="The Solution" desc="AI-driven navigation combined with eco-friendly propulsion." />
+                <GridItem icon={Target} title="Key Metric" desc="Connecting 70+ million people with 5,000km of new tracks." />
+              </div>
+            </div>
+          </Section>
+
+          {/* Target Audience */}
+          <Section className="space-y-16">
+            <div className="max-w-xl">
+              <h2 className="text-3xl md:text-4xl font-medium text-gray-900 mb-6">Target Audience</h2>
+              <p className="text-gray-500 leading-relaxed">
+                Crafting a journey as unique as each passenger. Our service isn't just transportation; it's a tailored experience.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <GridItem icon={Building} title="Urban Commuters" desc="City dwellers who ride the pulse of public transit daily." />
+              <GridItem icon={Briefcase} title="Business" desc="Movers and shakers needing swift, reliable connections." />
+              <GridItem icon={Plane} title="Air Travellers" desc="Globetrotters seeking seamless airport links via rapid rail." />
+              <GridItem icon={Camera} title="Tourists" desc="Explorers navigating city wonders with ease." />
+              <GridItem icon={Users} title="Event Goers" desc="Conference-goers riding the rails to their next big moment." />
+              <GridItem icon={Train} title="Daily Riders" desc="Those seeking a consistent, high-quality daily commute." />
+            </div>
+          </Section>
+
+          {/* Visual Design Gallery */}
+          <Section className="space-y-16">
+            <div className="max-w-xl">
+              <h2 className="text-3xl md:text-4xl font-medium text-gray-900 mb-6">Visual Interface</h2>
+              <p className="text-gray-500 leading-relaxed">
+                A sleek, transparent design language that puts the journey first.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {["/images/Northstar1.jpg", "/images/Northstar2.png", "/images/Northstar3.png"].map((src, i) => (
+                <div key={i} className="relative group rounded-2xl overflow-hidden border border-black/[0.05] shadow-lg shadow-gray-200/50">
+                  <div className="aspect-[9/19.5] relative">
+                    <Image
+                      src={src}
+                      alt={`Design ${i + 1}`}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
                   </div>
-                </SwiperSlide>
+                </div>
               ))}
-            </Swiper>
-          </DeviceFrameset>
-        </div>
-        <motion.div
-          className="absolute top-1/2 right-0 transform -translate-y-1/2 text-sm text-gray-400 font-semibold"
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.5 }}
-        >
-          Swipe to see more →
-        </motion.div>
-      </div>
-    </motion.section>
-  </AnimatedSection>
-);
-
-const UIUXDesign: React.FC<{ features: FeatureItem[] }> = ({ features }) => (
-  <AnimatedSection className="text-black p-4 rounded">
-    <div className=" text-black p-6 md:p-8 rounded-3xl ">
-      <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-red-500">UI/UX Design</h2>
-      
-      <div className="mb-8 text-center">
-        <p className="text-gray-700 text-lg">
-          Prioritizing simplicity, efficiency, and engagement for an exceptional booking experience.
-        </p>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <FeatureCard
-          icon={Layout}
-          text="User Interface"
-          description="Sleek and intuitive layout for effortless navigation and comprehensive booking functionalities."
-        />
-        <FeatureCard
-          icon={Mouse}
-          text="User Experience"
-          description="Streamlined booking process with efficient search features and step-by-step flows for a seamless experience."
-        />
-        <FeatureCard
-          icon={Users}
-          text="Accessibility"
-          description="Inclusive design ensuring all passengers can navigate the app comfortably, with multilingual support."
-        />
-      </div>
-      
-      <div className="bg-gray-100 rounded-2xl p-6 space-y-6">
-        <h3 className="text-2xl font-semibold text-gray-800">Key Features</h3>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {features.map((item, index) => (
-            <FeatureCard key={index} {...item} />
-          ))}
-        </div>
-      </div>
-      
-      <div className="mt-8 text-center">
-        <p className="text-gray-600 text-sm">
-          Experience a user-centric design that evolves with your needs, ensuring an exceptional journey from booking to destination.
-        </p>
-      </div>
-    </div>
-  </AnimatedSection>
-);
-
-
-
-
-const SmartBooking: React.FC<{ features: FeatureItem[] }> = ({ features }) => (
-  <AnimatedSection className="max-w-2xl mx-auto">
-    <div className=" text-black p-3 rounded-3xl ">
-      <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-red-600">Smart Booking</h2>
-      
-      <div className="mb-8">
-        <p className="text-gray-700 text-lg mb-4">
-          Revolutionize your journey planning with our AI-powered smart booking system. Experience unparalleled convenience and personalized assistance.
-        </p>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <FeatureCard
-          icon={Bot}
-          text="AI Assistant Integration"
-          description="Communicate your travel needs and preferences to our AI, which will intelligently generate the best trip schedule tailored to your requirements."
-        />
-        <FeatureCard
-          icon={Settings}
-          text="Customizable Preferences"
-          description="Specify desired departure times, seating arrangements, budget constraints, and specific amenities for a truly personalized travel experience."
-        />
-      </div>
-      
-      <div className="mt-8">
-        <h3 className="text-2xl font-semibold mb-4 text-gray-800">Enhanced User Inputs</h3>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {features.map((item, index) => (
-            <div key={index} className="flex items-center space-x-2">
-              <item.icon className="w-5 h-5 text-red-600" />
-              <span className="text-sm text-gray-700">{item.text}</span>
             </div>
-          ))}
-        </div>
-      </div>
-      
-      <div className="mt-8 text-center">
-        <p className="text-gray-600 text-sm">
-          Experience a new level of travel planning with our AI-powered smart booking system.
-        </p>
+          </Section>
+
+          {/* Smart Booking / UI UX */}
+          <Section className="grid md:grid-cols-2 gap-12 md:gap-24 items-start">
+            <div className="space-y-12">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-medium text-gray-900 mb-6">Smart Booking</h2>
+                <p className="text-gray-500 leading-relaxed">
+                  Revolutionize journey planning with AI-powered systems. Specify departure times, seating, and budget for a truly personalized experience.
+                </p>
+              </div>
+              <div className="space-y-4">
+                <GridItem icon={Bot} title="AI Assistant" desc="Intelligently generates the best trip schedule based on natural language." />
+                <GridItem icon={Settings} title="Preferences" desc="Deep customization for seating, amenities, and environment." />
+                <GridItem icon={CreditCard} title="Dynamic Pricing" desc="Smart budget allocation for optimal travel value." />
+              </div>
+            </div>
+
+            <div className="relative rounded-3xl overflow-hidden border border-black/[0.05] shadow-xl shadow-gray-200/50">
+              <Image
+                src="/images/smartbooking.png"
+                alt="Smart Booking Interface"
+                width={800}
+                height={1000}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          </Section>
+
+          {/* Business Model & Footer */}
+          <Section className="space-y-12">
+            <div className="p-12 rounded-3xl bg-gray-50 border border-black/[0.05]">
+              <h3 className="text-xs uppercase tracking-[0.2em] text-red-500 mb-6">Business Model</h3>
+              <p className="text-xl md:text-2xl font-light leading-relaxed text-gray-800">
+                As a private company, NorthStar funds construction through real estate leverage—selling land value from station development. Ticket fares cover operations, ensuring sustainability without government subsidies.
+              </p>
+            </div>
+
+            <div className="flex justify-between items-end pt-12 border-t border-black/[0.05]">
+              <div>
+                <h3 className="text-[10px] uppercase tracking-[0.2em] text-gray-400 mb-2">Next Project</h3>
+                <Link href="/allwork" className="text-lg md:text-xl text-gray-900 font-medium hover:text-gray-500 transition-colors">
+                  View All Work &rarr;
+                </Link>
+              </div>
+            </div>
+          </Section>
+
+        </main>
       </div>
     </div>
-  </AnimatedSection>
-);
-
-
-const SmartBookingImg: React.FC<{ features: FeatureItem[] }> = ({ features }) => (
-  <section className="p-8 max-w-4xl mx-auto transition-all duration-300 ease-in-out">
-    <div className=" rounded-6xl overflow-hidden  transition-transform duration-300 ease-in-out hover:scale-105">
-      <div className="p-6 md:p-8">
-        <img 
-          src="/images/smartbooking.png" 
-          alt="Smart Booking" 
-          className="w-full h-auto object-cover transition-opacity duration-300 ease-in-out hover:opacity-90"
-        />
-      </div>
-    </div>
-  </section>
-);
-
-
-
-
-const BusinessModel: React.FC = () => (
-  <AnimatedSection>
-    <section className=" min-h-screen flex flex-col items-center justify-center px-4 sm:px-3 md:px-3 py-3 sm:py-12 md:py-3">
-      <div className="max-w-7xl mx-auto w-full bg-gray-100 rounded-3xl p-4 sm:p-6 md:p-8 shadow-lg">
-        <div className="flex items-center justify-center gap-2 mb-4 sm:mb-6">
-          <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-red-500 flex items-center justify-center">
-            <ArrowRight className="text-white w-2 h-2 sm:w-3 sm:h-3" />
-          </div>
-          <span className="text-red-500 font-medium text-sm sm:text-base">
-            Business Model
-          </span>
-        </div>
-        <div className="text-center mb-8 sm:mb-12 md:mb-16 space-y-2 sm:space-y-4">
-          <h2 className="text-gray-800 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-medium leading-relaxed sm:leading-relaxed md:leading-relaxed">
-            As a private company without government subsidies, NorthStar's
-            primary funding for construction costs comes through real
-            estate. We leverage the increased land value from rail station
-            construction by selling to developers for Transit Oriented
-            Development. Ticket fares cover ongoing maintenance and staff
-            costs, ensuring financial sustainability while creating walkable
-            areas for an enhanced user experience.
-          </h2>
-        </div>
-      </div>
-    </section>
-  </AnimatedSection>
-);
-
-
-export default Page;
-
+  );
+}

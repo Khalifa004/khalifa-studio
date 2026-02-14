@@ -1,10 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Zap, Palette, Gauge, Maximize2, Type, Sliders, Cpu, Network, Layers, X, ZapOff, ChartBarIcon } from 'lucide-react'
-import { Card } from "@/components/ui/card"
+import { motion } from "framer-motion"
+import { Zap, Palette, Gauge, Maximize2, Type, Sliders, Cpu, Network, Layers, ChartBarIcon } from 'lucide-react'
 import Image from "next/image"
+
+// --- Design Tokens ---
+const organicEase = [0.4, 0, 0.2, 1];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -13,170 +15,166 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
-  visible: { y: 0, opacity: 1, transition: { type: "spring", stiffness: 100 } }
+  visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: organicEase } }
 }
 
-const colorPalette = [
-  { name: "Primary", color: "#4CAF50" },
-  { name: "Background", color: "#FFFFFF" },
-  { name: "Surface", color: "#F5F5F5" },
-  { name: "Text", color: "#333333" },
-]
-
-const typographyStyles = [
-  { name: "Heading 1", size: "text-4xl md:text-6xl", weight: "font-bold" },
-  { name: "Heading 2", size: "text-3xl md:text-5xl", weight: "font-semibold" },
-  { name: "Heading 3", size: "text-2xl md:text-4xl", weight: "font-medium" },
-  { name: "Body", size: "text-base", weight: "font-normal" },
-  { name: "Caption", size: "text-sm", weight: "font-light" },
-]
+const Card = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
+  <div className={`relative p-8 rounded-2xl bg-white border border-black/[0.03] hover:border-black/[0.08] transition-colors duration-500 h-full ${className}`}>
+    <div className="relative z-10">
+      {children}
+    </div>
+  </div>
+);
 
 const sections = [
   {
-    title: "Project Scope and Features",
+    title: "Scope & Features",
     icon: Zap,
-    color: "#FF6B6B",
-    image: "/placeholder.svg?height=160&width=320",
     items: [
-      { icon: Maximize2, title: "Comprehensive Scope", description: "Defined clear project boundaries and objectives" },
-      { icon: Layers, title: "Key Features", description: "Identified and prioritized essential functionalities" },
-      { icon: Network, title: "Integration Points", description: "Mapped out system integrations and data flow" },
+      { icon: Maximize2, title: "Scope", description: "Defined boundaries and objectives." },
+      { icon: Layers, title: "Features", description: "Prioritized essential functionalities." },
+      { icon: Network, title: "Integration", description: "Mapped data flow and API points." },
     ]
   },
   {
     title: "Design System",
     icon: Palette,
-    color: "#4ECDC4",
-    image: "/placeholder.svg?height=160&width=320",
     items: [
-      { icon: Palette, title: "Color Scheme", description: "Developed a cohesive and accessible color palette" },
-      { icon: Type, title: "Typography", description: "Established a clear typographic hierarchy and font selection" },
-      { icon: Sliders, title: "Component Library", description: "Created a reusable set of UI components" },
+      { icon: Palette, title: "Color", description: "Accessible, cohesive palette." },
+      { icon: Type, title: "Typography", description: "Clear typographic hierarchy." },
+      { icon: Sliders, title: "Components", description: "Reusable UI component library." },
     ]
   },
   {
-    title: "Performance Optimization",
+    title: "Performance",
     icon: Gauge,
-    color: "#FFA400",
     items: [
-      { icon: Cpu, title: "Load Time Optimization", description: "Improved initial page load and time to interactive" },
-      { icon: Gauge, title: "Responsiveness", description: "Enhanced UI responsiveness and smooth interactions" },
-      { icon: Layers, title: "Code Splitting", description: "Implemented efficient code splitting and lazy loading" },
+      { icon: Cpu, title: "Speed", description: "Optimized time-to-interactive." },
+      { icon: Gauge, title: "Fluidity", description: "Smooth 60fps interactions." },
+      { icon: Layers, title: "Bundling", description: "Efficient code splitting." },
     ]
   },
 ]
 
 export default function Pomoraprocess2() {
-  const [enlargedImage, setEnlargedImage] = useState<string | null>(null)
 
   return (
-    <div className="min-h-screen bg-[hsl(0,0%,98%)] p-4 md:p-8">
-      <div className="max-w-7xl mx-auto space-y-16">
+    <div className="w-full text-gray-600 font-sans">
+      <div className="w-full space-y-24">
+
         {/* Header Section */}
-        <div className="text-center space-y-4 mb-12">
-          <span className="inline-flex items-center text-green-600 text-sm font-medium">
-            <span className="size-2 bg-green-600 rounded-full mr-2" />
-            Project Insights
-          </span>
+        <div className="text-center space-y-6">
+          <div className="inline-flex items-center px-3 py-1 rounded-full border border-black/5 bg-white/50 backdrop-blur-sm">
+            <span className="text-[10px] uppercase tracking-widest text-gray-500">Deep Dive</span>
+          </div>
           <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-4xl md:text-6xl font-bold text-gray-900"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: organicEase }}
+            className="text-3xl md:text-5xl font-medium text-gray-900 tracking-tight"
           >
-            Detailed Project Overview
+            System Architecture
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-gray-600 text-lg max-w-2xl mx-auto"
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: organicEase, delay: 0.2 }}
+            className="text-gray-500 text-lg max-w-2xl mx-auto font-light"
           >
-            Explore the key aspects of our project development process
+            A closer look at the structural decisions behind Pomora.
           </motion.p>
         </div>
 
-        <div>
-          <div className="flex items-center gap-3 mb-2">
-            <ChartBarIcon className="text-green-600" size={24} />
-            <h3 className="text-3xl font-semibold text-gray-900">Flow Chart</h3>
+        {/* Flow Chart Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: organicEase }}
+          className="space-y-8"
+        >
+          <div className="flex items-center gap-3 border-b border-black/5 pb-4">
+            <ChartBarIcon className="text-gray-900" size={20} />
+            <h3 className="text-xl font-medium text-gray-900">User Flow</h3>
           </div>
-          
-          <picture>
-            <source srcSet="/images/Pomoraflowchart.png" media="(min-width: 1024px)" />
-            <source srcSet="/images/Pomoraflowchart.png" media="(min-width: 768px)" />
-            <img 
-              src="/images/Pomoraflowchart.png" 
-              alt="Flow Chart" 
-              className="w-full h-auto"
-            />
-          </picture>
-        </div>
 
-        {/* Sections */}
+          <div className="rounded-2xl border border-black/5 overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-500">
+            <picture>
+              <source srcSet="/images/Pomoraflowchart.png" media="(min-width: 1024px)" />
+              <source srcSet="/images/Pomoraflowchart.png" media="(min-width: 768px)" />
+              <img
+                src="/images/Pomoraflowchart.png"
+                alt="Flow Chart"
+                className="w-full h-auto opacity-90 hover:opacity-100 transition-opacity duration-500"
+              />
+            </picture>
+          </div>
+        </motion.div>
+
+        {/* Detailed Sections */}
         {sections.map((section, sectionIndex) => (
           <motion.div
             key={sectionIndex}
             variants={containerVariants}
             initial="hidden"
-            animate="visible"
-            className="space-y-6"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-10%" }}
+            className="space-y-8"
           >
-            <motion.h2 variants={itemVariants} className="text-3xl font-bold text-gray-900 flex items-center gap-3">
-              <section.icon className="text-lime-600" size={32} />
-              {section.title}
-            </motion.h2>
-            <motion.div variants={itemVariants}>
-              <Card className="bg-gray-100 border-gray-200 p-6">
-                <div className="flex grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    {section.items.map((item, itemIndex) => (
-                      <motion.div key={itemIndex} variants={itemVariants} className="bg-white bg-opacity-70 p-4 rounded-lg shadow">
-                        <div className="flex items-center gap-3 mb-2">
-                          <item.icon className="text-lime-600" size={24} />
-                          <h3 className="text-lg font-semibold text-gray-900">{item.title}</h3>
-                        </div>
-                        <p className="text-gray-600 text-sm">{item.description}</p>
-                      </motion.div>
+            <div className="flex items-center gap-3 border-b border-black/5 pb-4">
+              <section.icon className="text-gray-900" size={20} />
+              <h2 className="text-xl font-medium text-gray-900">{section.title}</h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {section.items.map((item, itemIndex) => (
+                <motion.div key={itemIndex} variants={itemVariants}>
+                  <Card>
+                    <div className="mb-4 text-gray-400">
+                      <item.icon size={24} />
+                    </div>
+                    <h3 className="text-gray-900 font-medium mb-2">{item.title}</h3>
+                    <p className="text-sm text-gray-500 leading-relaxed">{item.description}</p>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Design System Special Section */}
+            {section.title === "Design System" && (
+              <div className="grid md:grid-cols-2 gap-6 pt-8">
+                <Card className="bg-[#FAFAFA]">
+                  <h4 className="text-sm font-medium text-gray-400 uppercase tracking-widest mb-6">Palette</h4>
+                  <div className="grid grid-cols-4 gap-2">
+                    {["#4CAF50", "#FFFFFF", "#F5F5F5", "#333333"].map((c, i) => (
+                      <div key={i} className="space-y-2">
+                        <div className="w-full aspect-square rounded-lg border border-black/5 shadow-sm" style={{ backgroundColor: c }} />
+                        <div className="text-[10px] text-gray-400 font-mono">{c}</div>
+                      </div>
                     ))}
                   </div>
-                </div>
-              </Card>
-            </motion.div>
-
-            {/* Design System Details */}
-            {section.title === "Design System" && (
-              <motion.div variants={containerVariants} className="space-y-6">
-                <motion.h3 variants={itemVariants} className="text-2xl font-semibold text-gray-900 mt-8">
-                  Color Palette
-                </motion.h3>
-                <motion.div variants={itemVariants} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-                  {colorPalette.map((color, index) => (
-                    <div key={index} className="space-y-2">
-                      <div className="w-full aspect-square rounded-lg shadow-lg" style={{ backgroundColor: color.color }} />
-                      <p className="text-gray-900 text-sm font-medium">{color.name}</p>
-                      <p className="text-gray-600 text-xs">{color.color}</p>
+                </Card>
+                <Card className="bg-[#FAFAFA]">
+                  <h4 className="text-sm font-medium text-gray-400 uppercase tracking-widest mb-6">Typography</h4>
+                  <div className="space-y-4">
+                    <div className="text-4xl font-medium text-gray-900">Aa</div>
+                    <div className="space-y-1">
+                      <p className="text-gray-900 font-medium">Poppins</p>
+                      <p className="text-xs text-gray-500">Geometric Sans Serif</p>
                     </div>
-                  ))}
-                </motion.div>
-
-                <motion.h3 variants={itemVariants} className="text-2xl font-semibold text-gray-900 mt-8">
-                  Typography, Font: Poppins 
-                </motion.h3>
-                <motion.div variants={itemVariants} className="space-y-4">
-                  {typographyStyles.map((style, index) => (
-                    <div key={index} className="bg-gray-200 p-4 rounded-lg">
-                      <p className={`${style.size} ${style.weight} text-gray-900`}>
-                        {style.name}
-                      </p>
-                      <p className="text-gray-600 text-sm mt-2">
-                        Size: {style.size}, Weight: {style.weight}
-                      </p>
+                    <div className="flex gap-4 text-xs text-gray-400">
+                      <span>Light 300</span>
+                      <span>Regular 400</span>
+                      <span>Medium 500</span>
+                      <span>Bold 700</span>
                     </div>
-                  ))}
-                </motion.div>
-              </motion.div>
+                  </div>
+                </Card>
+              </div>
             )}
+
           </motion.div>
         ))}
       </div>

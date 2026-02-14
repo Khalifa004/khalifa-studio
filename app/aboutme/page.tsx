@@ -1,420 +1,277 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import Link from "next/link";
-import {
-  IconBrandFigma,
-  IconBrandBlender,
-  IconBrandJavascript,
-  IconBrandCss3,
-  IconBrandReact,
-  IconBrandLinkedin,
-  IconBrandNextjs,
-  IconBrandFramer,
-  IconBrandTailwind,
-  IconArrowUpRight,
-  IconMail,
-  IconDownload,
-  IconSparkles,
-  IconSchool,
-  IconLanguage,
-  IconDeviceLaptop,
-  IconLayoutGrid,
-  IconBolt,
-  IconFrame,
-  IconRocket,
-  IconTarget,
-} from "@tabler/icons-react";
-import { Frame } from "lucide-react";
+import Image from "next/image";
+import { ArrowLeft, Layers, Zap, Cpu, Code, PenTool, Globe, Terminal, Box, ChevronRight, Mail, Linkedin } from "lucide-react";
 
-// ---- Motion helpers -------------------------------------------------------
-const fade = {
-  initial: { opacity: 0, y: 16 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+// --- Design Tokens ---
+const organicEase = [0.4, 0, 0.2, 1];
+
+const Section = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-10%" }}
+      transition={{ duration: 0.8, ease: organicEase }}
+      className={`relative ${className}`}
+    >
+      {children}
+    </motion.div>
+  );
 };
 
-const stagger = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.08,
-    },
-  },
-};
+const Card = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
+  <div className={`relative p-8 rounded-2xl bg-gray-50/50 border border-black/[0.03] hover:border-black/[0.08] transition-colors duration-500 h-full ${className}`}>
+    <div className="absolute inset-0 bg-gradient-to-br from-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+    <div className="relative z-10">
+      {children}
+    </div>
+  </div>
+);
 
-const chip =
-  "inline-flex items-center gap-2 rounded-full border border-neutral-200/70 bg-white/70 px-4 py-2 text-sm text-neutral-700 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-white/50";
+const SkillItem = ({ label }: { label: string }) => (
+  <div className="group flex items-center gap-2 py-2 border-b border-black/[0.03] last:border-0 hover:bg-black/[0.02] transition-colors px-2 -mx-2 rounded-lg">
+    <div className="h-1.5 w-1.5 rounded-full bg-gray-200 group-hover:bg-emerald-500 transition-colors" />
+    <span className="text-sm text-gray-500 group-hover:text-gray-900 transition-colors">{label}</span>
+  </div>
+);
 
-const card =
-  "group relative rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md";
-
-// ---- Content strings (tailored) ------------------------------------------
-// ---- Content strings (tailored) ------------------------------------------
-const intro = {
-  title: "Design Engineer",
-  kicker: "Toronto → Building clean, fast, human interfaces",
-  blurb:
-    "I design and build thoughtful interfaces—from concept to production. I’m a specialized frontend engineer who ships with the React ecosystem (Next.js) and modern TypeScript. I care deeply about component architecture, performance optimization, and the details that make software feel alive.",
-};
-
-const education = {
-  school: "OCAD University",
-  program: "Digital Futures",
-  focus: "Business & Social Innovation",
-};
-
-const languages = [
-  { name: "French", level: "Native", description: "First language" },
-  { name: "English", level: "Fluent", description: "Professional proficiency" }
-] as const;
-
-const skills = {
-  Design: [
-    { label: "Product Design", icon: IconLayoutGrid, level: 95, description: "End-to-end design systems & UI architecture" },
-    { label: "Interaction", icon: IconBolt, level: 90, description: "Complex micro-interactions & motion design" },
-    { label: "Figma", icon: IconBrandFigma, level: 95, description: "Advanced prototyping & tokens" },
-  ],
-  Development: [
-    { label: "React Ecosystem", icon: IconBrandReact, level: 95, description: "Next.js, Server Components, Patterns" },
-    { label: "Frontend Architecture", icon: IconDeviceLaptop, level: 90, description: "State management, API integration" },
-    { label: "TypeScript", icon: IconBrandJavascript, level: 90, description: "Type-safe robust architecture" },
-    { label: "UI Engineering", icon: IconBrandTailwind, level: 92, description: "Tailwind, CSS Modules, Framer Motion" },
-  ],
-  Expertise: [
-    { label: "Design Systems", icon: IconLayoutGrid, level: 90 },
-    { label: "Web Performance", icon: IconSparkles, level: 90 },
-    { label: "Accessibility (a11y)", icon: IconDeviceLaptop, level: 88 },
-    { label: "Component Logic", icon: IconRocket, level: 88 },
-    { label: "Responsive Layouts", icon: IconFrame, level: 95 },
-  ],
-};
-
-const currentFocus = {
-  upcoming: [
- 
-    {
-      title: "Open Source Components",
-      description: "Publishing reusable React component library for modern web applications",
-      timeline: "", 
-      icon: IconLayoutGrid
-    }
-  ]
-};
-
+// --- Content Data ---
 const services = [
   {
-    title: "Product Development",
-    desc: "End-to-end product development from concept to launch. I've built IntelliCourse (AI-powered learning platform) and multiple web applications with modern tech stacks.",
-    icon: IconDeviceLaptop,
-    highlights: ["Next.js & React", "TypeScript", "Database Design", "API Integration"],
-    recent: "IntelliCourse - AI Learning Platform"
+    title: "Product Engineering",
+    desc: "End-to-end development from concept to launch. Building robust platforms like IntelliCourse with modern stacks.",
+    icon: Terminal
   },
   {
-    title: "Design Systems & UI",
-    desc: "Creating cohesive design systems and component libraries. From Figma designs to production-ready React components with accessibility and responsive design.",
-    icon: IconLayoutGrid,
-    highlights: ["Component Libraries", "Figma to Code", "Responsive Design", "Accessibility"],
-    recent: "Portfolio Component System"
+    title: "Design Systems",
+    desc: "Creating cohesive UI libraries. From Figma tokens to production-ready React components.",
+    icon: Layers
   },
   {
-    title: "Performance & Optimization",
-    desc: "Optimizing web applications for speed and user experience. Core Web Vitals, bundle optimization, and smooth animations with Framer Motion.",
-    icon: IconBolt,
-    highlights: ["Core Web Vitals", "Bundle Optimization", "Framer Motion", "SEO"],
-    recent: "Portfolio Performance Optimization"
-  },
+    title: "Performance",
+    desc: "Optimizing for speed and fluidity. Core Web Vitals, bundle splitting, and silky smooth Framer Motion interactions.",
+    icon: Zap
+  }
 ];
 
-export default function About() {
+export default function AboutMe() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
+
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
+  const heroScale = useTransform(scrollYProgress, [0, 0.1], [1, 0.98]);
+
   return (
-    <div className="relative bg-neutral-50 text-neutral-900">
-      {/* Background decoration */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
-      >
-        <div className="absolute left-1/2 top-[-10%] h-[36rem] w-[36rem] -translate-x-1/2 rounded-full bg-gradient-to-br from-indigo-200 via-sky-200 to-emerald-200 blur-3xl opacity-50" />
-        <div className="absolute bottom-[-20%] right-[-10%] h-[28rem] w-[28rem] rounded-full bg-gradient-to-br from-rose-200 via-fuchsia-200 to-indigo-200 blur-3xl opacity-40" />
-        <div className="absolute inset-0 bg-[radial-gradient(transparent_1px,rgba(0,0,0,0.02)_1px)] [background-size:24px_24px]" />
+    <div ref={containerRef} className="min-h-screen bg-[#FAFAFA] text-gray-600 selection:bg-black/5 selection:text-black font-sans antialiased overflow-x-hidden">
+
+      {/* Background Ambience - Light Mode */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute top-[-20%] right-[-10%] w-[60%] h-[60%] bg-emerald-100/40 blur-[150px] rounded-full mix-blend-multiply opacity-50" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-100/40 blur-[150px] rounded-full mix-blend-multiply opacity-50" />
+        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.015] mix-blend-multiply" />
       </div>
 
-      {/* Hero */}
-      <section className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 pb-24 pt-28 md:grid-cols-[1.2fr_.8fr] md:pb-32 md:pt-40">
-        <motion.div variants={stagger} initial="hidden" animate="show">
-          <motion.div className="mb-4" {...fade}>
-            <span className={`${chip} bg-white/80`}>Khalifa Seck</span>
-          </motion.div>
+      <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 py-12 md:py-24">
 
-          <motion.h1
-            className="text-balance text-5xl font-semibold leading-tight tracking-tight md:text-6xl"
-            {...fade}
-          >
-            {intro.title}
-          </motion.h1>
-
-          <motion.p
-            className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-700 md:text-xl"
-            {...fade}
-          >
-            {intro.blurb}
-          </motion.p>
-
-          <motion.div className="mt-8 flex flex-wrap items-center gap-3" {...fade}>
-            <Link
-              href="mailto:khalifa.seck@outlook.com"
-              className="inline-flex items-center gap-2 rounded-full bg-neutral-900 px-5 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-neutral-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400"
-            >
-              <IconMail size={18} />
-              Contact
-            </Link>
-     
-            <Link
-              href="https://www.linkedin.com/in/khalifa-seck-27a139251/"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-white px-5 py-3 text-sm font-medium text-neutral-800 shadow-sm transition-colors hover:bg-neutral-100"
-            >
-              <IconBrandLinkedin size={18} />
-              LinkedIn
-              <IconArrowUpRight size={16} className="-mr-1" />
-            </Link>
-          </motion.div>
-
-          <motion.ul
-            className="mt-8 flex flex-wrap items-center gap-2 text-sm text-neutral-600"
-            {...fade}
-          >
-            {["React Ecosystem", "TypeScript", "Frontend Arch", "System Design"].map(
-              (t) => (
-                <li key={t} className={`${chip} px-3 py-1`}>{t}</li>
-              )
-            )}
-          </motion.ul>
-        </motion.div>
-
+        {/* Navigation */}
         <motion.div
-          className="mx-auto grid place-items-center"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: organicEase, delay: 0.1 }}
+          className="mb-20 md:mb-32 flex justify-between items-center"
         >
-          <div className="relative h-72 w-72 overflow-visible md:h-80 md:w-80">
-            {/* Glow ring */}
-            <div className="absolute inset-0 -z-10 animate-pulse rounded-full bg-gradient-to-tr from-neutral-200 via-white to-neutral-200 p-[2px] [mask:linear-gradient(#000_0_0)_content-box,linear-gradient(#000_0_0)] [mask-composite:exclude]" />
-            <Image
-              src="/images/khalif.jpg"
-              alt="Portrait of Khalifa Seck"
-              fill
-              priority
-              className="rounded-full object-cover shadow-xl"
-            />
+          <Link href="/" className="group inline-flex items-center gap-2 text-xs uppercase tracking-widest text-gray-500 hover:text-black transition-colors duration-300">
+            <ArrowLeft className="w-3 h-3 transition-transform group-hover:-translate-x-1" />
+            <span>Return</span>
+          </Link>
+          <div className="hidden md:block text-[10px] uppercase tracking-[0.3em] text-gray-400">
+            Profile 001
           </div>
         </motion.div>
-      </section>
 
-      {/* About */}
-      <section className="mx-auto max-w-7xl px-6 pb-10 md:pb-16">
-        <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-2">
-          <motion.div {...fade}>
-            <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">About</h2>
-            <p className="mt-6 text-pretty text-lg leading-relaxed text-neutral-700">
-            I bridge product design and front-end engineering, turning complex ideas into clear, functional systems. I focus on creating accessible components, adding meaningful motion, and building with strong performance in mind, ensuring every interface feels effortless to use.
-            </p>
-          </motion.div>
-
-          <motion.div className="grid gap-6" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }}>
-            <motion.div className={card} {...fade}>
-              <div className="mb-2 flex items-center gap-2 text-sm text-neutral-500">
-                <IconSchool size={18} /> Education
-              </div>
-              <div className="text-lg font-medium">{education.school}</div>
-              <div className="text-neutral-700">{education.program}</div>
-              <div className="text-neutral-500">{education.focus}</div>
-            </motion.div>
-
-            <motion.div className={card} {...fade}>
-              <div className="mb-2 flex items-center gap-2 text-sm text-neutral-500">
-                <IconLanguage size={18} /> Languages
-              </div>
-              <div className="flex flex-col gap-3">
-                {languages.map((l) => (
-                  <div key={l.name} className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <span className={`${chip} font-medium`}>{l.name}</span>
-                      <span className="text-xs text-neutral-500">({l.level})</span>
-                    </div>
-                    <span className="text-xs text-neutral-600">{l.description}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Skills & Tools - Redesigned Minimal */}
-      <section className="mx-auto max-w-7xl px-6 py-24 border-t border-neutral-100">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
-          
-          {/* Design Column */}
-          <div className="flex flex-col gap-8">
-            <h3 className="text-xs font-bold text-neutral-400 uppercase tracking-widest">Design</h3>
-            <ul className="flex flex-col gap-4">
-              {skills.Design.map(({ label, description }) => (
-                <li key={label} className="group flex flex-col items-start gap-1">
-                  <span className="text-xl font-medium text-neutral-900 group-hover:text-neutral-600 transition-colors">
-                    {label}
-                  </span>
-                  <span className="text-sm text-neutral-500 font-light leading-relaxed">
-                    {description}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Development Column */}
-          <div className="flex flex-col gap-8">
-            <h3 className="text-xs font-bold text-neutral-400 uppercase tracking-widest">Development</h3>
-            <ul className="flex flex-col gap-4">
-              {skills.Development.map(({ label, description }) => (
-                <li key={label} className="group flex flex-col items-start gap-1">
-                  <span className="text-xl font-medium text-neutral-900 group-hover:text-neutral-600 transition-colors">
-                    {label}
-                  </span>
-                  <span className="text-sm text-neutral-500 font-light leading-relaxed">
-                    {description}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Expertise Column */}
-          <div className="flex flex-col gap-8">
-            <h3 className="text-xs font-bold text-neutral-400 uppercase tracking-widest">Expertise</h3>
-            <ul className="flex flex-col gap-4">
-              {skills.Expertise.map(({ label }) => (
-                <li key={label} className="group flex flex-col items-start gap-1">
-                  <span className="text-xl font-medium text-neutral-900 group-hover:text-neutral-600 transition-colors">
-                    {label}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-        </div>
-      </section>
-
-      {/* Services */}
-      <section className="mx-auto max-w-7xl px-6 pb-24">
-        <motion.h2 className="text-center text-3xl font-semibold tracking-tight md:text-4xl" {...fade}>
-          What I Do
-        </motion.h2>
-        <motion.p className="text-center text-lg text-neutral-600 mt-4 max-w-3xl mx-auto" {...fade}>
-          Specialized services combining design thinking with technical expertise
-        </motion.p>
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-          {services.map(({ title, desc, icon: I, highlights, recent }) => (
-            <motion.article 
-              key={title} 
-              className={`${card} hover:shadow-lg transition-all duration-300`} 
-              {...fade}
-              whileHover={{ y: -4 }}
-            >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-700 text-white shadow-lg">
-                <I size={20} />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">{title}</h3>
-              <p className="text-sm leading-relaxed text-neutral-600 mb-4">{desc}</p>
-              
-              <div className="mb-4">
-                <h4 className="text-xs font-medium text-neutral-500 mb-2 uppercase tracking-wide">Key Skills</h4>
-                <div className="flex flex-wrap gap-2">
-                  {highlights.map((skill) => (
-                    <span 
-                      key={skill} 
-                      className="inline-flex items-center px-2 py-1 rounded-md bg-neutral-100 text-neutral-700 text-xs font-medium"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+        {/* Hero Section */}
+        <motion.header
+          style={{ opacity: heroOpacity, scale: heroScale }}
+          className="mb-32 md:mb-48"
+        >
+          <div className="grid md:grid-cols-[1.5fr_1fr] gap-12 items-end">
+            <div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: organicEase }}
+                className="flex items-center gap-3 mb-6"
+              >
+                <div className="relative w-12 h-12 rounded-full overflow-hidden border border-black/5 shadow-sm">
+                  <Image src="/images/khalif.jpg" alt="Khalifa Seck" fill className="object-cover" />
                 </div>
-              </div>
-
-              <div className="pt-4 border-t border-neutral-200">
-                <div className="flex items-center gap-2 text-xs text-neutral-500">
-                  <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                  <span>Recent: {recent}</span>
+                <div className="flex flex-col">
+                  <span className="text-gray-900 font-medium text-sm">Khalifa Seck</span>
+                  <span className="text-gray-500 text-xs uppercase tracking-wider">Toronto, CA</span>
                 </div>
-              </div>
-            </motion.article>
-          ))}
-        </div>
-      </section>
+              </motion.div>
 
-      {/* Current Focus */}
-      <section className="mx-auto max-w-7xl px-6 py-20 bg-gradient-to-br from-neutral-50 to-neutral-100">
-        <motion.div className="text-center mb-12" {...fade}>
-          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl mb-4">Coming Next</h2>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            Projects and improvements I'm working on
-          </p>
-        </motion.div>
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: organicEase, delay: 0.1 }}
+                className="text-4xl md:text-7xl font-medium text-gray-900 tracking-tight leading-[1] mb-8"
+              >
+                UX/UI Designer <br />
+                <span className="text-gray-400">&</span> Frontend Dev.
+              </motion.h1>
 
-        <div className="max-w-4xl mx-auto">
-          <motion.div className={card} {...fade}>
-            <div className="flex items-center gap-2 mb-6">
-              <IconTarget size={24} className="text-emerald-600" />
-              <h3 className="text-xl font-semibold">Upcoming Projects</h3>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, ease: organicEase, delay: 0.2 }}
+                className="text-lg font-light text-gray-500 max-w-xl leading-relaxed"
+              >
+                I stand at the intersection of design and engineering. Crafting intuitive, accessible interfaces in Figma, and bringing them to life with clean, efficient code in React & TypeScript.
+              </motion.p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {currentFocus.upcoming.map(({ title, description, timeline, icon: I }) => (
-                <div key={title} className="flex items-start gap-4 p-4 rounded-lg bg-neutral-50 border border-neutral-200 hover:border-neutral-300 transition-colors">
-                  <I size={20} className="text-emerald-600 mt-1 flex-shrink-0" />
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-medium text-sm">{title}</h4>
-                      <span className="text-xs text-neutral-500 font-medium bg-neutral-200 px-2 py-1 rounded-full">{timeline}</span>
-                    </div>
-                    <p className="text-sm text-neutral-600 leading-relaxed">{description}</p>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: organicEase, delay: 0.3 }}
+              className="space-y-4"
+            >
+
+            </motion.div>
+          </div>
+        </motion.header>
+
+        <main className="space-y-32">
+
+          {/* The Hybrid Profile */}
+          <Section className="grid md:grid-cols-2 gap-12 md:gap-24">
+            <div>
+              <h2 className="text-xs font-medium text-gray-900 uppercase tracking-[0.2em] mb-8 opacity-40">The Approach</h2>
+              <p className="text-xl md:text-2xl leading-relaxed text-gray-800 font-light">
+                I bridge the gap between design and code. My workflow is hybrid by nature—switching seamlessly between Figma and VS Code to ensure the vision matches the reality.
+              </p>
+            </div>
+            <div className="space-y-8">
+              <div className="pl-6 border-l border-black/5 space-y-2">
+                <div className="text-gray-900 font-medium">Design Engineering</div>
+                <p className="text-sm text-gray-500 leading-relaxed">
+                  It's not just about how it looks, but how it works. Component architecture, accessibility, and performance are first-class citizens in my design process.
+                </p>
+              </div>
+              <div className="pl-6 border-l border-black/5 space-y-2">
+                <div className="text-gray-900 font-medium">Human-Centric</div>
+                <p className="text-sm text-gray-500 leading-relaxed">
+                  Technology should feel invisible. I focus on micro-interactions and organic motion that guide the user naturally.
+                </p>
+              </div>
+            </div>
+          </Section>
+
+          {/* Stack / Tech Stack */}
+          <Section>
+            <div className="flex items-center justify-between mb-12">
+              <h2 className="text-2xl font-medium text-gray-900">Stack</h2>
+              <div className="h-px w-32 bg-black/5" />
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <Card>
+                <div className="mb-6 w-10 h-10 rounded-lg bg-gray-100/50 flex items-center justify-center text-gray-700">
+                  <PenTool size={20} />
+                </div>
+                <h3 className="text-gray-900 font-medium mb-6">Design</h3>
+                <div className="space-y-1">
+                  <SkillItem label="Product Design" />
+                  <SkillItem label="Interaction" />
+                  <SkillItem label="Figma" />
+                  <SkillItem label="Motion" />
+                </div>
+              </Card>
+
+              <Card>
+                <div className="mb-6 w-10 h-10 rounded-lg bg-gray-100/50 flex items-center justify-center text-gray-700">
+                  <Code size={20} />
+                </div>
+                <h3 className="text-gray-900 font-medium mb-6">Development</h3>
+                <div className="space-y-1">
+                  <SkillItem label="React / Next.js" />
+                  <SkillItem label="TypeScript" />
+                  <SkillItem label="Tailwind CSS" />
+                  <SkillItem label="Node.js" />
+                </div>
+              </Card>
+
+              <Card>
+                <div className="mb-6 w-10 h-10 rounded-lg bg-gray-100/50 flex items-center justify-center text-gray-700">
+                  <Cpu size={20} />
+                </div>
+                <h3 className="text-gray-900 font-medium mb-6">Expertise</h3>
+                <div className="space-y-1">
+                  <SkillItem label="Design Systems" />
+                  <SkillItem label="Performance" />
+                  <SkillItem label="Accessibility" />
+                  <SkillItem label="SEO" />
+                </div>
+              </Card>
+            </div>
+          </Section>
+
+          {/* Capabilities / Services */}
+          <Section>
+            <h2 className="text-xs font-medium text-gray-900 uppercase tracking-[0.2em] mb-12 opacity-40 text-center">Capabilities</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {services.map((s, i) => (
+                <div key={i} className="group p-6 rounded-xl hover:bg-white transition-colors duration-300 border border-transparent hover:border-black/[0.03] hover:shadow-sm">
+                  <div className="mb-4 text-gray-400 group-hover:text-black transition-colors duration-300">
+                    <s.icon size={24} />
                   </div>
+                  <h3 className="text-gray-900 font-medium mb-2">{s.title}</h3>
+                  <p className="text-sm text-gray-500 leading-relaxed group-hover:text-gray-600 transition-colors duration-300">
+                    {s.desc}
+                  </p>
                 </div>
               ))}
             </div>
-          </motion.div>
-        </div>
-      </section>
+          </Section>
 
-      {/* Footer CTA */}
-      <footer className="border-t border-neutral-200/80 bg-white/70">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 py-10 md:flex-row">
-          <p className="text-center text-sm text-neutral-600 md:text-left">
-            Open to product design & front‑end roles, and selected freelance work.
-          </p>
-          <div className="flex flex-wrap items-center gap-3">
-            <Link
-              href="mailto:khalifa.seck@outlook.com"
-              className="inline-flex items-center gap-2 rounded-full bg-neutral-900 px-5 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-neutral-800"
-            >
-              <IconMail size={18} />
-              Get in touch
-            </Link>
-            <Link
-              href="https://www.linkedin.com/in/khalifa-seck-27a139251/"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-white px-5 py-3 text-sm font-medium text-neutral-800 shadow-sm transition-colors hover:bg-neutral-100"
-            >
-              <IconBrandLinkedin size={18} />
-              LinkedIn
-            </Link>
-          </div>
-        </div>
-      </footer>
+          {/* Footer / Connect */}
+          <Section className="pt-24 border-t border-black/5">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+              <div>
+                <h3 className="text-gray-900 font-medium mb-1">Let's build something.</h3>
+                <p className="text-sm text-gray-500">Open for select projects and collaborations.</p>
+              </div>
+
+              <div className="flex gap-4">
+                <Link
+                  href="mailto:khalifa.seck@outlook.com"
+                  className="px-6 py-3 rounded-full bg-black text-white font-medium text-sm hover:bg-gray-800 transition-colors flex items-center gap-2 shadow-lg shadow-gray-200"
+                >
+                  <Mail size={16} />
+                  Email Me
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/in/khalifa-seck-27a139251/"
+                  target="_blank"
+                  className="px-6 py-3 rounded-full border border-black/10 text-gray-900 font-medium text-sm hover:bg-gray-50 transition-colors flex items-center gap-2 bg-white"
+                >
+                  <Linkedin size={16} />
+                  LinkedIn
+                </Link>
+              </div>
+            </div>
+          </Section>
+
+        </main>
+      </div>
     </div>
   );
 }
