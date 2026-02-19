@@ -260,7 +260,7 @@ const StaggeredList = () => {
               </li>
               <li className="flex gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-black/20 mt-2.5" />
-                <p className="text-gray-600 leading-relaxed">Combine animations with clear user feedback—motion should have meaning.</p>
+                <p className="text-gray-600 leading-relaxed">Combine animations with clear user feedback motion should have meaning.</p>
               </li>
             </ul>
           </Section>

@@ -100,7 +100,7 @@ export default function YouthUpskilling() {
                         </div>
                         <div className="space-y-6">
                             <p className="leading-loose">
-                                Late last year, I joined a working group focused on youth upskilling. The goal wasn't just to "teach coding"—it was to build a sustainable ecosystem where young people could learn, build, and actually find work.
+                                Late last year, I joined a working group focused on youth upskilling. The goal wasn't just to "teach coding" it was to build a sustainable ecosystem where young people could learn, build, and actually find work.
                             </p>
                             <p className="leading-loose">
                                 My role was bringing a product perspective to the table. Policies are great, but how do they translate into a user experience? How does a student in a remote area actually access these resources? We spent weeks mapping out user journeys that accounted for limited data, shared devices, and spotty power.
@@ -138,7 +138,7 @@ export default function YouthUpskilling() {
                         <div className="space-y-6">
                             <h2 className="text-2xl font-medium text-gray-900">Moving the Needle</h2>
                             <p className="leading-loose max-w-3xl">
-                                This collaboration is ongoing, but seeing the pilot programs launch has been one of the highlights of my year. It's messy, it's challenging, and it doesn't always go according to plan—but it's real progress. And frankly, that's more satisfying than any perfectly optimized algorithm.
+                                This collaboration is ongoing, but seeing the pilot programs launch has been one of the highlights of my year. It's messy, it's challenging, and it doesn't always go according to plan but it's real progress. And frankly, that's more satisfying than any perfectly optimized algorithm.
                             </p>
                         </div>
 

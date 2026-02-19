@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const meta = {
   solution:
-    "EchoBoard unifies key collaboration and productivity features into one seamless, real‑time environment. It provides chat, AI assistance, whiteboarding, and personal journaling — all synced instantly, so teams stay in flow and ideas stay connected.",
+    "EchoBoard unifies key collaboration and productivity features into one seamless, real‑time environment. It provides chat, AI assistance, whiteboarding, and personal journaling all synced instantly, so teams stay in flow and ideas stay connected.",
   differentiators: [
     "AI‑powered collaboration right where you work",
     "Single tool replacing 3–5 separate apps",

@@ -86,7 +86,7 @@ export default function GlobalAISummit() {
                     {/* Intro */}
                     <Section className="max-w-2xl">
                         <p className="text-lg md:text-xl leading-relaxed text-gray-800 font-light">
-                            Sometimes, an email changes everything. When I received the invitation from the <span className="text-black font-normal">Mastercard Foundation</span> to attend the Global AI Summit in Kigali, it wasn't just another conference—it was a recognition of the work we were doing with IntelliCourse.
+                            Sometimes, an email changes everything. When I received the invitation from the <span className="text-black font-normal">Mastercard Foundation</span> to attend the Global AI Summit in Kigali, it wasn't just another conference it was a recognition of the work we were doing with IntelliCourse.
                         </p>
                         <div className="mt-8 flex gap-4">
                             <div className="h-px flex-1 bg-gradient-to-r from-black/5 to-transparent" />
@@ -103,7 +103,7 @@ export default function GlobalAISummit() {
                                 Walking into the summit, the energy was palpable. It wasn't just about the technology; it was about the people using it to solve real-world problems. Being recognized as a <span className="font-medium text-gray-900">High-Impact Engineer</span> felt surreal, but standing there among innovators from across the continent, I realized that what we build actually matters.
                             </p>
                             <p className="leading-loose">
-                                I had the chance to share the story of IntelliCourse—how we're trying to make personalized education accessible even in low-connectivity areas. The feedback was incredibly grounding. It’s easy to get lost in code and metrics, but hearing how your tool could impact a student in a rural village brings you right back to the "why".
+                                I had the chance to share the story of IntelliCourse how we're trying to make personalized education accessible even in low-connectivity areas. The feedback was incredibly grounding. It’s easy to get lost in code and metrics, but hearing how your tool could impact a student in a rural village brings you right back to the "why".
                             </p>
                         </div>
                     </Section>
@@ -118,7 +118,7 @@ export default function GlobalAISummit() {
                                 The conversations weren't about complex algorithms or server costs. They were about <span className="text-gray-900 font-medium">potential</span>. We talked about how AI can be a bridge, not just a tool. Meeting other founders and engineers who are just as obsessed with impact as they are with optimization was refreshing.
                             </p>
                             <p>
-                                It reinforced my belief that the best technology doesn't scream "look at me"—it quietly empowers people to do more than they thought possible.
+                                It reinforced my belief that the best technology doesn't scream "look at me" it quietly empowers people to do more than they thought possible.
                             </p>
                         </div>
                     </Section>

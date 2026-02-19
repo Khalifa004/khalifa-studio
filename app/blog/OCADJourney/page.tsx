@@ -127,7 +127,7 @@ export default function NavigatingTheDigitalFutures() {
             </div>
             <div className="space-y-6">
               <p className="leading-loose">
-                It wasn’t easy. Debugging code for hours or facing errors that seemed impossible to solve became regular challenges. But the more I practiced, the more things started to make sense. My understanding of web and app development grew through self-guided projects, where I applied what I learned in real-world scenarios. These projects allowed me to explore ideas that went beyond just theory—combining design with functionality and creating intuitive digital experiences that I was proud of.
+                It wasn’t easy. Debugging code for hours or facing errors that seemed impossible to solve became regular challenges. But the more I practiced, the more things started to make sense. My understanding of web and app development grew through self-guided projects, where I applied what I learned in real-world scenarios. These projects allowed me to explore ideas that went beyond just theory combining design with functionality and creating intuitive digital experiences that I was proud of.
               </p>
             </div>
           </Section>

@@ -80,7 +80,7 @@ export default function EchoBoardTechAndDesign() {
           Technical Architecture & UI/UX Design
         </h1>
         <p className="mt-4 max-w-3xl text-base leading-7 text-black/70 md:text-lg">
-          Built and designed solo — from systems architecture to interface details.
+          Built and designed solo from systems architecture to interface details.
         </p>
       </section>
 

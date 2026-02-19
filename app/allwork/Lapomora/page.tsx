@@ -138,7 +138,7 @@ export default function LapomoraPage() {
             <div>
               <h2 className="text-xs font-medium text-gray-900 uppercase tracking-[0.2em] mb-8 opacity-40">The Challenge</h2>
               <p className="text-xl md:text-2xl leading-relaxed text-gray-800 font-light">
-                Distractions make it hard to maintain momentum. Pomora pairs structured focus/break cycles with subtle cues and analytics, so staying focused feels natural—not forceful.
+                Distractions make it hard to maintain momentum. Pomora pairs structured focus/break cycles with subtle cues and analytics, so staying focused feels natural not forceful.
               </p>
             </div>
             <div className="relative aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 border border-black/5">

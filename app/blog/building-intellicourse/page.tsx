@@ -100,7 +100,7 @@ export default function BuildingIntelliCourse() {
             </div>
             <div className="space-y-6">
               <p className="leading-loose">
-                IntelliCourse is an AI-powered platform that creates courses, assignments, and grading in one place. It acts like a personal tutor who not only knows your goals but adapts to your pace and style of learning. No endless searches, no patchwork of videos—just a structured path.
+                IntelliCourse is an AI-powered platform that creates courses, assignments, and grading in one place. It acts like a personal tutor who not only knows your goals but adapts to your pace and style of learning. No endless searches, no patchwork of videos just a structured path.
               </p>
             </div>
           </Section>
@@ -125,7 +125,7 @@ export default function BuildingIntelliCourse() {
             <div className="space-y-6 order-2 md:order-1">
               <h2 className="text-2xl font-medium text-gray-900">Designing for real people</h2>
               <p className="leading-loose">
-                A big focus was making IntelliCourse work in low-connectivity environments. We built offline-ready modules and <span className="text-black font-medium">CDOM (Course Data Offline Mode)</span> so users could download lessons and sync later. For many students, this wasn’t optional—it was the only way they could fully use the platform.
+                A big focus was making IntelliCourse work in low-connectivity environments. We built offline-ready modules and <span className="text-black font-medium">CDOM (Course Data Offline Mode)</span> so users could download lessons and sync later. For many students, this wasn’t optional it was the only way they could fully use the platform.
               </p>
             </div>
             <div className="order-1 md:order-2 flex items-center justify-center p-8 rounded-full bg-white border border-black/[0.05] aspect-square md:aspect-auto shadow-sm">
@@ -151,7 +151,7 @@ export default function BuildingIntelliCourse() {
             <div className="space-y-6">
               <h2 className="text-2xl font-medium text-gray-900">Why this mattered</h2>
               <p className="leading-loose max-w-3xl">
-                The highlight came during the <span className="text-black font-medium">Global AI Summit in Kigali</span>. Feedback from students and educators reinforced that education is about delivering quality learning experiences. InteliCourse wasn’t just a project—it was proof that you can take an ambitious idea and turn it into something real.
+                The highlight came during the <span className="text-black font-medium">Global AI Summit in Kigali</span>. Feedback from students and educators reinforced that education is about delivering quality learning experiences. InteliCourse wasn’t just a project it was proof that you can take an ambitious idea and turn it into something real.
               </p>
             </div>
 

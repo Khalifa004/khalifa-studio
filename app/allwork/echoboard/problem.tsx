@@ -18,7 +18,7 @@ const meta = {
   pains: [
     {
       title: "Fragmented workflow",
-      desc: "Context constantly switches between chat, whiteboards, docs, and notes—ideas get lost and momentum breaks.",
+      desc: "Context constantly switches between chat, whiteboards, docs, and notes ideas get lost and momentum breaks.",
     },
     {
       title: "No in‑context AI",
@@ -26,7 +26,7 @@ const meta = {
     },
     {
       title: "Real‑time sync pain",
-      desc: "Presence, cursors, and concurrent edits are hard to get right—latency and conflicts degrade trust in the tool.",
+      desc: "Presence, cursors, and concurrent edits are hard to get right latency and conflicts degrade trust in the tool.",
     },
   ],
 };

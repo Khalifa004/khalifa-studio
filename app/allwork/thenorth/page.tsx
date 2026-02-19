@@ -233,7 +233,7 @@ export default function NorthStarCaseStudy() {
             <div className="p-12 rounded-3xl bg-gray-50 border border-black/[0.05]">
               <h3 className="text-xs uppercase tracking-[0.2em] text-red-500 mb-6">Business Model</h3>
               <p className="text-xl md:text-2xl font-light leading-relaxed text-gray-800">
-                As a private company, NorthStar funds construction through real estate leverage—selling land value from station development. Ticket fares cover operations, ensuring sustainability without government subsidies.
+                As a private company, NorthStar funds construction through real estate leverage selling land value from station development. Ticket fares cover operations, ensuring sustainability without government subsidies.
               </p>
             </div>
 
