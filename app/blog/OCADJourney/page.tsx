@@ -32,7 +32,7 @@ export default function NavigatingTheDigitalFutures() {
   const scale = useTransform(scrollYProgress, [0, 0.1], [1, 0.98]);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-[#FAFAFA] text-gray-600 selection:bg-black/5 selection:text-black font-sans antialiased overflow-x-hidden">
+    <div ref={containerRef} className="min-h-screen bg-background text-gray-600 selection:bg-black/5 selection:text-black font-sans antialiased overflow-x-hidden">
 
       {/* Background Ambience */}
       <div className="fixed inset-0 pointer-events-none z-0">
@@ -106,7 +106,7 @@ export default function NavigatingTheDigitalFutures() {
           </Section>
 
           {/* A Turning Point */}
-          <Section className="relative p-8 md:p-12 rounded-2xl bg-white border border-black/[0.03] shadow-sm overflow-hidden group hover:shadow-md transition-all duration-500">
+          <Section className="relative p-8 md:p-12 rounded-2xl bg-background border border-black/[0.03] shadow-sm overflow-hidden group hover:shadow-md transition-all duration-500">
             <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-50 rounded-bl-full opacity-50" />
 
             <h2 className="relative text-2xl font-medium text-gray-900 mb-6">Taking Control</h2>

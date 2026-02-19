@@ -156,7 +156,7 @@ const UICard: React.FC<{ component: UIComponentProps; index: number; onClick: ()
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
       onClick={onClick}
-      className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 cursor-pointer"
+      className="group relative bg-background rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 cursor-pointer"
     >
       {/* Image Container */}
       <div className="relative aspect-[4/3] overflow-hidden">
@@ -167,10 +167,10 @@ const UICard: React.FC<{ component: UIComponentProps; index: number; onClick: ()
           className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
-        
+
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        
+
         {/* Category Badge */}
         <div className="absolute top-4 left-4">
           <span className="inline-block px-3 py-1 text-xs font-medium text-white bg-black/30 backdrop-blur-sm rounded-full">
@@ -187,7 +187,7 @@ const UICard: React.FC<{ component: UIComponentProps; index: number; onClick: ()
         <p className="text-gray-600 text-sm mb-4 leading-relaxed">
           {component.description}
         </p>
-        
+
         {/* Tech Stack */}
         {component.tech && (
           <div className="flex flex-wrap gap-2">
@@ -227,7 +227,7 @@ const UIShowcase: React.FC = () => {
   };
 
   return (
-    <div className="py-20 bg-[hsl(0,0%,98%)]">
+    <div className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -243,16 +243,16 @@ const UIShowcase: React.FC = () => {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
             Interface Design
           </h2>
-  
+
         </motion.div>
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {uiComponents.map((component, index) => (
-            <UICard 
-              key={index} 
-              component={component} 
-              index={index} 
+            <UICard
+              key={index}
+              component={component}
+              index={index}
               onClick={() => handleCardClick(component)}
             />
           ))}
@@ -280,7 +280,7 @@ const UIShowcase: React.FC = () => {
       </div>
 
       {/* Modal */}
-      <UIModal 
+      <UIModal
         isOpen={isModalOpen}
         onClose={closeModal}
         component={selectedComponent}

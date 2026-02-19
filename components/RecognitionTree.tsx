@@ -101,7 +101,7 @@ export default function RecognitionTree() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white">
+    <div className="max-w-4xl mx-auto p-6 bg-background">
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 mb-2 flex items-center justify-center gap-3">
@@ -132,7 +132,7 @@ export default function RecognitionTree() {
                   <div className={`bg-gradient-to-r ${level.color} p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300`}>
                     <div className="flex items-center justify-between text-white">
                       <div className="flex items-center gap-4">
-                        <div className="p-2 bg-white/20 rounded-lg backdrop-blur-sm">
+                        <div className="p-2 bg-background/20 rounded-lg backdrop-blur-sm">
                           {level.icon}
                         </div>
                         <div>
@@ -154,13 +154,12 @@ export default function RecognitionTree() {
                 </button>
 
                 {/* Expanded Content */}
-                <div className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                }`}>
+                <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  }`}>
                   <div className="mt-4 ml-8 p-4 bg-gray-50 rounded-lg border-l-4 border-gray-300">
                     <div className="grid gap-3">
                       {level.positions.map((position, posIndex) => (
-                        <div key={posIndex} className="flex justify-between items-center py-2 px-3 bg-white rounded-md shadow-sm hover:shadow-md transition-shadow">
+                        <div key={posIndex} className="flex justify-between items-center py-2 px-3 bg-background rounded-md shadow-sm hover:shadow-md transition-shadow">
                           <span className="font-medium text-gray-700">{position.title}</span>
                           <span className="text-gray-500 font-medium">{position.name}</span>
                         </div>
@@ -188,10 +187,10 @@ export default function RecognitionTree() {
           <div>
             <h4 className="font-bold text-gray-900 mb-2">Texte PR d'accompagnement</h4>
             <p className="text-gray-700 leading-relaxed">
-              L'ASC Kouly est fière d'évoluer dans une grande famille sportive et culturelle, 
-              encadrée par l'ONCAV et ses différentes branches (ORCAV, ODECAV, ZAC). 
-              Nous saluons le travail, le dévouement et l'engagement de toutes celles et ceux qui, 
-              à chaque niveau, rendent possible la magie des compétitions communautaires. 
+              L'ASC Kouly est fière d'évoluer dans une grande famille sportive et culturelle,
+              encadrée par l'ONCAV et ses différentes branches (ORCAV, ODECAV, ZAC).
+              Nous saluons le travail, le dévouement et l'engagement de toutes celles et ceux qui,
+              à chaque niveau, rendent possible la magie des compétitions communautaires.
               Cet arbre est un hommage à l'unité et à la passion qui nous rassemblent.
             </p>
           </div>

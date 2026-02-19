@@ -19,7 +19,7 @@ const itemVariants = {
 }
 
 const Card = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <div className={`relative p-8 rounded-2xl bg-white border border-black/[0.03] hover:border-black/[0.08] transition-colors duration-500 h-full ${className}`}>
+  <div className={`relative p-8 rounded-2xl bg-background border border-black/[0.03] hover:border-black/[0.08] transition-colors duration-500 h-full ${className}`}>
     <div className="relative z-10">
       {children}
     </div>
@@ -64,7 +64,7 @@ export default function Pomoraprocess2() {
 
         {/* Header Section */}
         <div className="text-center space-y-6">
-          <div className="inline-flex items-center px-3 py-1 rounded-full border border-black/5 bg-white/50 backdrop-blur-sm">
+          <div className="inline-flex items-center px-3 py-1 rounded-full border border-black/5 bg-background/50 backdrop-blur-sm">
             <span className="text-[10px] uppercase tracking-widest text-gray-500">Deep Dive</span>
           </div>
           <motion.h1
@@ -100,7 +100,7 @@ export default function Pomoraprocess2() {
             <h3 className="text-xl font-medium text-gray-900">User Flow</h3>
           </div>
 
-          <div className="rounded-2xl border border-black/5 overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-500">
+          <div className="rounded-2xl border border-black/5 overflow-hidden bg-background shadow-sm hover:shadow-md transition-shadow duration-500">
             <picture>
               <source srcSet="/images/Pomoraflowchart.png" media="(min-width: 1024px)" />
               <source srcSet="/images/Pomoraflowchart.png" media="(min-width: 768px)" />
@@ -145,7 +145,7 @@ export default function Pomoraprocess2() {
             {/* Design System Special Section */}
             {section.title === "Design System" && (
               <div className="grid md:grid-cols-2 gap-6 pt-8">
-                <Card className="bg-[#FAFAFA]">
+                <Card className="bg-background">
                   <h4 className="text-sm font-medium text-gray-400 uppercase tracking-widest mb-6">Palette</h4>
                   <div className="grid grid-cols-4 gap-2">
                     {["#4CAF50", "#FFFFFF", "#F5F5F5", "#333333"].map((c, i) => (
@@ -156,7 +156,7 @@ export default function Pomoraprocess2() {
                     ))}
                   </div>
                 </Card>
-                <Card className="bg-[#FAFAFA]">
+                <Card className="bg-background">
                   <h4 className="text-sm font-medium text-gray-400 uppercase tracking-widest mb-6">Typography</h4>
                   <div className="space-y-4">
                     <div className="text-4xl font-medium text-gray-900">Aa</div>

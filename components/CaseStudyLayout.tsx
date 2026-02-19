@@ -30,7 +30,7 @@ export default function CaseStudyLayout({ header, sections, children }: CaseStud
   }, []);
 
   return (
-    <div className="bg-[hsl(0,0%,98%)] text-gray-900">
+    <div className="bg-background text-gray-900">
       <section className="relative min-h-[70vh] flex flex-col justify-center px-6 pt-24 overflow-hidden isolate">
         {header.backgroundVideo && shouldPlayVideo ? (
           <video className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0" autoPlay muted loop playsInline preload="none" aria-hidden="true">
@@ -71,7 +71,7 @@ export default function CaseStudyLayout({ header, sections, children }: CaseStud
             {s.items ? (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {s.items.map((it) => (
-                  <div key={it.label} className="rounded-xl border border-gray-200 bg-white p-4">
+                  <div key={it.label} className="rounded-xl border border-gray-200 bg-background p-4">
                     <div className="text-gray-500 text-xs uppercase">{it.label}</div>
                     <div className="text-gray-800 font-medium">{it.value}</div>
                   </div>

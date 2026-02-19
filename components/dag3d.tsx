@@ -103,12 +103,12 @@ const Carousel_006 = ({
       plugins={
         autoplay
           ? [
-              Autoplay({
-                delay: 2000,
-                stopOnInteraction: true,
-                stopOnMouseEnter: true,
-              }),
-            ]
+            Autoplay({
+              delay: 2000,
+              stopOnInteraction: true,
+              stopOnMouseEnter: true,
+            }),
+          ]
           : []
       }
     >
@@ -173,7 +173,7 @@ const Carousel_006 = ({
 
       {showPagination && (
         <div className="absolute -bottom-2 left-1/2 flex -translate-x-1/2 items-center justify-center">
-          <div className="flex items-center justify-center gap-3 bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg border border-black/10">
+          <div className="flex items-center justify-center gap-3 bg-background/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg border border-black/10">
             {Array.from({ length: images.length }).map((_, index) => (
               <button
                 key={index}

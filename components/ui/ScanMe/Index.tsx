@@ -15,7 +15,7 @@ const Index: React.FC = () => {
     if (navigator.share) {
       navigator.share({
         title: 'Share My Profile',
-       
+
         url: qrCodeURL,
       })
         .then(() => console.log('Successful share'))
@@ -41,18 +41,18 @@ const Index: React.FC = () => {
         <div className="fixed inset-0 overflow-y-auto">
           <div className="fixed inset-0 transition-opacity  backdrop-blur" onClick={closeModal}></div>
           <div className="flex items-center justify-center min-h-screen">
-            <div className="blur-container relative z-10 bg-white rounded-2xl ">
+            <div className="blur-container relative z-10 bg-background rounded-2xl ">
               <div className=" px-6 py-2  ">
                 <div className="flex justify-end mb-1 ">
-                 
+
                 </div>
                 <div className="flex flex-col justify-center">
                   <QRCode value={qrCodeURL} size={200} />
                   <div className='flex justify-between mt-2 text-black'>
                     <p>Share My Profile!</p>
-                    <FaShareFromSquare 
-                      className="text-xl cursor-pointer text-black" 
-                      onClick={shareQRCode} 
+                    <FaShareFromSquare
+                      className="text-xl cursor-pointer text-black"
+                      onClick={shareQRCode}
                       aria-label="Share QR code"
                     />
                   </div>

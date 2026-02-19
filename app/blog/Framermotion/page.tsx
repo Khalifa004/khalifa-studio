@@ -78,7 +78,7 @@ export default function HarnessingFramerMotion() {
   }, []);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-[#FAFAFA] text-gray-600 selection:bg-black/5 selection:text-black font-sans antialiased overflow-x-hidden">
+    <div ref={containerRef} className="min-h-screen bg-background text-gray-600 selection:bg-black/5 selection:text-black font-sans antialiased overflow-x-hidden">
 
       {/* Background Ambience */}
       <div className="fixed inset-0 pointer-events-none z-0">
@@ -245,7 +245,7 @@ const StaggeredList = () => {
           </Section>
 
           {/* Best Practices */}
-          <Section className="relative p-8 md:p-12 rounded-2xl bg-white border border-black/[0.03] shadow-sm overflow-hidden">
+          <Section className="relative p-8 md:p-12 rounded-2xl bg-background border border-black/[0.03] shadow-sm overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 opacity-50" />
 
             <h2 className="relative text-2xl font-medium text-gray-900 mb-6">Golden Rules of Animation</h2>

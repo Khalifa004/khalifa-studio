@@ -14,7 +14,7 @@ const meta = {
     { name: "notifications", desc: "Event notifications with read state" },
   ],
   security: [
-  
+
     {
       title: "RBAC & Constraints",
       points: [
@@ -44,7 +44,7 @@ const meta = {
 
 export default function EchoBoardDataAndRealtime() {
   return (
-    <main className="min-h-screen bg-gray-50 text-black antialiased">
+    <main className="min-h-screen bg-background text-black antialiased">
       {/* Header */}
       <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/5 px-3 py-1 text-xs font-medium">
@@ -58,7 +58,7 @@ export default function EchoBoardDataAndRealtime() {
 
       {/* Database Architecture Overview */}
       <section className="mx-auto max-w-6xl px-6 pb-8">
-        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-black/10 bg-white p-8 shadow-sm">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-black/10 bg-background p-8 shadow-sm">
           <div className="mb-6 text-center">
             <h3 className="text-xl font-semibold text-black mb-2">Database Architecture</h3>
             <p className="text-black/70">PostgreSQL with Row Level Security and real-time subscriptions</p>
@@ -142,7 +142,7 @@ export default function EchoBoardDataAndRealtime() {
         {/* Core Tables */}
         <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {meta.tables.map((t) => (
-            <article key={t.name} className="rounded-2xl border border-black/10 bg-white p-5 shadow-sm">
+            <article key={t.name} className="rounded-2xl border border-black/10 bg-background p-5 shadow-sm">
               <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-black/5 px-2.5 py-1 text-[11px] font-medium">
                 <span className="h-1.5 w-1.5 rounded-full bg-black/60" /> {t.name}
               </div>
@@ -154,7 +154,7 @@ export default function EchoBoardDataAndRealtime() {
         {/* Security & Permissions */}
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
           {meta.security.map((block) => (
-            <article key={block.title} className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
+            <article key={block.title} className="rounded-2xl border border-black/10 bg-background p-6 shadow-sm">
               <h3 className="text-lg font-medium">{block.title}</h3>
               <ul className="mt-3 space-y-2 text-sm text-black/75">
                 {block.points.map((p) => (
@@ -168,18 +168,18 @@ export default function EchoBoardDataAndRealtime() {
         </div>
 
         {/* Tiny ER sketch (decorative/indicative) */}
-        <div className="mt-10 overflow-hidden rounded-2xl border border-black/10 bg-gradient-to-b from-black/5 to-white p-6">
+        <div className="mt-10 overflow-hidden rounded-2xl border border-black/10 bg-gradient-to-b from-black/5 to-background p-6">
           <h4 className="text-sm font-medium text-black/70">ER Overview (simplified)</h4>
           <div className="mt-4 grid grid-cols-3 gap-6 text-xs text-black/70">
-            <div className="rounded-lg border border-black/10 bg-white p-3">
+            <div className="rounded-lg border border-black/10 bg-background p-3">
               <div className="font-semibold">rooms</div>
               <div className="mt-1">id • owner_id • visibility</div>
             </div>
-            <div className="rounded-lg border border-black/10 bg-white p-3">
+            <div className="rounded-lg border border-black/10 bg-background p-3">
               <div className="font-semibold">memberships</div>
               <div className="mt-1">room_id • user_id • role</div>
             </div>
-            <div className="rounded-lg border border-black/10 bg-white p-3">
+            <div className="rounded-lg border border-black/10 bg-background p-3">
               <div className="font-semibold">messages</div>
               <div className="mt-1">room_id • author_id • created_at</div>
             </div>
@@ -195,7 +195,7 @@ export default function EchoBoardDataAndRealtime() {
 
       {/* Real-time Architecture Visualization */}
       <section className="mx-auto max-w-6xl px-6 pb-8">
-        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-black/10 bg-white p-8 shadow-sm">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-black/10 bg-background p-8 shadow-sm">
           <div className="mb-6 text-center">
             <h3 className="text-xl font-semibold text-black mb-2">Real-time Collaboration Architecture</h3>
             <p className="text-black/70">Multi-user synchronization with conflict resolution</p>
@@ -281,7 +281,7 @@ export default function EchoBoardDataAndRealtime() {
 
         <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
           {meta.realtime.features.map((f) => (
-            <article key={f.title} className="group rounded-2xl border border-black/10 bg-white p-6 shadow-sm transition hover:shadow-md">
+            <article key={f.title} className="group rounded-2xl border border-black/10 bg-background p-6 shadow-sm transition hover:shadow-md">
               <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-black/5 px-2.5 py-1 text-[11px] font-medium">
                 <span className="h-1.5 w-1.5 rounded-full bg-[oklch(0.7_0.08_300)]" /> {f.title}
               </div>
@@ -291,7 +291,7 @@ export default function EchoBoardDataAndRealtime() {
         </div>
 
         {/* Performance Notes */}
-        <div className="mt-10 rounded-2xl border border-black/10 bg-gradient-to-b from-black/5 to-white p-6">
+        <div className="mt-10 rounded-2xl border border-black/10 bg-gradient-to-b from-black/5 to-background p-6">
           <h3 className="text-lg font-medium">Performance Considerations</h3>
           <ul className="mt-3 grid list-disc grid-cols-1 gap-2 pl-5 text-sm text-black/75 md:grid-cols-2">
             {meta.realtime.perf.map((p) => (

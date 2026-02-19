@@ -27,7 +27,7 @@ export const AnimatedButton: React.FC<AnimatedButtonProps> = ({ children, classN
         style={{ transform: isHovered ? "translateX(-100%)" : "translateX(0)" }}
       />
       <div
-        className="absolute inset-0 bg-white transition-transform duration-500 ease-in-out"
+        className="absolute inset-0 bg-background transition-transform duration-500 ease-in-out"
         style={{ transform: isHovered ? "translateX(0)" : "translateX(100%)" }}
       />
       <span className="relative z-10">{children}</span>

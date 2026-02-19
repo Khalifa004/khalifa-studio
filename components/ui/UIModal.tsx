@@ -45,7 +45,7 @@ const UIModal: React.FC<UIModalProps> = ({ isOpen, onClose, component }) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.3, type: "spring", damping: 20 }}
-            className="relative w-full max-w-6xl max-h-[90vh] bg-white rounded-3xl overflow-hidden shadow-2xl"
+            className="relative w-full max-w-6xl max-h-[90vh] bg-background rounded-3xl overflow-hidden shadow-2xl"
           >
             {/* Close Button */}
             <button
@@ -67,10 +67,10 @@ const UIModal: React.FC<UIModalProps> = ({ isOpen, onClose, component }) => {
                   sizes="(max-width: 1200px) 100vw, 1200px"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                
+
                 {/* Category Badge */}
                 <div className="absolute top-6 left-6">
-                  <span className="inline-block px-4 py-2 text-sm font-medium text-white bg-white/20 backdrop-blur-sm rounded-full">
+                  <span className="inline-block px-4 py-2 text-sm font-medium text-white bg-background/20 backdrop-blur-sm rounded-full">
                     {component.category}
                   </span>
                 </div>

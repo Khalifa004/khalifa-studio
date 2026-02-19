@@ -56,7 +56,7 @@ const meta = {
 
 export default function EchoBoardOutcomesAndLearnings() {
   return (
-    <main className="min-h-screen bg-gray-50 text-black antialiased">
+    <main className="min-h-screen bg-background text-black antialiased">
       {/* Header */}
       <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/5 px-3 py-1 text-xs font-medium">
@@ -68,7 +68,7 @@ export default function EchoBoardOutcomesAndLearnings() {
 
       {/* Impact Overview Visualization */}
       <section className="mx-auto max-w-6xl px-6 pb-8">
-        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-black/10 bg-white p-8 shadow-sm">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-black/10 bg-background p-8 shadow-sm">
           <div className="mb-6 text-center">
             <h3 className="text-xl font-semibold text-black mb-2">Project Impact Overview</h3>
             <p className="text-black/70">Measurable improvements in team collaboration and productivity</p>
@@ -101,7 +101,7 @@ export default function EchoBoardOutcomesAndLearnings() {
         {/* Impact Metrics */}
         <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
           {meta.outcome.metrics.map((m) => (
-            <article key={m.label} className="rounded-2xl border border-black/10 bg-white p-6 text-center shadow-sm">
+            <article key={m.label} className="rounded-2xl border border-black/10 bg-background p-6 text-center shadow-sm">
               <div className="text-3xl font-semibold tracking-tight">{m.value}</div>
               <div className="mt-1 text-sm font-medium">{m.label}</div>
               <div className="mt-1 text-xs text-black/60">{m.note}</div>
@@ -111,7 +111,7 @@ export default function EchoBoardOutcomesAndLearnings() {
 
         {/* Qualitative wins & tool replacement */}
         <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
-          <article className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
+          <article className="rounded-2xl border border-black/10 bg-background p-6 shadow-sm">
             <h3 className="text-lg font-medium">Qualitative Wins</h3>
             <ul className="mt-3 space-y-2 text-sm text-black/75">
               {meta.outcome.qualitative.map((q) => (
@@ -121,7 +121,7 @@ export default function EchoBoardOutcomesAndLearnings() {
               ))}
             </ul>
           </article>
-          <article className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
+          <article className="rounded-2xl border border-black/10 bg-background p-6 shadow-sm">
             <h3 className="text-lg font-medium">Tool Consolidation</h3>
             <p className="mt-2 text-sm text-black/70">EchoBoard can replace or reduce reliance on:</p>
             <ul className="mt-3 grid grid-cols-2 gap-2 text-sm text-black/80">
@@ -140,7 +140,7 @@ export default function EchoBoardOutcomesAndLearnings() {
 
       {/* Learning Journey Visualization */}
       <section className="mx-auto max-w-6xl px-6 pb-8">
-        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-black/10 bg-white p-8 shadow-sm">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-black/10 bg-background p-8 shadow-sm">
           <div className="mb-6 text-center">
             <h3 className="text-xl font-semibold text-black mb-2">Development Journey</h3>
             <p className="text-black/70">Key learnings and challenges overcome during development</p>
@@ -225,7 +225,7 @@ export default function EchoBoardOutcomesAndLearnings() {
 
         <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
           {/* Challenges */}
-          <article className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
+          <article className="rounded-2xl border border-black/10 bg-background p-6 shadow-sm">
             <h3 className="text-lg font-medium">Key Challenges</h3>
             <ul className="mt-3 space-y-2 text-sm text-black/75">
               {meta.learnings.challenges.map((c) => (
@@ -238,7 +238,7 @@ export default function EchoBoardOutcomesAndLearnings() {
           </article>
 
           {/* What Worked */}
-          <article className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
+          <article className="rounded-2xl border border-black/10 bg-background p-6 shadow-sm">
             <h3 className="text-lg font-medium">What Worked</h3>
             <ul className="mt-3 space-y-2 text-sm text-black/75">
               {meta.learnings.whatWorked.map((w) => (
@@ -250,7 +250,7 @@ export default function EchoBoardOutcomesAndLearnings() {
           </article>
 
           {/* Next Iterations */}
-          <article className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
+          <article className="rounded-2xl border border-black/10 bg-background p-6 shadow-sm">
             <h3 className="text-lg font-medium">Next Iterations</h3>
             <ul className="mt-3 space-y-2 text-sm text-black/75">
               {meta.learnings.next.map((n) => (
@@ -262,7 +262,7 @@ export default function EchoBoardOutcomesAndLearnings() {
           </article>
         </div>
 
-       
+
       </section>
     </main>
   );

@@ -34,8 +34,8 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
-  visible: { 
-    y: 0, 
+  visible: {
+    y: 0,
     opacity: 1,
     transition: {
       type: "spring",
@@ -117,7 +117,7 @@ const LatestProducts: React.FC = () => {
 
   return (
     <motion.main
-      className="relative flex justify-center items-center flex-col w-full min-h-[160px] overflow-x-hidden bg-white"
+      className="relative flex justify-center items-center flex-col w-full min-h-[160px] overflow-x-hidden bg-background"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -128,15 +128,15 @@ const LatestProducts: React.FC = () => {
       <div className="relative flex flex-col items-center justify-start gap-4 sm:gap-6 md:gap-8 w-full max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-6 md:py-12 z-10">
         <section className="flex flex-col items-start justify-start gap-3 sm:gap-4 md:gap-6 w-full">
           <div className="flex justify-between items-center w-full">
-            <motion.p 
+            <motion.p
               className="text-sm sm:text-base font-medium text-gray-900"
               variants={itemVariants}
             >
               Latest Work
             </motion.p>
             <motion.div variants={itemVariants}>
-              <Link 
-                href="/allwork" 
+              <Link
+                href="/allwork"
                 className="text-xs sm:text-sm text-gray-500 hover:text-gray-900 transition-colors duration-300"
               >
                 See all work →
@@ -149,19 +149,19 @@ const LatestProducts: React.FC = () => {
           </div>
         </section>
 
-        <motion.div 
+        <motion.div
           className="h-px w-full bg-gradient-to-r from-transparent via-gray-200 to-transparent"
           variants={itemVariants}
         />
 
         <StrengthsSection />
 
-        <motion.div 
+        <motion.div
           className="h-px w-full bg-gradient-to-r from-transparent via-gray-200 to-transparent"
           variants={itemVariants}
         />
 
-       
+
       </div>
     </motion.main>
   );

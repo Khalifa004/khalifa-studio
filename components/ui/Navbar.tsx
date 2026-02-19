@@ -14,17 +14,17 @@ const NavBar = () => {
     // { label: 'Graphics', href: '/artwork', icon: <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M224,56V178.06l-39.72-39.72a8,8,0,0,0-11.31,0L147.31,164,97.66,114.34a8,8,0,0,0-11.32,0L32,168.69V56a8,8,0,0,1,8-8H216A8,8,0,0,1,224,56Z" opacity="0.2"></path><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"></path></svg> },
   ];
 
-  const pathname = usePathname(); 
+  const pathname = usePathname();
   const [activeItem, setActiveItem] = useState('');
 
   useEffect(() => {
-    setActiveItem(pathname); 
+    setActiveItem(pathname);
   }, [pathname]);
 
   return (
     <div className="fixed top-4 left-1/2 transform -translate-x-1/2 flex justify-center z-50">
-      <motion.nav 
-        className="relative bg-white/90 backdrop-blur-md border border-gray-200 rounded-full overflow-hidden shadow-lg hover:bg-white transition-all duration-500"
+      <motion.nav
+        className="relative bg-background/90 backdrop-blur-md border border-gray-200 rounded-full overflow-hidden shadow-lg hover:bg-background transition-all duration-500"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, type: 'spring', stiffness: 120 }}
@@ -34,12 +34,12 @@ const NavBar = () => {
             <Link key={index} href={item.href} passHref>
               <motion.div
                 className={`cursor-pointer flex items-center space-x-2 py-2 px-3 rounded-full transition-all duration-300 
-                  ${activeItem === item.href 
-                    ? 'bg-gray-100 text-gray-900 shadow-md' 
+                  ${activeItem === item.href
+                    ? 'bg-gray-100 text-gray-900 shadow-md'
                     : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'}`}
                 aria-pressed={activeItem === item.href}
-                whileHover={{ scale: 1.05 }} 
-                whileTap={{ scale: 0.95 }} 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 20 }}
               >
                 <span className="text-lg" aria-hidden="true">

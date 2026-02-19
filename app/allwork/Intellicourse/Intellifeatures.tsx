@@ -20,7 +20,7 @@ interface FeatureCardProps {
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon: Icon }) => (
   <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.2 }} className="h-full">
-    <Card className="overflow-hidden border border-gray-200 hover:shadow-md transition-all bg-white h-full">
+    <Card className="overflow-hidden border border-gray-200 hover:shadow-md transition-all bg-background h-full">
       <CardContent className="p-5 flex flex-row gap-4 items-start h-full">
         <div className="shrink-0 rounded-md bg-gray-100 p-3">
           <Icon className="w-6 h-6 text-[#18ACFE]" aria-hidden="true" />
@@ -66,17 +66,17 @@ const Intellifeatures: React.FC = () => {
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <FeatureCard 
+                  <FeatureCard
                     title="Component-driven system"
                     description="Composable components with clear props, slot patterns, and variant-driven styles."
                     icon={Database}
                   />
-                  <FeatureCard 
+                  <FeatureCard
                     title="App Router & RSC boundaries"
                     description="Layout composition with server components by default; client islands where interaction is required."
                     icon={Cpu}
                   />
-                  <FeatureCard 
+                  <FeatureCard
                     title="Form architecture"
                     description="Multi-step flows with field-level validation, error surfaces, and controlled inputs."
                     icon={Check}
@@ -93,17 +93,17 @@ const Intellifeatures: React.FC = () => {
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <FeatureCard 
+                  <FeatureCard
                     title="Code-splitting & dynamic import"
                     description="Route-based and component-level splitting with lazy loading for non-critical UI."
                     icon={Zap}
                   />
-                  <FeatureCard 
+                  <FeatureCard
                     title="Responsive images"
                     description="Next/Image with proper sizes and fill to reduce LCP and bandwidth."
                     icon={Database}
                   />
-                  <FeatureCard 
+                  <FeatureCard
                     title="In-view rendering"
                     description="IntersectionObserver-driven reveals and deferral of offscreen work."
                     icon={Sparkles}
@@ -120,17 +120,17 @@ const Intellifeatures: React.FC = () => {
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <FeatureCard 
+                  <FeatureCard
                     title="Semantic structure"
                     description="Landmarks, heading hierarchy, and ARIA labels for assistive tech."
                     icon={Check}
                   />
-                  <FeatureCard 
+                  <FeatureCard
                     title="Focus & keyboard support"
                     description="Visible focus states, focus traps for modals, and tab order review."
                     icon={Check}
                   />
-                  <FeatureCard 
+                  <FeatureCard
                     title="Motion preferences"
                     description="Reduced-motion fallbacks; time-bounded transitions and safe easing."
                     icon={Zap}
@@ -147,17 +147,17 @@ const Intellifeatures: React.FC = () => {
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <FeatureCard 
+                  <FeatureCard
                     title="Event hooks"
                     description="Client-side hooks to emit screen and action events for funnels."
                     icon={BarChart3}
                   />
-                  <FeatureCard 
+                  <FeatureCard
                     title="Performance marks"
                     description="Custom marks/measures to correlate UI interactions with timing."
                     icon={Zap}
                   />
-                  <FeatureCard 
+                  <FeatureCard
                     title="Dashboard-ready payloads"
                     description="Normalized event shape for easy aggregation and charting."
                     icon={Database}
@@ -168,15 +168,15 @@ const Intellifeatures: React.FC = () => {
           </Tabs>
 
           <div className="flex justify-center mt-12">
-          {/* <div className="inline-flex items-center rounded-full bg-gray-100 px-4 py-1 text-xl">
+            {/* <div className="inline-flex items-center rounded-full bg-gray-100 px-4 py-1 text-xl">
         <span className="mr-2 text-[#18ACFE]">●</span>  Explore IntelliCourse
       </div> */}
-        
+
           </div>
         </div>
 
-        <Bigtext/>
-        
+        <Bigtext />
+
       </section>
     </div>
   )

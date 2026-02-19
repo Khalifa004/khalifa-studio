@@ -33,28 +33,28 @@ const meta = {
 
 export default function EchoBoardSolutionAndFeatures() {
   return (
-    <main className="min-h-screen bg-gray-50 text-gray-900 antialiased">
+    <main className="min-h-screen bg-background text-gray-900 antialiased">
       {/* Solution Overview */}
       <section className="mx-auto max-w-6xl px-6 py-20" id="solution">
-        <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white/70 px-3 py-1 text-xs font-medium backdrop-blur">
+        <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-gray-300 bg-background/70 px-3 py-1 text-xs font-medium backdrop-blur">
           <span className="h-2 w-2 rounded-full bg-[oklch(0.7_0.08_120)]" /> Solution
         </div>
         <h2 className="text-2xl font-semibold tracking-tight md:text-4xl">The Solution</h2>
         <p className="mt-4 max-w-3xl text-base leading-7 text-gray-800 md:text-lg">{meta.solution}</p>
         <ul className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
           {meta.differentiators.map((d) => (
-            <li key={d} className="rounded-xl border border-gray-300 bg-white/70 p-4 text-sm font-medium backdrop-blur">{d}</li>
+            <li key={d} className="rounded-xl border border-gray-300 bg-background/70 p-4 text-sm font-medium backdrop-blur">{d}</li>
           ))}
         </ul>
 
         {/* EchoBoard Main Image */}
         <div className="mt-12 mb-12">
-          <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-lg">
+          <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-gray-200 bg-background p-8 shadow-lg">
             <div className="mb-6 text-center">
               <h3 className="text-2xl font-semibold text-gray-900 mb-2">EchoBoard - Unified Workspace</h3>
               <p className="text-gray-600">One platform that brings everything together</p>
             </div>
-            <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-gradient-to-br from-gray-50 to-gray-100">
+            <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-gradient-to-br from-background to-gray-100">
               <Image
                 src="/images/Echoboard.png"
                 alt="EchoBoard unified workspace interface showing chat, whiteboard, and AI features"
@@ -78,14 +78,14 @@ export default function EchoBoardSolutionAndFeatures() {
 
       {/* Key Features */}
       <section className="mx-auto max-w-6xl px-6 py-20" id="features">
-        <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white/70 px-3 py-1 text-xs font-medium backdrop-blur">
+        <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-gray-300 bg-background/70 px-3 py-1 text-xs font-medium backdrop-blur">
           <span className="h-2 w-2 rounded-full bg-[oklch(0.7_0.08_300)]" /> Key Features
         </div>
         <h2 className="text-2xl font-semibold tracking-tight md:text-4xl">Core Capabilities</h2>
-        
+
         {/* Unified Platform Visualization */}
         <div className="mt-8 mb-12">
-          <div className="relative mx-auto max-w-4xl overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+          <div className="relative mx-auto max-w-4xl overflow-hidden rounded-2xl border border-gray-200 bg-background p-8 shadow-sm">
             <div className="mb-6 text-center">
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Unified Platform Architecture</h3>
               <p className="text-gray-600">All features seamlessly integrated in one interface</p>

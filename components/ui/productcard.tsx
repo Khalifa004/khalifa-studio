@@ -16,7 +16,7 @@ interface ProductCardProps {
 const ProductCard = ({ name, price, description, image, href, variants }: ProductCardProps) => (
   <Link href={href}>
     <motion.div
-      className="group relative h-full rounded-2xl overflow-hidden bg-white/80 backdrop-blur-lg border border-white/20 
+      className="group relative h-full rounded-2xl overflow-hidden bg-background/80 backdrop-blur-lg border border-white/20 
                 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.1)] transition-all duration-500"
       variants={variants}
     >

@@ -24,8 +24,8 @@ const Section = ({ children, className = "" }: { children: React.ReactNode; clas
 };
 
 const Card = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <div className={`relative p-8 rounded-2xl bg-gray-50/50 border border-black/[0.03] hover:border-black/[0.08] transition-colors duration-500 h-full ${className}`}>
-    <div className="absolute inset-0 bg-gradient-to-br from-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+  <div className={`relative p-8 rounded-2xl bg-background/50 border border-black/[0.03] hover:border-black/[0.08] transition-colors duration-500 h-full ${className}`}>
+    <div className="absolute inset-0 bg-gradient-to-br from-background to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
     <div className="relative z-10">
       {children}
     </div>
@@ -69,7 +69,7 @@ export default function AboutMe() {
   const heroScale = useTransform(scrollYProgress, [0, 0.1], [1, 0.98]);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-[#FAFAFA] text-gray-600 selection:bg-black/5 selection:text-black font-sans antialiased overflow-x-hidden">
+    <div ref={containerRef} className="min-h-screen bg-background text-gray-600 selection:bg-black/5 selection:text-black font-sans antialiased overflow-x-hidden">
 
       {/* Background Ambience - Light Mode */}
       <div className="fixed inset-0 pointer-events-none z-0">
@@ -91,7 +91,7 @@ export default function AboutMe() {
             <ArrowLeft className="w-3 h-3 transition-transform group-hover:-translate-x-1" />
             <span>Return</span>
           </Link>
-       
+
         </motion.div>
 
         {/* Hero Section */}
@@ -227,7 +227,7 @@ export default function AboutMe() {
             <h2 className="text-xs font-medium text-gray-900 uppercase tracking-[0.2em] mb-12 opacity-40 text-center">Capabilities</h2>
             <div className="grid md:grid-cols-3 gap-6">
               {services.map((s, i) => (
-                <div key={i} className="group p-6 rounded-xl hover:bg-white transition-colors duration-300 border border-transparent hover:border-black/[0.03] hover:shadow-sm">
+                <div key={i} className="group p-6 rounded-xl hover:bg-background transition-colors duration-300 border border-transparent hover:border-black/[0.03] hover:shadow-sm">
                   <div className="mb-4 text-gray-400 group-hover:text-black transition-colors duration-300">
                     <s.icon size={24} />
                   </div>
@@ -259,7 +259,7 @@ export default function AboutMe() {
                 <Link
                   href="https://www.linkedin.com/in/khalifa-seck-27a139251/"
                   target="_blank"
-                  className="px-6 py-3 rounded-full border border-black/10 text-gray-900 font-medium text-sm hover:bg-gray-50 transition-colors flex items-center gap-2 bg-white"
+                  className="px-6 py-3 rounded-full border border-black/10 text-gray-900 font-medium text-sm hover:bg-gray-50 transition-colors flex items-center gap-2 bg-background"
                 >
                   <Linkedin size={16} />
                   LinkedIn

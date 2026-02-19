@@ -32,7 +32,7 @@ export default function BuildingIntelliCourse() {
   const scale = useTransform(scrollYProgress, [0, 0.1], [1, 0.98]);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-[#FAFAFA] text-gray-600 selection:bg-black/5 selection:text-black font-sans antialiased overflow-x-hidden">
+    <div ref={containerRef} className="min-h-screen bg-background text-gray-600 selection:bg-black/5 selection:text-black font-sans antialiased overflow-x-hidden">
 
       {/* Background Ambience */}
       <div className="fixed inset-0 pointer-events-none z-0">
@@ -106,7 +106,7 @@ export default function BuildingIntelliCourse() {
           </Section>
 
           {/* From Idea to Prototype */}
-          <Section className="relative p-8 md:p-12 rounded-2xl bg-white border border-black/[0.03] shadow-sm overflow-hidden group hover:shadow-md transition-all duration-500">
+          <Section className="relative p-8 md:p-12 rounded-2xl bg-background border border-black/[0.03] shadow-sm overflow-hidden group hover:shadow-md transition-all duration-500">
             <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-50 rounded-bl-full opacity-50" />
 
             <h2 className="relative text-2xl font-medium text-gray-900 mb-6">From idea to prototype</h2>
@@ -128,7 +128,7 @@ export default function BuildingIntelliCourse() {
                 A big focus was making IntelliCourse work in low-connectivity environments. We built offline-ready modules and <span className="text-black font-medium">CDOM (Course Data Offline Mode)</span> so users could download lessons and sync later. For many students, this wasn’t optional it was the only way they could fully use the platform.
               </p>
             </div>
-            <div className="order-1 md:order-2 flex items-center justify-center p-8 rounded-full bg-white border border-black/[0.05] aspect-square md:aspect-auto shadow-sm">
+            <div className="order-1 md:order-2 flex items-center justify-center p-8 rounded-full bg-background border border-black/[0.05] aspect-square md:aspect-auto shadow-sm">
               <div className="text-center space-y-2">
                 <div className="text-4xl font-light text-gray-900">CDOM</div>
                 <div className="text-xs uppercase tracking-widest text-gray-400">Offline Architecture</div>

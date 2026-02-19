@@ -11,7 +11,7 @@ import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
-    <div className="relative bg-white w-full overflow-x-hidden">
+    <div className="relative bg-background w-full overflow-x-hidden">
       {/* Animated Logo */}
       <div className="absolute top-4 \ z-10">
         {/* Uncomment the AnimatedLogo when ready */}

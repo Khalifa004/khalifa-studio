@@ -22,8 +22,8 @@ const Section = ({ children, className = "" }: { children: React.ReactNode; clas
 };
 
 const GridItem = ({ icon: Icon, title, desc }: { icon: any, title: string, desc: string }) => (
-  <div className="group relative p-6 rounded-xl bg-gray-50/50 border border-black/[0.03] hover:border-black/[0.08] transition-colors duration-500">
-    <div className="absolute inset-0 bg-gradient-to-br from-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
+  <div className="group relative p-6 rounded-xl bg-background/50 border border-black/[0.03] hover:border-black/[0.08] transition-colors duration-500">
+    <div className="absolute inset-0 bg-gradient-to-br from-background to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
     <div className="relative z-10">
       <div className="mb-4 inline-flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100/80 text-gray-600 group-hover:text-black group-hover:scale-110 transition-all duration-500 ease-out">
         <Icon size={20} />
@@ -52,7 +52,7 @@ export default function IntellicourseCaseStudy() {
   const heroScale = useTransform(scrollYProgress, [0, 0.1], [1, 0.98]);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-[#FAFAFA] text-gray-600 selection:bg-indigo-100 selection:text-indigo-900 font-sans antialiased overflow-x-hidden">
+    <div ref={containerRef} className="min-h-screen bg-background text-gray-600 selection:bg-indigo-100 selection:text-indigo-900 font-sans antialiased overflow-x-hidden">
 
       {/* Background Ambience - Light Mode */}
       <div className="fixed inset-0 pointer-events-none z-0">
@@ -204,7 +204,7 @@ export default function IntellicourseCaseStudy() {
                 <div className="space-y-4">
                   <GridItem icon={Zap} title="Code-splitting" desc="Route-based splitting with lazy loading." />
                   <GridItem icon={Sparkles} title="In-view Render" desc="IntersectionObserver-driven reveals." />
-                  <div className="p-6 rounded-xl bg-gray-50 border border-black/[0.03] flex flex-col justify-center items-center text-center h-[140px]">
+                  <div className="p-6 rounded-xl bg-background border border-black/[0.03] flex flex-col justify-center items-center text-center h-[140px]">
                     <div className="text-3xl font-light text-gray-900 mb-1">98-100</div>
                     <div className="text-[10px] uppercase tracking-widest text-gray-400">Lighthouse Score</div>
                   </div>
@@ -223,15 +223,15 @@ export default function IntellicourseCaseStudy() {
           </Section>
 
           {/* Team */}
-          <Section className="grid md:grid-cols-2 gap-12 items-center rounded-3xl bg-white border border-black/[0.05] p-8 md:p-12 shadow-sm">
+          <Section className="grid md:grid-cols-2 gap-12 items-center rounded-3xl bg-background border border-black/[0.05] p-8 md:p-12 shadow-sm">
             <div>
               <h2 className="text-2xl font-medium text-gray-900 mb-4">The Team</h2>
               <p className="text-gray-500 leading-relaxed mb-8">
                 Our current team includes two designers and four software developers, working collaboratively to bring innovative solutions to life.
               </p>
               <div className="flex gap-4">
-                <div className="px-4 py-2 rounded-full border border-black/5 bg-gray-50 text-sm text-gray-700">2 Designers</div>
-                <div className="px-4 py-2 rounded-full border border-black/5 bg-gray-50 text-sm text-gray-700">4 Developers</div>
+                <div className="px-4 py-2 rounded-full border border-black/5 bg-background text-sm text-gray-700">2 Designers</div>
+                <div className="px-4 py-2 rounded-full border border-black/5 bg-background text-sm text-gray-700">4 Developers</div>
               </div>
             </div>
             <div className="relative aspect-square md:aspect-video rounded-xl overflow-hidden shadow-lg shadow-gray-200/50">

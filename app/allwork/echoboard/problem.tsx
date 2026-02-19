@@ -35,7 +35,7 @@ export default function EchoBoardIntroAndProblem() {
   return (
     <main className=" text-gray-900 antialiased">
       {/* Top gradient bar */}
-    
+
 
 
       {/* Divider */}
@@ -44,8 +44,8 @@ export default function EchoBoardIntroAndProblem() {
       </div>
 
       {/* Problem Statement */}
-      <section className="mx-auto max-w-6xl bg-gray-50 px-6 py-20 md:py-24" id="problem">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium">
+      <section className="mx-auto max-w-6xl bg-background px-6 py-20 md:py-24" id="problem">
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-background px-3 py-1 text-xs font-medium">
           <span className="h-2 w-2 rounded-full bg-orange-400" />
           Problem
         </div>
@@ -56,19 +56,19 @@ export default function EchoBoardIntroAndProblem() {
 
         {/* Problem Visualization */}
         <div className="mt-12 mb-12">
-          <div className="relative mx-auto max-w-4xl overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+          <div className="relative mx-auto max-w-4xl overflow-hidden rounded-2xl border border-gray-200 bg-background p-8 shadow-sm">
             <div className="mb-6 text-center">
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Fragmented Collaboration Tools</h3>
               <p className="text-gray-600">Teams constantly switch between multiple disconnected applications</p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="flex flex-col items-center p-4 rounded-lg border border-gray-200 bg-gray-50">
+              <div className="flex flex-col items-center p-4 rounded-lg border border-gray-200 bg-background">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-2">
                   <span className="text-blue-600 font-bold text-lg">💬</span>
                 </div>
                 <span className="text-sm font-medium text-gray-700">Chat App</span>
               </div>
-              <div className="flex flex-col items-center p-4 rounded-lg border border-gray-200 bg-gray-50">
+              <div className="flex flex-col items-center p-4 rounded-lg border border-gray-200 bg-background">
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-2">
                   <span className="text-green-600 font-bold text-lg">📝</span>
                 </div>
@@ -101,7 +101,7 @@ export default function EchoBoardIntroAndProblem() {
           {meta.pains.map((p) => (
             <article
               key={p.title}
-              className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300"
+              className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-background p-8 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-300"
             >
               <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-orange-400 via-red-400 to-pink-400" />
               <h3 className="text-xl font-semibold tracking-tight text-gray-900">{p.title}</h3>
@@ -110,7 +110,7 @@ export default function EchoBoardIntroAndProblem() {
           ))}
         </div>
 
-     
+
       </section>
     </main>
   );

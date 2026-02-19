@@ -28,13 +28,13 @@ const strengths = [
 
 export function StrengthsSection() {
   return (
-    <section className="bg-white py-24 w-full">
+    <section className="bg-background py-24 w-full">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        
+
         {/* Header Area */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-gray-100 pb-8">
           <div className="max-w-xl">
-             <h2 className="text-4xl md:text-5xl font-semibold tracking-tighter text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-semibold tracking-tighter text-gray-900 mb-6">
               My Strengths
             </h2>
             <p className="text-gray-500 text-lg font-light leading-relaxed">
@@ -42,7 +42,7 @@ export function StrengthsSection() {
             </p>
           </div>
           <div className="hidden md:block pb-1">
-             <span className="inline-flex items-center justify-center px-4 py-1 rounded-full border border-gray-200 text-xs font-medium uppercase tracking-widest text-gray-500">
+            <span className="inline-flex items-center justify-center px-4 py-1 rounded-full border border-gray-200 text-xs font-medium uppercase tracking-widest text-gray-500">
               Personal Toolkit
             </span>
           </div>

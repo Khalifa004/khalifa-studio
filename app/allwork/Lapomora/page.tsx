@@ -28,7 +28,7 @@ const Section = ({ children, className = "" }: { children: React.ReactNode; clas
 
 const Card = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
   <div className={`relative p-8 rounded-2xl bg-gray-50/50 border border-black/[0.03] hover:border-black/[0.08] transition-colors duration-500 h-full ${className}`}>
-    <div className="absolute inset-0 bg-gradient-to-br from-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+    <div className="absolute inset-0 bg-gradient-to-br from-background to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
     <div className="relative z-10">
       {children}
     </div>
@@ -46,7 +46,7 @@ export default function LapomoraPage() {
   const heroScale = useTransform(scrollYProgress, [0, 0.1], [1, 0.98]);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-[#FAFAFA] text-gray-600 selection:bg-black/5 selection:text-black font-sans antialiased overflow-x-hidden">
+    <div ref={containerRef} className="min-h-screen bg-background text-gray-600 selection:bg-black/5 selection:text-black font-sans antialiased overflow-x-hidden">
 
       {/* Background Ambience */}
       <div className="fixed inset-0 pointer-events-none z-0">
@@ -86,7 +86,7 @@ export default function LapomoraPage() {
                 transition={{ duration: 0.8, ease: organicEase }}
                 className="flex items-center gap-3 mb-6"
               >
-                <div className="px-3 py-1 rounded-full border border-black/5 bg-white/50 backdrop-blur-sm">
+                <div className="px-3 py-1 rounded-full border border-black/5 bg-background/50 backdrop-blur-sm">
                   <span className="text-[10px] uppercase tracking-widest text-gray-500">Personal Project</span>
                 </div>
                 <span className="text-gray-400 text-xs uppercase tracking-wider">2024</span>
@@ -121,7 +121,7 @@ export default function LapomoraPage() {
                 <Link
                   href="https://pomora.app"
                   target="_blank"
-                  className="group flex items-center justify-between p-4 rounded-xl bg-white border border-black/[0.03] hover:border-black/10 transition-all duration-300 shadow-sm hover:shadow-md"
+                  className="group flex items-center justify-between p-4 rounded-xl bg-background border border-black/[0.03] hover:border-black/10 transition-all duration-300 shadow-sm hover:shadow-md"
                 >
                   <span className="text-sm font-medium text-gray-900">Visit Live Site</span>
                   <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-gray-900 transition-colors" />
@@ -204,10 +204,10 @@ export default function LapomoraPage() {
           <Section>
             <h2 className="text-xs font-medium text-gray-900 uppercase tracking-[0.2em] mb-12 opacity-40 text-center">Development Process</h2>
             <div className="space-y-12">
-              <div className="rounded-3xl border border-black/5 bg-white overflow-hidden shadow-sm">
+              <div className="rounded-3xl border border-black/5 bg-background overflow-hidden shadow-sm">
                 <EnhancedProjectDevelopmentProcess />
               </div>
-              <div className="rounded-3xl border border-black/5 bg-white overflow-hidden shadow-sm p-4">
+              <div className="rounded-3xl border border-black/5 bg-background overflow-hidden shadow-sm p-4">
                 <Pomoraprocess2 />
               </div>
             </div>

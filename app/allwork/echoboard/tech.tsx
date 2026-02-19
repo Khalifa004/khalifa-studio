@@ -70,7 +70,7 @@ const meta = {
 
 export default function EchoBoardTechAndDesign() {
   return (
-    <main className="min-h-screen bg-gray-50 text-[oklch(0.21_0_0)] antialiased">
+    <main className="min-h-screen bg-background text-[oklch(0.21_0_0)] antialiased">
       {/* Header */}
       <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/5 px-3 py-1 text-xs font-medium">
@@ -86,7 +86,7 @@ export default function EchoBoardTechAndDesign() {
 
       {/* Tech Stack Overview */}
       <section className="mx-auto max-w-6xl px-6 pb-8">
-        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-black/10 bg-white p-8 shadow-sm">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-black/10 bg-background p-8 shadow-sm">
           <div className="mb-6 text-center">
             <h3 className="text-xl font-semibold text-black mb-2">Technology Stack</h3>
             <p className="text-black/70">Modern, scalable architecture built with cutting-edge tools</p>
@@ -162,7 +162,7 @@ export default function EchoBoardTechAndDesign() {
         <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">5. Technical Architecture</h2>
         <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
           {/* Frontend */}
-          <article className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
+          <article className="rounded-2xl border border-black/10 bg-background p-6 shadow-sm">
             <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-black/5 px-3 py-1 text-xs font-medium">
               <span className="h-1.5 w-1.5 rounded-full bg-[oklch(0.7_0.08_250)]" /> Frontend
             </div>
@@ -178,7 +178,7 @@ export default function EchoBoardTechAndDesign() {
           </article>
 
           {/* Backend */}
-          <article className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
+          <article className="rounded-2xl border border-black/10 bg-background p-6 shadow-sm">
             <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-black/5 px-3 py-1 text-xs font-medium">
               <span className="h-1.5 w-1.5 rounded-full bg-[oklch(0.7_0.08_120)]" /> Backend
             </div>
@@ -194,7 +194,7 @@ export default function EchoBoardTechAndDesign() {
           </article>
 
           {/* AI */}
-          <article className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
+          <article className="rounded-2xl border border-black/10 bg-background p-6 shadow-sm">
             <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-black/5 px-3 py-1 text-xs font-medium">
               <span className="h-1.5 w-1.5 rounded-full bg-[oklch(0.7_0.08_20)]" /> AI & Intelligence
             </div>
@@ -210,7 +210,7 @@ export default function EchoBoardTechAndDesign() {
           </article>
 
           {/* Realtime */}
-          <article className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
+          <article className="rounded-2xl border border-black/10 bg-background p-6 shadow-sm">
             <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-black/5 px-3 py-1 text-xs font-medium">
               <span className="h-1.5 w-1.5 rounded-full bg-[oklch(0.7_0.08_300)]" /> Real‑time
             </div>
@@ -235,10 +235,10 @@ export default function EchoBoardTechAndDesign() {
       {/* UI/UX Design */}
       <section className="mx-auto max-w-6xl px-6 pb-20">
         <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">6. UI/UX Design System</h2>
-        
+
         {/* Design Philosophy Visualization */}
         <div className="mt-8 mb-12">
-          <div className="relative mx-auto max-w-4xl overflow-hidden rounded-2xl border border-black/10 bg-white p-8 shadow-sm">
+          <div className="relative mx-auto max-w-4xl overflow-hidden rounded-2xl border border-black/10 bg-background p-8 shadow-sm">
             <div className="mb-6 text-center">
               <h3 className="text-xl font-semibold text-black mb-2">Design Principles</h3>
               <p className="text-black/70">Clean, accessible, and performant user experience</p>
@@ -290,7 +290,7 @@ export default function EchoBoardTechAndDesign() {
 
         <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
           {/* Philosophy */}
-          <article className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
+          <article className="rounded-2xl border border-black/10 bg-background p-6 shadow-sm">
             <h3 className="text-lg font-medium">Design Philosophy</h3>
             <ul className="mt-3 space-y-2 text-sm text-black/70">
               {meta.design.philosophy.map((p) => (
@@ -302,7 +302,7 @@ export default function EchoBoardTechAndDesign() {
           </article>
 
           {/* Component Architecture */}
-          <article className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
+          <article className="rounded-2xl border border-black/10 bg-background p-6 shadow-sm">
             <h3 className="text-lg font-medium">Component Architecture</h3>
             <dl className="mt-3 space-y-3 text-sm">
               {meta.design.components.map((c) => (
@@ -315,7 +315,7 @@ export default function EchoBoardTechAndDesign() {
           </article>
 
           {/* Theming */}
-          <article className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
+          <article className="rounded-2xl border border-black/10 bg-background p-6 shadow-sm">
             <h3 className="text-lg font-medium">Theming & Tokens</h3>
             <dl className="mt-3 space-y-3 text-sm">
               {meta.design.theming.map((t) => (

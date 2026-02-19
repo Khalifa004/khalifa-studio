@@ -24,7 +24,7 @@ const Section = ({ children, className = "" }: { children: React.ReactNode; clas
 
 const GridItem = ({ icon: Icon, title, desc }: { icon: any, title: string, desc: string }) => (
   <div className="group relative p-6 rounded-xl bg-gray-50/50 border border-black/[0.03] hover:border-black/[0.08] transition-colors duration-500 h-full">
-    <div className="absolute inset-0 bg-gradient-to-br from-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
+    <div className="absolute inset-0 bg-gradient-to-br from-background to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
     <div className="relative z-10 flex flex-col h-full">
       <div className="mb-4 inline-flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100/80 text-gray-600 group-hover:text-black group-hover:scale-110 transition-all duration-500 ease-out">
         <Icon size={20} />
@@ -46,7 +46,7 @@ export default function NorthStarCaseStudy() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-[#FAFAFA] text-gray-600 selection:bg-red-100 selection:text-red-900 font-sans antialiased overflow-x-hidden">
+    <div ref={containerRef} className="min-h-screen bg-background text-gray-600 selection:bg-red-100 selection:text-red-900 font-sans antialiased overflow-x-hidden">
 
       {/* Background Ambience - Light Mode (Red/Warm tint for NorthStar) */}
       <div className="fixed inset-0 pointer-events-none z-0">

@@ -33,24 +33,24 @@ export default function Home() {
               className={` flex flex-col gap-12 text-black/50 text-sm font-light max-w-[300px]`}
               style={{ fontSize: `${0.875 * textSize}rem` }}
             >
-        <div className="space-y-6">
-  <div className="h-px bg-black/10 w-full" />
-  <p>
-    My work as a graphic designer blends visual storytelling with creative problem-solving. Whether it's branding, 
-    digital design, or immersive 3D models, I explore different aspects of design to push creativity and bring ideas to life.
-  </p>
-  <p>
-    From bold graphics to intricate 3D compositions, I experiment with form, color, and motion to create impactful visuals. 
-    My process involves a mix of traditional design principles and modern techniques, allowing me to craft unique and engaging experiences.
-  </p>
-  <p>Here are some of my favorite works so far.</p>
-  <div className="h-px bg-white/10 w-full" />
-</div>
+              <div className="space-y-6">
+                <div className="h-px bg-black/10 w-full" />
+                <p>
+                  My work as a graphic designer blends visual storytelling with creative problem-solving. Whether it's branding,
+                  digital design, or immersive 3D models, I explore different aspects of design to push creativity and bring ideas to life.
+                </p>
+                <p>
+                  From bold graphics to intricate 3D compositions, I experiment with form, color, and motion to create impactful visuals.
+                  My process involves a mix of traditional design principles and modern techniques, allowing me to craft unique and engaging experiences.
+                </p>
+                <p>Here are some of my favorite works so far.</p>
+                <div className="h-px bg-background/10 w-full" />
+              </div>
 
             </div>
-          
+
           </div>
-   
+
         </div>
 
         {/* Right Content */}

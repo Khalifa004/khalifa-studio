@@ -58,7 +58,7 @@ export default function ProjectHeader({
         <div className="absolute inset-0 bg-black bg-opacity-50" />
       )}
 
-      <div className={`max-w-6xl mx-auto w-full space-y-16 relative z-10 ${backgroundImage || backgroundVideo ? 'text-white' : 'bg-[hsl(0,0%,98%)]'}`}>
+      <div className={`max-w-6xl mx-auto w-full space-y-16 relative z-10 ${backgroundImage || backgroundVideo ? 'text-white' : 'bg-background'}`}>
         {/* Title Section */}
         <motion.div
           initial={{ y: 50, opacity: 0 }}
@@ -73,7 +73,7 @@ export default function ProjectHeader({
             initial={{ width: 0 }}
             animate={{ width: "8rem" }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className={`h-1 ${backgroundImage || backgroundVideo ? 'bg-white' : 'bg-stone-900'} rounded-full`}
+            className={`h-1 ${backgroundImage || backgroundVideo ? 'bg-background' : 'bg-stone-900'} rounded-full`}
           />
         </motion.div>
 

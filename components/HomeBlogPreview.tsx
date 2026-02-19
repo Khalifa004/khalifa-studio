@@ -23,7 +23,7 @@ const blogPreviews = [
 
 export default function HomeBlogPreview() {
     return (
-        <section className="w-full py-24 bg-white">
+        <section className="w-full py-24 bg-background">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-12">
                     <div>
@@ -60,7 +60,7 @@ export default function HomeBlogPreview() {
                             transition={{ duration: 0.6, delay: index * 0.1 + 0.2 }}
                         >
                             <Link href={post.href} className="group block h-full">
-                                <article className="h-full p-8 rounded-2xl bg-gray-50 border border-gray-100 transition-all duration-300 hover:bg-white hover:shadow-lg hover:border-transparent">
+                                <article className="h-full p-8 rounded-2xl bg-gray-50 border border-gray-100 transition-all duration-300 hover:bg-background hover:shadow-lg hover:border-transparent">
                                     <div className="flex flex-col h-full justify-between">
                                         <div>
                                             <div className="flex items-center gap-3 mb-6">

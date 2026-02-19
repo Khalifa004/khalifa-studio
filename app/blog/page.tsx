@@ -49,7 +49,7 @@ export default function Blog() {
 
   return (
     <motion.main
-      className=" text-gray-900 min-h-screen"
+      className="bg-background text-gray-900 min-h-screen"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
