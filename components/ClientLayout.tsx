@@ -24,7 +24,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
         <Navbar />
       </div>
       {children}
-      <CalWidget />
+      {/* <CalWidget /> */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Footer />
       </div>
