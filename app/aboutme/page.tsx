@@ -91,9 +91,7 @@ export default function AboutMe() {
             <ArrowLeft className="w-3 h-3 transition-transform group-hover:-translate-x-1" />
             <span>Return</span>
           </Link>
-          <div className="hidden md:block text-[10px] uppercase tracking-[0.3em] text-gray-400">
-            Profile 001
-          </div>
+       
         </motion.div>
 
         {/* Hero Section */}
@@ -124,7 +122,7 @@ export default function AboutMe() {
                 transition={{ duration: 0.8, ease: organicEase, delay: 0.1 }}
                 className="text-4xl md:text-7xl font-medium text-gray-900 tracking-tight leading-[1] mb-8"
               >
-                UX/UI Designer <br />
+                Product Engineer <br />
                 <span className="text-gray-400">&</span> Frontend Dev.
               </motion.h1>
 

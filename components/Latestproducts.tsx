@@ -161,40 +161,7 @@ const LatestProducts: React.FC = () => {
           variants={itemVariants}
         />
 
-        <section className="flex flex-col items-center justify-center gap-3 sm:gap-4 w-full">
-          <div className="flex justify-between mb-2 sm:mb-4 w-full">
-            <p className="text-xs sm:text-sm text-gray-600">Blogs</p>
-            <Link href="/blog" className="text-xs sm:text-sm text-gray-800 hover:text-lime-600 transition-colors duration-300 cursor-pointer">
-              See all
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6 w-full mb-6 sm:mb-8 md:mb-12">
-            {latestBlogs.map((blog, index) => (
-              <Link 
-                key={index}
-                className="flex Posts_hover__Vc6hP px-2 sm:px-4 bg-transparent rounded-lg transition-colors duration-300 relative group" 
-                href={blog.href}
-              >
-                <div className="flex items-start relative">
-                  <motion.div 
-                    className="flex bg-gray-300 w-3 sm:w-4 md:w-6 h-[0.125rem] absolute top-1/2 transform -translate-y-1/2 transition-transform duration-300" 
-                    initial={{ rotate: 90 }} 
-                    whileHover={{ rotate: 0 }} 
-                  />
-                  <motion.div 
-                    className="ml-4 sm:ml-6 md:ml-8 flex flex-col" 
-                    whileHover={{ x: 10 }} 
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <h2 className="text-xs sm:text-sm md:text-base font-bold text-gray-800 pb-1 sm:pb-2 leading-tight">{blog.title}</h2>
-                    <span className="text-xs text-gray-600">{blog.date}</span>
-                  </motion.div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
+       
       </div>
     </motion.main>
   );

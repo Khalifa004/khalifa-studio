@@ -58,7 +58,7 @@ const Hero: React.FC = () => {
                 className="max-w-md"
             >
                 <p className="text-xl sm:text-2xl font-light text-gray-600 leading-tight">
-                Frontend Engineer & UI Designer crafting polished, high-performance interfaces.
+                Product Engineer crafting polished, high-performance interfaces.
                 </p>
             </motion.div>
 
@@ -83,4 +83,3 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
-
