@@ -87,7 +87,7 @@ export default function AboutMe() {
           transition={{ duration: 0.6, ease: organicEase, delay: 0.1 }}
           className="mb-20 md:mb-32 flex justify-between items-center"
         >
-          <Link href="/" className="group inline-flex items-center gap-2 text-xs uppercase tracking-widest text-gray-500 hover:text-black transition-colors duration-300">
+          <Link href="/" className="group inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-gray-500 hover:text-black transition-colors duration-300">
             <ArrowLeft className="w-3 h-3 transition-transform group-hover:-translate-x-1" />
             <span>Return</span>
           </Link>
@@ -112,7 +112,7 @@ export default function AboutMe() {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-gray-900 font-medium text-sm">Khalifa Seck</span>
-                  <span className="text-gray-500 text-xs uppercase tracking-wider">Toronto, CA</span>
+                  <span className="text-gray-500 font-mono text-[10px] uppercase tracking-widest">Toronto, CA</span>
                 </div>
               </motion.div>
 
@@ -120,10 +120,10 @@ export default function AboutMe() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: organicEase, delay: 0.1 }}
-                className="text-4xl md:text-7xl font-medium text-gray-900 tracking-tight leading-[1] mb-8"
+                className="text-5xl md:text-7xl font-medium text-gray-900 tracking-tight leading-[1] mb-8"
               >
                 Product Engineer <br />
-                <span className="text-gray-400">&</span> Frontend Dev.
+                <span className="text-gray-400">&</span> <span className="font-serif italic font-normal">Frontend</span> Dev.
               </motion.h1>
 
               <motion.p
@@ -152,8 +152,8 @@ export default function AboutMe() {
           {/* The Hybrid Profile */}
           <Section className="grid md:grid-cols-2 gap-12 md:gap-24">
             <div>
-              <h2 className="text-xs font-medium text-gray-900 uppercase tracking-[0.2em] mb-8 opacity-40">The Approach</h2>
-              <p className="text-xl md:text-2xl leading-relaxed text-gray-800 font-light">
+              <h2 className="font-mono text-[10px] font-medium text-gray-900 uppercase tracking-[0.2em] mb-8 opacity-40">The Approach</h2>
+              <p className="text-xl md:text-3xl leading-relaxed text-gray-800 font-serif italic">
                 I bridge the gap between design and code. My workflow is hybrid by nature—switching seamlessly between Figma and VS Code to ensure the vision matches the reality.
               </p>
             </div>
@@ -176,7 +176,7 @@ export default function AboutMe() {
           {/* Stack / Tech Stack */}
           <Section>
             <div className="flex items-center justify-between mb-12">
-              <h2 className="text-2xl font-medium text-gray-900">Stack</h2>
+              <h2 className="text-3xl font-serif text-gray-900">Stack</h2>
               <div className="h-px w-32 bg-black/5" />
             </div>
 
@@ -224,7 +224,7 @@ export default function AboutMe() {
 
           {/* Capabilities / Services */}
           <Section>
-            <h2 className="text-xs font-medium text-gray-900 uppercase tracking-[0.2em] mb-12 opacity-40 text-center">Capabilities</h2>
+            <h2 className="font-mono text-[10px] font-medium text-gray-900 uppercase tracking-[0.2em] mb-12 opacity-40 text-center">Capabilities</h2>
             <div className="grid md:grid-cols-3 gap-6">
               {services.map((s, i) => (
                 <div key={i} className="group p-6 rounded-xl hover:bg-background transition-colors duration-300 border border-transparent hover:border-black/[0.03] hover:shadow-sm">

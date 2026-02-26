@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { StrengthsSection } from "./Strenghts";
-import HoverExpand from "./HoverExpand";
+import MasonryGrid from "./MasonryGrid";
 
 interface Product {
   name: string;
@@ -60,20 +60,6 @@ const LatestProducts: React.FC = () => {
       description: "AI-powered platform that personalizes learning and fosters continuous growth.",
       image: "/images/intellicourse1.jpeg",
       href: "/allwork/Intellicourse",
-    },
-    {
-      name: "Pomora",
-      price: "App",
-      description: "A productivity app focused on time management and task organization.",
-      image: "/images/pomoramain2.png",
-      href: "/allwork/Lapomora",
-    },
-    {
-      name: "EchoBoard",
-      price: "Tool",
-      description: "A tool for creating and sharing interactive boards with AI-powered content.",
-      image: "/images/Echoboard.png",
-      href: "/allwork/echoboard",
     },
   ];
 
@@ -144,8 +130,8 @@ const LatestProducts: React.FC = () => {
             </motion.div>
           </div>
 
-          <div className="w-full">
-            <HoverExpand projects={products} />
+          <div className="w-full mt-12 md:mt-24">
+            <MasonryGrid projects={products} />
           </div>
         </section>
 
