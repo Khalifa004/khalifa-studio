@@ -49,16 +49,18 @@ export default function Blog() {
 
   return (
     <motion.main
-      className="bg-background text-gray-900 min-h-screen"
+      className="bg-background text-gray-600 min-h-screen font-sans antialiased overflow-x-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w-6xl mx-auto p-4 mt-36">
-        <h1 className="text-5xl font-bold text-left mb-10">I write sometimes...</h1>
+      <div className="max-w-4xl mx-auto px-6 md:px-12 py-32 md:py-48">
+        <h1 className="text-5xl md:text-7xl font-serif text-gray-900 tracking-tight leading-[0.9] mb-20 md:mb-32">
+          Notes & <br className="hidden md:block" />Observations
+        </h1>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 px-l mb-40 gap-6"
+          className="flex flex-col gap-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -66,24 +68,13 @@ export default function Blog() {
           {posts.map((post, index) => (
             <Link
               key={index}
-              className="flex px-4 mx-4  rounded-lg transition-shadow duration-300 relative group hover:shadow-lg"
+              className="group flex flex-col items-start gap-3 border-b border-black/5 pb-6 hover:border-black/20 transition-colors"
               href={post.href}
               aria-label={`Read more about ${post.title}`}
             >
-              <div className="flex items-start relative py-4">
-                <motion.div
-                  className="flex bg-gray-300 w-8 h-[0.125rem] absolute top-1/2 transform -translate-y-1/2 transition-transform duration-300"
-                  initial={{ rotate: 90 }}
-                  whileHover={{ rotate: 0 }}
-                />
-                <motion.div
-                  className="ml-10 flex flex-col"
-                  whileHover={{ x: 10 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <h2 className="text-xl font-bold text-gray-800 pb-3">{post.title}</h2>
-                  <span className="text-gray-600 text-sm">{post.date}</span>
-                </motion.div>
+              <div className="flex flex-col gap-2">
+                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-gray-400 group-hover:text-gray-900 transition-colors">{post.date}</span>
+                <h2 className="text-2xl md:text-3xl font-medium text-gray-900 leading-tight group-hover:opacity-60 transition-opacity">{post.title}</h2>
               </div>
             </Link>
           ))}

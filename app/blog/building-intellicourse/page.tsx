@@ -36,8 +36,6 @@ export default function BuildingIntelliCourse() {
 
       {/* Background Ambience */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-indigo-100/40 blur-[120px] rounded-full mix-blend-multiply opacity-60" />
-        <div className="absolute bottom-[-10%] right-[-5%] w-[40%] h-[40%] bg-blue-100/40 blur-[100px] rounded-full mix-blend-multiply opacity-50" />
         <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.015] mix-blend-multiply" />
       </div>
 
@@ -65,7 +63,7 @@ export default function BuildingIntelliCourse() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: organicEase }}
-            className="text-4xl md:text-6xl font-medium text-gray-900 tracking-tight leading-[1.1] mb-6"
+            className="text-4xl md:text-6xl font-serif text-gray-900 tracking-tight leading-[1.1] mb-6"
           >
             Building IntelliCourse
           </motion.h1>
