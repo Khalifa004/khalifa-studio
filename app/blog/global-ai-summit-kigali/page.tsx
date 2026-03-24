@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 
 const organicEase = [0.4, 0, 0.2, 1];
@@ -89,6 +90,17 @@ export default function GlobalAISummit() {
                         <div className="mt-8 flex gap-4">
                             <div className="h-px flex-1 bg-gradient-to-r from-black/5 to-transparent" />
                         </div>
+                    </Section>
+
+                    {/* Summit Image */}
+                    <Section className="w-full aspect-[21/9] relative rounded-2xl overflow-hidden shadow-sm border border-black/[0.03] group hover:shadow-md transition-all duration-500">
+                        <Image
+                            src="/images/kigali.png"
+                            alt="Global AI Summit in Kigali"
+                            fill
+                            className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                            priority
+                        />
                     </Section>
 
                     {/* The Experience */}
