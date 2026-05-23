@@ -12,10 +12,11 @@ const {
 const config = {
 	darkMode: ["class"],
 	content: [
-		'./pages/**/*.{ts,tsx}',
-		'./components/**/*.{ts,tsx}',
-		'./app/**/*.{ts,tsx}',
-		'./src/**/*.{ts,tsx}',
+		'./pages/**/*.{ts,tsx,js,jsx}',
+		'./components/**/*.{ts,tsx,js,jsx}',
+		'./app/**/*.{ts,tsx,js,jsx}',
+		'./src/**/*.{ts,tsx,js,jsx}',
+		'./node_modules/@nextui-org/theme/dist/components/**/*.js'
 	],
 	prefix: "",
 	theme: {
@@ -62,6 +63,7 @@ const config = {
 			fontFamily: {
 				serif: ['var(--font-serif)', 'serif'],
 				mono: ['var(--font-mono)', 'monospace'],
+				comfortaa: ['var(--font-comfortaa)', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -85,16 +87,19 @@ const config = {
 						height: '0'
 					}
 				},
-
+				shimmer: {
+					'0%': { backgroundPosition: '200% 0' },
+					'100%': { backgroundPosition: '-200% 0' },
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-
+				shimmer: 'shimmer 14s linear infinite',
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [require("tailwindcss-animate"), require('@nextui-org/theme')],
 
 
 

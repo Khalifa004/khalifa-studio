@@ -11,7 +11,10 @@ interface Project {
     name: string;
     price: string;
     description: string;
-    image: string;
+    image?: string;
+    backgroundColor?: string;
+    logoText?: string;
+    logoFont?: string;
     href: string;
 }
 
@@ -48,14 +51,27 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ projects, className }) => {
                         transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                         className={cn("group relative flex flex-col", isOffset ? "sm:mt-24" : "")}
                     >
-                        <Link href={project.href} className="flex flex-col gap-4">
+                        <Link 
+                            href={project.href} 
+                            className="flex flex-col gap-4"
+                            target={project.href.startsWith('http') ? "_blank" : undefined}
+                            rel={project.href.startsWith('http') ? "noopener noreferrer" : undefined}
+                        >
                             <div className="relative overflow-hidden rounded-2xl w-full aspect-[4/3] sm:aspect-[3/4] md:aspect-[4/5] bg-gray-100 border border-black/5">
-                                <Image
-                                    src={project.image}
-                                    alt={project.name}
-                                    fill
-                                    className="object-cover transition-all duration-700 ease-in-out group-hover:scale-105"
-                                />
+                                {project.image ? (
+                                    <Image
+                                        src={project.image}
+                                        alt={project.name}
+                                        fill
+                                        className="object-cover transition-all duration-700 ease-in-out group-hover:scale-105"
+                                    />
+                                ) : (
+                                    <div 
+                                        className={cn("w-full h-full flex items-center justify-center transition-all duration-700 ease-in-out group-hover:scale-105", project.backgroundColor || "bg-[#F5F5DC]")}
+                                    >
+                                        <span className={cn("text-5xl md:text-6xl lg:text-7xl text-gray-900 tracking-tight", project.logoFont || "font-serif italic")}>{project.logoText || project.name}</span>
+                                    </div>
+                                )}
 
                                 {/* Overlay hover effect */}
                                 <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

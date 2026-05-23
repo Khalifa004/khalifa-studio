@@ -1,4 +1,4 @@
-import { Newsreader, JetBrains_Mono } from "next/font/google";
+import { Newsreader, JetBrains_Mono, Comfortaa } from "next/font/google";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
@@ -14,6 +14,12 @@ const newsreader = Newsreader({
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
+  display: "swap",
+});
+
+const comfortaa = Comfortaa({
+  subsets: ["latin"],
+  variable: "--font-comfortaa",
   display: "swap",
 });
 
@@ -48,7 +54,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="light">
-      <body className={`min-h-screen bg-background w-full overflow-x-clip ${newsreader.variable} ${jetbrainsMono.variable}`}>
+      <body className={`min-h-screen bg-background w-full overflow-x-clip ${newsreader.variable} ${jetbrainsMono.variable} ${comfortaa.variable}`}>
         <ClientLayout>
           {children}
           <Analytics />

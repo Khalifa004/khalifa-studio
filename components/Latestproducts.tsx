@@ -5,13 +5,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { StrengthsSection } from "./Strenghts";
-import MasonryGrid from "./MasonryGrid";
+import ProjectList from "./ProjectList";
 
 interface Product {
   name: string;
   price: string;
   description: string;
-  image: string;
+  image?: string;
+  backgroundColor?: string;
+  logoText?: string;
+  logoFont?: string;
   href: string;
 }
 
@@ -47,6 +50,22 @@ const itemVariants = {
 
 const LatestProducts: React.FC = () => {
   const products: Product[] = [
+    {
+      name: "Orin",
+      price: "Mac App",
+      description: "A Mac app that turns the notch into a lightweight memory layer for work, letting you capture notes, tasks, links, and context instantly across apps and websites.",
+      backgroundColor: "bg-[#F3EFE7]",
+      logoText: "Orin",
+      logoFont: "font-comfortaa font-bold",
+      href: "https://orin.khalifa.studio/",
+    },
+    {
+      name: "Pith",
+      price: "iOS App",
+      description: "Pith distills your raw voice into structured insights completely offline. Designed to capture and organize your core ideas with privacy in mind.",
+      image: "/images/pithnotelogo.png",
+      href: "https://pith.khalifa.studio/",
+    },
     {
       name: "Northstar",
       price: "Case Study",
@@ -130,8 +149,8 @@ const LatestProducts: React.FC = () => {
             </motion.div>
           </div>
 
-          <div className="w-full mt-12 md:mt-24">
-            <MasonryGrid projects={products} />
+          <div className="w-full mt-8 md:mt-12">
+            <ProjectList projects={products} />
           </div>
         </section>
 

@@ -3,10 +3,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-[90vh] flex flex-col justify-center w-full bg-background overflow-hidden">
+    <section className="relative min-h-[65vh] flex flex-col justify-center w-full bg-background overflow-hidden">
 
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-peach/20 blur-[120px] rounded-full mix-blend-multiply opacity-50 pointer-events-none" />
@@ -22,10 +23,15 @@ const Hero: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "circOut" }}
             >
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-gray-900 leading-[1.1] tracking-tight">
-                Hi, I'm Khalifa. <br className="hidden md:block" />
-                I design interfaces and write the code that brings them to life.
-              </h1>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden border border-black/5 shadow-sm">
+                  <Image src="/images/khalif.jpg" alt="Khalifa Seck" fill className="object-cover" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-gray-900 font-medium text-sm">Khalifa Seck</span>
+                  <span className="text-gray-500 font-mono text-[10px] uppercase tracking-widest">Toronto, CA</span>
+                </div>
+              </div>
             </motion.div>
 
             <motion.div
@@ -33,9 +39,9 @@ const Hero: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.25, ease: "circOut" }}
             >
-              <p className="text-lg md:text-xl font-light text-gray-500 leading-relax max-w-2xl">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-gray-900 leading-[1.1] tracking-tight">
                 I'm a designer who <span className="text-gray-900 font-medium italic">engineers</span>. 
-              </p>
+              </h1>
             </motion.div>
           </div>
 
