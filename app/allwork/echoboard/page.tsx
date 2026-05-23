@@ -96,7 +96,7 @@ export default function EchoBoardPage() {
                     transition={{ duration: 0.8, ease: organicEase, delay: 0.2 }}
                     className="text-lg font-light text-gray-500 max-w-xl leading-relaxed"
                   >
-                    A unified workspace that blends real‑time chat, AI assistance, interactive whiteboards, and personal journaling to streamline remote collaboration.
+                    A unified wojknrkspace that blends real‑time chat, AI assistance, interactive whiteboards, and personal journaling to streamline remote collaboration.
                   </motion.p>
                 </div>
 
