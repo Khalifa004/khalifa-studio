@@ -39,9 +39,7 @@ const Hero: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.25, ease: "circOut" }}
             >
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-gray-900 leading-[1.1] tracking-tight">
-                I'm a designer who <span className="text-gray-900 font-medium italic">engineers</span>. 
-              </h1>
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-gray-900 leading-[1.1] tracking-tight" />
             </motion.div>
           </div>
 
