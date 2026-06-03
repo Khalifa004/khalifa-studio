@@ -1,7 +1,7 @@
 import { Newsreader, JetBrains_Mono, Comfortaa } from "next/font/google";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import ClientLayout from "@/components/ClientLayout";
 

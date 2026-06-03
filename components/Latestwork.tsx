@@ -53,8 +53,8 @@ const projects: Project[] = [
     logoText: "Orin",
     logoFont: "font-comfortaa font-bold",
     href: "https://orin.khalifa.studio/",
-    role: "Development + UI",
-    year: "2024",
+    role: "Product design + Development",
+    year: "2026",
   },
   {
     name: "Pith",
@@ -62,8 +62,8 @@ const projects: Project[] = [
     description: "Pith distills your raw voice into structured insights completely offline. Designed to capture and organize your core ideas with privacy in mind.",
     image: "/images/pithnotelogo.png",
     href: "https://pith.khalifa.studio/",
-    role: "Development + UI",
-    year: "2024",
+    role: "Product design + Development",
+    year: "2026",
   },
 ];
 
