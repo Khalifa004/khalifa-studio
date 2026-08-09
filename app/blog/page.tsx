@@ -60,8 +60,8 @@ const posts: BlogPost[] = [
     href: "/blog/new-milestone-in-my-career",
     category: "Reflection",
     excerpt: "A look at the experiments, collaborators, and turning points that continue to shape my work in technology.",
-    avatar: "/images/khalif.jpg",
-    avatarLabel: "Khalifa Seck",
+    avatar: "/framer.png",
+    avatarLabel: "Framer Motion",
   },
   {
     title: "Navigating the Digital Futures: My Journey Through OCAD University and Self-Taught Coding",

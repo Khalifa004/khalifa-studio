@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 
 const organicEase = [0.4, 0, 0.2, 1];
@@ -78,6 +79,28 @@ export default function NavigatingTheDigitalFutures() {
             <span>Digital Futures</span>
           </motion.div>
         </motion.header>
+
+        <motion.figure
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: organicEase, delay: 0.3 }}
+          className="mb-24 overflow-hidden border border-black/5 md:mb-32"
+        >
+          <div className="relative aspect-[16/10]">
+            <Image
+              src="/ocad.jpg"
+              alt="OCAD University’s Sharp Centre for Design in Toronto"
+              fill
+              priority
+              sizes="(min-width: 896px) 768px, calc(100vw - 3rem)"
+              className="object-cover"
+            />
+          </div>
+          <figcaption className="flex items-center justify-between gap-4 border-t border-black/5 px-4 py-3 text-[10px] font-medium uppercase tracking-[0.14em] text-gray-500 md:px-5">
+            <span>OCAD University · Toronto</span>
+            <span>Digital Futures</span>
+          </figcaption>
+        </motion.figure>
 
         <main className="space-y-20 md:space-y-32">
 

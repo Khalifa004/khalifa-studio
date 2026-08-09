@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Copy, Check } from "lucide-react";
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css';
@@ -124,6 +125,28 @@ export default function HarnessingFramerMotion() {
             <span>Interactive Design</span>
           </motion.div>
         </motion.header>
+
+        <motion.figure
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: organicEase, delay: 0.25 }}
+          className="mb-24 overflow-hidden rounded-2xl border border-black/[0.08] bg-white shadow-sm md:mb-32"
+        >
+          <div className="relative aspect-[16/10]">
+            <Image
+              src="/framer.png"
+              alt="Framer Motion interface and animation studies"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 896px"
+              className="object-cover"
+            />
+          </div>
+          <figcaption className="flex items-center justify-between border-t border-black/[0.08] px-5 py-3 font-mono text-[10px] uppercase tracking-[0.14em] text-gray-500">
+            <span>Framer Motion</span>
+            <span>Interaction study</span>
+          </figcaption>
+        </motion.figure>
 
         <main className="space-y-20 md:space-y-32">
 

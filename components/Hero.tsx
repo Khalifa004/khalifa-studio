@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,12 +9,7 @@ const Hero = () => {
       <div className="mx-auto flex min-h-[78vh] w-full max-w-7xl flex-col border-x border-black/[0.08] px-6 pt-28 sm:px-8 lg:px-12 lg:pt-36">
         <div className="grid flex-1 md:grid-cols-[1.35fr_0.85fr] md:gap-14 lg:gap-24">
           <div className="flex flex-col justify-between pb-14 md:pb-20">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "circOut" }}
-              className="flex items-center gap-3"
-            >
+            <div className="flex items-center gap-3">
               <div className="relative h-10 w-10 overflow-hidden border border-black/10">
                 <Image src="/images/khalif.jpg" alt="Khalifa Seck" fill sizes="40px" className="object-cover" />
               </div>
@@ -23,14 +17,9 @@ const Hero = () => {
                 <span className="block font-medium">Khalifa Seck</span>
                 <span className="mt-1 block font-mono text-[10px] uppercase tracking-[0.14em] text-gray-500">Product engineer · Toronto</span>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "circOut" }}
-              className="mt-16 max-w-3xl md:mt-24"
-            >
+            <div className="mt-16 max-w-3xl md:mt-24">
               <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-gray-500">Designing the useful, not just the new</p>
               <h1 className="mt-5 max-w-3xl font-serif text-5xl leading-[0.93] tracking-[-0.045em] sm:text-6xl md:text-7xl lg:text-[5.4rem]">
                 Products for learning, focus, and the loose threads of a day.
@@ -49,24 +38,14 @@ const Hero = () => {
                   Start a conversation <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">↗</span>
                 </a>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.55, ease: "circOut" }}
-              className="mt-12 max-w-md border-t border-black/10 pt-5 text-sm leading-relaxed text-gray-500"
-            >
+            <p className="mt-12 max-w-md border-t border-black/10 pt-5 text-sm leading-relaxed text-gray-500">
               Based in Toronto and available for select product and collaboration opportunities.
-            </motion.p>
+            </p>
           </div>
 
-          <motion.aside
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.45, ease: "circOut" }}
-            className="border-t border-black/[0.1] py-10 md:mt-16 md:border-l md:border-t-0 md:py-0 md:pl-10 lg:pl-14"
-          >
+          <aside className="border-t border-black/[0.1] py-10 md:mt-16 md:border-l md:border-t-0 md:py-0 md:pl-10 lg:pl-14">
             <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-gray-500">A few things I&apos;m making</p>
             <div className="mt-7 border-t border-black/[0.12]">
               <article className="grid grid-cols-[2rem_1fr] gap-3 border-b border-black/[0.12] py-5">
@@ -119,7 +98,8 @@ const Hero = () => {
                 </div>
               </article>
             </div>
-          </motion.aside>
+
+          </aside>
         </div>
       </div>
     </section>
