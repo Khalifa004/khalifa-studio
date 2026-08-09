@@ -1,84 +1,167 @@
 "use client";
-import Link from 'next/link';
-import { motion } from 'framer-motion';
 
-interface BlogPost {
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+
+type BlogPost = {
   title: string;
   date: string;
   href: string;
-}
+  category: string;
+  excerpt: string;
+  avatar: string;
+  avatarClass?: string;
+  avatarLabel: string;
+};
+
+const posts: BlogPost[] = [
+  {
+    title: "Building IntelliCourse — My Journey into AI-Powered Learning",
+    date: "August 2025",
+    href: "/blog/building-intellicourse",
+    category: "Product build",
+    excerpt: "What it takes to design a learning platform that feels adaptive, useful, and grounded in a learner’s actual pace.",
+    avatar: "/images/intellicoursecover.jpg",
+    avatarLabel: "IntelliCourse",
+  },
+  {
+    title: "Global AI Summit in Kigali",
+    date: "April 2025",
+    href: "/blog/global-ai-summit-kigali",
+    category: "Field note",
+    excerpt: "Invited by Mastercard Foundation as a High-Impact Engineer—reflecting on AI in education and who gets to shape its future.",
+    avatar: "/mastercard.webp",
+    avatarLabel: "Mastercard Foundation",
+  },
+  {
+    title: "Collaborating for Youth Upskilling",
+    date: "December 2024",
+    href: "/blog/youth-upskilling-collaboration",
+    category: "Social impact",
+    excerpt: "Notes from collaborating with African innovators and governments to help close the digital skills gap.",
+    avatar: "/images/kigali.png",
+    avatarLabel: "Youth upskilling collaboration",
+  },
+  {
+    title: "My Pomodoro Journey: Creating Pomora",
+    date: "November 2024",
+    href: "/blog/pomora",
+    category: "Product build",
+    excerpt: "The thinking behind a calmer focus tool—where structure, feedback, and a little delight make concentration easier to return to.",
+    avatar: "/images/pomoralogo.svg",
+    avatarClass: "object-contain p-1.5",
+    avatarLabel: "Pomora",
+  },
+  {
+    title: "The Evolution of My Career Through AI Innovation",
+    date: "July 2024",
+    href: "/blog/new-milestone-in-my-career",
+    category: "Reflection",
+    excerpt: "A look at the experiments, collaborators, and turning points that continue to shape my work in technology.",
+    avatar: "/images/khalif.jpg",
+    avatarLabel: "Khalifa Seck",
+  },
+  {
+    title: "Navigating the Digital Futures: My Journey Through OCAD University and Self-Taught Coding",
+    date: "December 2023",
+    href: "/blog/OCADJourney",
+    category: "Reflection",
+    excerpt: "How design education and self-directed code became one practice for turning ideas into experiences.",
+    avatar: "/images/khalif.jpg",
+    avatarLabel: "Khalifa Seck",
+  },
+  {
+    title: "Harnessing Framer Motion for Dynamic Web Experiences",
+    date: "September 2023",
+    href: "/blog/Framermotion",
+    category: "Craft note",
+    excerpt: "A practical look at using motion to clarify interaction, guide attention, and make an interface feel more alive.",
+    avatar: "/images/khalif.jpg",
+    avatarLabel: "Khalifa Seck",
+  },
+];
 
 export default function Blog() {
-  const posts: BlogPost[] = [
-    {
-      title: 'Global AI Summit in Kigali',
-      date: 'April 2025',
-      href: '/blog/global-ai-summit-kigali',
-    },
-    {
-      title: 'Collaborating for Youth Upskilling',
-      date: 'December 2024',
-      href: '/blog/youth-upskilling-collaboration',
-    },
-    {
-      title: 'Building IntelliCourse — My Journey into AI-Powered Learning',
-      date: 'August 08, 2025',
-      href: '/blog/building-intellicourse',
-    },
-    {
-      title: 'The Evolution of My Career Through AI Innovation',
-      date: 'July 13, 2024',
-      href: '/blog/new-milestone-in-my-career',
-    },
-    {
-      title: 'Navigating the Digital Futures: My Journey Through OCAD University and Self-Taught Coding',
-      date: 'December 19, 2023',
-      href: '/blog/OCADJourney',
-    },
-    {
-      title: 'Harnessing Framer Motion for Dynamic Web Experiences',
-      date: 'September 09, 2023',
-      href: '/blog/Framermotion',
-    },
-    {
-      title: 'My Pomodoro Journey: Creating Pomora',
-      date: 'November 09, 2024',
-      href: '/blog/pomora',
-    },
-  ];
-
   return (
     <motion.main
-      className="bg-background text-gray-600 min-h-screen font-sans antialiased overflow-x-hidden"
+      className="min-h-screen overflow-x-hidden bg-background text-gray-900"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.45 }}
     >
-      <div className="max-w-4xl mx-auto px-6 md:px-12 py-32 md:py-48">
-        <h1 className="text-5xl md:text-7xl font-serif text-gray-900 tracking-tight leading-[0.9] mb-20 md:mb-32">
-          Notes & <br className="hidden md:block" />Observations
-        </h1>
-
-        <motion.div
-          className="flex flex-col gap-6"
-          initial={{ opacity: 0, y: 20 }}
+      <div className="mx-auto max-w-7xl border-x border-black/[0.08] px-6 pb-20 pt-32 sm:px-8 md:pb-28 lg:px-12 lg:pt-40">
+        <motion.header
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="grid gap-10 border-b border-black/[0.12] pb-14 md:grid-cols-[1.1fr_0.9fr] md:items-end md:gap-20"
         >
+          <div>
+            <p className="font-mono text-[10px] uppercase tracking-[0.17em] text-gray-500">Notes from the work</p>
+            <h1 className="mt-6 max-w-3xl font-serif text-5xl leading-[0.9] tracking-[-0.055em] sm:text-6xl md:text-7xl">
+              Writing about the work behind the work.
+            </h1>
+          </div>
+          <div className="md:pb-1">
+            <p className="max-w-md text-base leading-relaxed text-gray-600">
+              Product notes, field observations, and reflections on the systems, people, and experiments that shape how I design and build.
+            </p>
+            <div className="mt-8 flex items-center gap-7 font-mono text-[10px] uppercase tracking-[0.15em] text-gray-500">
+              <span>07 essays</span>
+              <span className="h-px w-7 bg-black/15" />
+              <span>2023—2025</span>
+            </div>
+          </div>
+        </motion.header>
+
+        <section className="mt-4 border-t border-black/[0.12]" aria-label="Writing">
           {posts.map((post, index) => (
-            <Link
-              key={index}
-              className="group flex flex-col items-start gap-3 border-b border-black/5 pb-6 hover:border-black/20 transition-colors"
-              href={post.href}
-              aria-label={`Read more about ${post.title}`}
+            <motion.article
+              key={post.href}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ duration: 0.6, delay: Math.min(index * 0.05, 0.25), ease: [0.16, 1, 0.3, 1] }}
+              className="border-b border-black/[0.12]"
             >
-              <div className="flex flex-col gap-2">
-                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-gray-400 group-hover:text-gray-900 transition-colors">{post.date}</span>
-                <h2 className="text-2xl md:text-3xl font-medium text-gray-900 leading-tight group-hover:opacity-60 transition-opacity">{post.title}</h2>
-              </div>
-            </Link>
+              <Link
+                href={post.href}
+                aria-label={`Read ${post.title}`}
+                className="group grid gap-5 py-7 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900 sm:grid-cols-[2.5rem_3rem_minmax(0,1fr)_auto] sm:items-start sm:gap-5 sm:py-9"
+              >
+                <span className="font-mono text-[10px] tracking-[0.16em] text-gray-400">{String(index + 1).padStart(2, "0")}</span>
+
+                <span className="relative h-10 w-10 overflow-hidden rounded-full border border-black/10 bg-white">
+                  <Image
+                    src={post.avatar}
+                    alt={post.avatarLabel}
+                    fill
+                    sizes="40px"
+                    className={post.avatarClass ?? "object-cover"}
+                  />
+                </span>
+
+                <div className="sm:pr-8">
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[9px] uppercase tracking-[0.15em] text-gray-500">
+                    <span>{post.category}</span>
+                    <span className="hidden h-px w-4 bg-black/15 sm:block" />
+                    <span>{post.date}</span>
+                  </div>
+                  <h2 className="mt-4 max-w-3xl font-serif text-2xl leading-[1.02] tracking-[-0.035em] text-gray-900 transition-colors group-hover:text-gray-500 sm:text-3xl md:text-4xl">
+                    {post.title}
+                  </h2>
+                  <p className="mt-4 max-w-2xl text-sm leading-relaxed text-gray-600 sm:text-base">{post.excerpt}</p>
+                </div>
+
+                <span className="hidden items-center gap-2 self-center text-sm font-medium text-gray-700 transition-transform group-hover:translate-x-1 sm:inline-flex">
+                  Read <ArrowUpRight className="h-4 w-4" />
+                </span>
+              </Link>
+            </motion.article>
           ))}
-        </motion.div>
+        </section>
       </div>
     </motion.main>
   );

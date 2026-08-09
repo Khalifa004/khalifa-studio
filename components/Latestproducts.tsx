@@ -51,6 +51,20 @@ const itemVariants = {
 const LatestProducts: React.FC = () => {
   const products: Product[] = [
     {
+      name: "Northstar",
+      price: "Case Study",
+      description: "A cutting-edge bullet train service that combines efficient transportation with immersive VR experiences.",
+      image: "/images/norhtstars.png",
+      href: "/allwork/thenorth",
+    },
+    {
+      name: "Pith",
+      price: "iOS App",
+      description: "Pith distills your raw voice into structured insights completely offline. Designed to capture and organize your core ideas with privacy in mind.",
+      image: "/images/pithnotelogo.png",
+      href: "/allwork/pith",
+    },
+    {
       name: "Orin",
       price: "Mac App",
       description: "A Mac app that turns the notch into a lightweight memory layer for work, letting you capture notes, tasks, links, and context instantly across apps and websites.",
@@ -58,20 +72,6 @@ const LatestProducts: React.FC = () => {
       logoText: "Orin",
       logoFont: "font-comfortaa font-bold",
       href: "https://orin.khalifa.studio/",
-    },
-    {
-      name: "Pith",
-      price: "iOS App",
-      description: "Pith distills your raw voice into structured insights completely offline. Designed to capture and organize your core ideas with privacy in mind.",
-      image: "/images/pithnotelogo.png",
-      href: "https://pith.khalifa.studio/",
-    },
-    {
-      name: "Northstar",
-      price: "Case Study",
-      description: "A cutting-edge bullet train service that combines efficient transportation with immersive VR experiences.",
-      image: "/images/norhtstars.png",
-      href: "/allwork/thenorth",
     },
     {
       name: "IntelliCourse",
@@ -173,4 +173,3 @@ const LatestProducts: React.FC = () => {
 };
 
 export default LatestProducts;
-

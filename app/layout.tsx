@@ -1,24 +1,24 @@
-import { Newsreader, JetBrains_Mono, Comfortaa } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import ClientLayout from "@/components/ClientLayout";
 
-const newsreader = Newsreader({
-  subsets: ["latin"],
+const displayFont = localFont({
+  src: "../public/fonts/ClashDisplay.ttf",
   variable: "--font-serif",
   display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
+const monoFont = localFont({
+  src: "../public/fonts/GeistMonoVF.woff",
   variable: "--font-mono",
   display: "swap",
 });
 
-const comfortaa = Comfortaa({
-  subsets: ["latin"],
+const accentFont = localFont({
+  src: "../public/fonts/Satoshi-Variable.woff2",
   variable: "--font-comfortaa",
   display: "swap",
 });
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="light">
-      <body className={`min-h-screen bg-background w-full overflow-x-clip ${newsreader.variable} ${jetbrainsMono.variable} ${comfortaa.variable}`}>
+      <body className={`min-h-screen bg-background w-full overflow-x-clip ${displayFont.variable} ${monoFont.variable} ${accentFont.variable}`}>
         <ClientLayout>
           {children}
           <Analytics />

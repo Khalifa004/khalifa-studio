@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
@@ -10,7 +11,11 @@ const blogPreviews = [
         date: "April 2025",
         excerpt: "Invited by Mastercard Foundation as a High-Impact Engineer. Reflecting on the future of AI in education.",
         href: "/blog/global-ai-summit-kigali",
-        tags: ["AI Summit", "Kigali"]
+        tags: ["AI Summit", "Kigali"],
+        partner: {
+            name: "Mastercard Foundation",
+            image: "/mastercard.webp",
+        },
     },
     {
         title: "Collaborating for Youth Upskilling",
@@ -63,9 +68,28 @@ export default function HomeBlogPreview() {
                                 <article className="h-full p-8 rounded-2xl bg-gray-50 border border-gray-100 transition-all duration-300 hover:bg-background hover:shadow-lg hover:border-transparent">
                                     <div className="flex flex-col h-full justify-between">
                                         <div>
-                                            <div className="flex items-center gap-3 mb-6">
-                                                <span className="text-xs font-medium uppercase tracking-wider text-gray-400">{post.date}</span>
-                                                <div className="flex gap-2">
+                                            <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
+                                                {post.partner ? (
+                                                    <div className="flex items-center gap-3">
+                                                        <div className="relative h-10 w-10 overflow-hidden rounded-full border border-black/10 bg-white">
+                                                            <Image
+                                                                src={post.partner.image}
+                                                                alt=""
+                                                                fill
+                                                                sizes="40px"
+                                                                className="object-cover"
+                                                            />
+                                                        </div>
+                                                        <div>
+                                                            <p className="font-mono text-[9px] uppercase tracking-[0.14em] text-gray-400">With</p>
+                                                            <p className="mt-0.5 text-xs font-medium text-gray-700">{post.partner.name}</p>
+                                                        </div>
+                                                    </div>
+                                                ) : (
+                                                    <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-gray-400">Latest note</span>
+                                                )}
+                                                <div className="flex items-center gap-2">
+                                                    <span className="text-xs font-medium uppercase tracking-wider text-gray-400">{post.date}</span>
                                                     {post.tags.map(tag => (
                                                         <span key={tag} className="px-2 py-0.5 rounded-full bg-gray-200/50 text-[10px] text-gray-500">{tag}</span>
                                                     ))}

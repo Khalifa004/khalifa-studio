@@ -19,30 +19,30 @@ interface Project {
 
 const projects: Project[] = [
   {
-    name: "Pomora",
-    price: "Platform",
-    description: "Boost your productivity with my intelligent Pomodoro Timer.",
-    image: "/images/pomoramain2.png",
-    href: "/allwork/Lapomora",
-    role: "Front-end + UI",
-    year: "2024",
-  },
-  {
-    name: "IntelliCourse",
-    price: "Platform",
-    description: "AI-powered platform that personalizes learning and fosters continuous growth.",
-    image: "/images/intellicourse1.jpeg",
-    href: "/allwork/Intellicourse",
-    role: "Product design + Front-end",
-    year: "2024",
-  },
-  {
     name: "NorthStar",
     price: "UX/UI design",
     description: "Innovation Project",
     image: "/images/Northstars.png",
     href: "/allwork/thenorth",
     role: "UI/UX",
+    year: "2024",
+  },
+  {
+    name: "Pith",
+    price: "iOS App",
+    description: "Pith distills your raw voice into structured insights completely offline. Designed to capture and organize your core ideas with privacy in mind.",
+    image: "/images/pithnotelogo.png",
+    href: "/allwork/pith",
+    role: "Product design + Development",
+    year: "2026",
+  },
+  {
+    name: "Pomora",
+    price: "Platform",
+    description: "Boost your productivity with my intelligent Pomodoro Timer.",
+    image: "/images/pomoramain2.png",
+    href: "/allwork/Lapomora",
+    role: "Front-end + UI",
     year: "2024",
   },
   {
@@ -57,13 +57,13 @@ const projects: Project[] = [
     year: "2026",
   },
   {
-    name: "Pith",
-    price: "iOS App",
-    description: "Pith distills your raw voice into structured insights completely offline. Designed to capture and organize your core ideas with privacy in mind.",
-    image: "/images/pithnotelogo.png",
-    href: "https://pith.khalifa.studio/",
-    role: "Product design + Development",
-    year: "2026",
+    name: "IntelliCourse",
+    price: "Platform",
+    description: "AI-powered platform that personalizes learning and fosters continuous growth.",
+    image: "/images/intellicourse1.jpeg",
+    href: "/allwork/Intellicourse",
+    role: "Product design + Front-end",
+    year: "2024",
   },
 ];
 
@@ -100,4 +100,3 @@ const LatestWork: React.FC = () => {
 };
 
 export default LatestWork;
-

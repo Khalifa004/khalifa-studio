@@ -1,79 +1,125 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
-const Hero: React.FC = () => {
+const Hero = () => {
   return (
-    <section className="relative min-h-[65vh] flex flex-col justify-center w-full bg-background overflow-hidden">
-
-      {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-peach/20 blur-[120px] rounded-full mix-blend-multiply opacity-50 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-lavender/20 blur-[120px] rounded-full mix-blend-multiply opacity-50 pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full h-full flex flex-col justify-center relative z-10 pt-20 pb-12">
-        <div className="grid md:grid-cols-[1.5fr_1fr] gap-12 lg:gap-24 items-end">
-
-          {/* Left Column: Headline & Bio */}
-          <div className="flex flex-col items-start gap-8 max-w-3xl">
+    <section className="relative w-full overflow-hidden bg-background text-gray-900">
+      <div className="mx-auto flex min-h-[78vh] w-full max-w-7xl flex-col border-x border-black/[0.08] px-6 pt-28 sm:px-8 lg:px-12 lg:pt-36">
+        <div className="grid flex-1 md:grid-cols-[1.35fr_0.85fr] md:gap-14 lg:gap-24">
+          <div className="flex flex-col justify-between pb-14 md:pb-20">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "circOut" }}
+              className="flex items-center gap-3"
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden border border-black/5 shadow-sm">
-                  <Image src="/images/khalif.jpg" alt="Khalifa Seck" fill className="object-cover" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-gray-900 font-medium text-sm">Khalifa Seck</span>
-                  <span className="text-gray-500 font-mono text-[10px] uppercase tracking-widest">Toronto, CA</span>
-                </div>
+              <div className="relative h-10 w-10 overflow-hidden border border-black/10">
+                <Image src="/images/khalif.jpg" alt="Khalifa Seck" fill sizes="40px" className="object-cover" />
+              </div>
+              <div className="text-sm leading-tight">
+                <span className="block font-medium">Khalifa Seck</span>
+                <span className="mt-1 block font-mono text-[10px] uppercase tracking-[0.14em] text-gray-500">Product engineer · Toronto</span>
               </div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.25, ease: "circOut" }}
-            >
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-gray-900 leading-[1.1] tracking-tight" />
-            </motion.div>
-          </div>
-
-          {/* Right Column: Details & Links */}
-          <div className="flex flex-col gap-8 md:pb-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "circOut" }}
-              className="flex flex-col gap-6"
+              className="mt-16 max-w-3xl md:mt-24"
             >
-              {/* Status Badge */}
-              <div className="flex items-center gap-3">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
-               
-              </div>
-
-              <div className="h-px w-full bg-gradient-to-r from-black/10 to-transparent" />
-
-              {/* Navigation Links */}
-              <div className="flex gap-8">
-                <Link href="/allwork" className="group flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-gray-900 transition-colors">
-                  <span className="border-b border-black/20 group-hover:border-black transition-colors pb-0.5">Explore Work</span>
+              <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-gray-500">Designing the useful, not just the new</p>
+              <h1 className="mt-5 max-w-3xl font-serif text-5xl leading-[0.93] tracking-[-0.045em] sm:text-6xl md:text-7xl lg:text-[5.4rem]">
+                Products for learning, focus, and the loose threads of a day.
+              </h1>
+              <p className="mt-8 max-w-xl text-base leading-relaxed text-gray-700 md:text-lg">
+                I&apos;m Khalifa—a product engineer who designs and builds thoughtful digital experiences for learning, focus, and everyday work.
+              </p>
+              <p className="mt-4 max-w-xl text-sm leading-relaxed text-gray-500">
+                From Figma to frontend, I pair systems thinking with a sharp eye for interaction, motion, and the details that make technology feel human.
+              </p>
+              <div className="mt-10 flex flex-wrap gap-x-7 gap-y-4 text-sm font-medium">
+                <Link href="/allwork" className="group inline-flex items-center gap-2 border-b border-black pb-1 transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900">
+                  View selected work <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">↗</span>
                 </Link>
-                <Link href="/aboutme" className="group flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-gray-500 hover:text-gray-900 transition-colors">
-                  <span className="border-b border-transparent group-hover:border-black transition-colors pb-0.5">About Me</span>
-                </Link>
+                <a href="mailto:khalifa.seck@outlook.com" className="group inline-flex items-center gap-2 border-b border-black/25 pb-1 text-gray-600 transition-colors hover:border-black hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900">
+                  Start a conversation <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">↗</span>
+                </a>
               </div>
             </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.55, ease: "circOut" }}
+              className="mt-12 max-w-md border-t border-black/10 pt-5 text-sm leading-relaxed text-gray-500"
+            >
+              Based in Toronto and available for select product and collaboration opportunities.
+            </motion.p>
           </div>
 
+          <motion.aside
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.45, ease: "circOut" }}
+            className="border-t border-black/[0.1] py-10 md:mt-16 md:border-l md:border-t-0 md:py-0 md:pl-10 lg:pl-14"
+          >
+            <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-gray-500">A few things I&apos;m making</p>
+            <div className="mt-7 border-t border-black/[0.12]">
+              <article className="grid grid-cols-[2rem_1fr] gap-3 border-b border-black/[0.12] py-5">
+                <span className="font-mono text-[10px] text-gray-400">01</span>
+                <div>
+                  <h2 className="text-lg font-medium">IntelliCourse</h2>
+                  <p className="mt-1 text-sm leading-relaxed text-gray-600">Making adaptive learning feel less transactional.</p>
+                  <p className="mt-3 font-mono text-[9px] uppercase tracking-[0.14em] text-gray-500">Lead frontend + interaction design</p>
+                </div>
+              </article>
+              <article className="grid grid-cols-[2rem_1fr] gap-3 border-b border-black/[0.12] py-5">
+                <span className="font-mono text-[10px] text-gray-400">02</span>
+                <div>
+                  <a
+                    href="https://orin.khalifa.studio/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group flex w-fit items-center gap-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900"
+                  >
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-black/10 bg-[#f3efe7] font-serif text-xl leading-none text-gray-900 transition-transform duration-300 group-hover:scale-105">O</span>
+                    <h2 className="text-lg font-medium transition-opacity group-hover:opacity-60">Orin</h2>
+                    <span aria-hidden="true" className="text-sm text-gray-400 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+                  </a>
+                  <p className="mt-3 text-sm leading-relaxed text-gray-600">A lightweight memory layer for the loose context of a workday.</p>
+                  <p className="mt-3 font-mono text-[9px] uppercase tracking-[0.14em] text-gray-500">Product design + development</p>
+                </div>
+              </article>
+              <article className="grid grid-cols-[2rem_1fr] gap-3 border-b border-black/[0.12] py-5">
+                <span className="font-mono text-[10px] text-gray-400">03</span>
+                <div>
+                  <a
+                    href="https://pith.khalifa.studio/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group flex w-fit items-center gap-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900"
+                  >
+                    <span className="relative h-9 w-9 overflow-hidden rounded-full border border-black/10 bg-[#062c23] transition-transform duration-300 group-hover:scale-105">
+                      <Image src="/images/pithnotelogo.png" alt="" fill sizes="36px" className="object-cover" />
+                    </span>
+                    <h2 className="text-lg font-medium transition-opacity group-hover:opacity-60">Pith</h2>
+                    <span aria-hidden="true" className="text-sm text-gray-400 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+                  </a>
+                  <p className="mt-3 text-sm leading-relaxed text-gray-600">A private voice-to-insight companion that works completely offline.</p>
+                  <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
+                    <Link href="/allwork/pith" className="text-xs font-medium text-gray-500 underline decoration-black/20 underline-offset-4 transition-colors hover:text-black hover:decoration-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900">
+                      Read the case study
+                    </Link>
+                    <span className="font-mono text-[9px] uppercase tracking-[0.14em] text-gray-500">Product design + development</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </motion.aside>
         </div>
       </div>
     </section>
