@@ -1,102 +1,167 @@
-'use client'
+"use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import ProjectList from './ProjectList';
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
-interface Project {
+type Project = {
   name: string;
-  price: string;
+  type: string;
   description: string;
   image?: string;
-  backgroundColor?: string;
-  logoText?: string;
-  logoFont?: string;
   href: string;
-  role?: string;
-  year?: string;
-}
+  role: string;
+  year: string;
+  surface: string;
+  logoText?: string;
+  external?: boolean;
+};
 
 const projects: Project[] = [
   {
-    name: "NorthStar",
-    price: "UX/UI design",
-    description: "Innovation Project",
+    name: "Northstar",
+    type: "Case study",
+    description: "A concept for an immersive high-speed rail experience that brings together service design, booking, and VR.",
     image: "/images/Northstars.png",
     href: "/allwork/thenorth",
-    role: "UI/UX",
+    role: "UI/UX design",
     year: "2024",
+    surface: "#dbe4ef",
   },
   {
     name: "Pith",
-    price: "iOS App",
-    description: "Pith distills your raw voice into structured insights completely offline. Designed to capture and organize your core ideas with privacy in mind.",
+    type: "iOS app",
+    description: "A private, on-device voice companion that turns unstructured thoughts into useful notes and insight.",
     image: "/images/pithnotelogo.png",
     href: "/allwork/pith",
-    role: "Product design + Development",
+    role: "Product design + development",
     year: "2026",
+    surface: "#062c23",
   },
   {
     name: "Pomora",
-    price: "Platform",
-    description: "Boost your productivity with my intelligent Pomodoro Timer.",
+    type: "Web app",
+    description: "A focused productivity timer built to make planning a work session feel simple and motivating.",
     image: "/images/pomoramain2.png",
     href: "/allwork/Lapomora",
-    role: "Front-end + UI",
+    role: "Frontend + UI design",
     year: "2024",
+    surface: "#f5d1cf",
   },
   {
     name: "Orin",
-    price: "Mac App",
-    description: "A lightweight memory layer for work.",
-    backgroundColor: "bg-[#F3EFE7]",
-    logoText: "Orin",
-    logoFont: "font-comfortaa font-bold",
+    type: "Mac app",
+    description: "A lightweight memory layer for the small notes, tasks, links, and context that collect during a workday.",
     href: "https://orin.khalifa.studio/",
-    role: "Product design + Development",
+    role: "Product design + development",
     year: "2026",
+    surface: "#f3efe7",
+    logoText: "Orin",
+    external: true,
   },
   {
     name: "IntelliCourse",
-    price: "Platform",
-    description: "AI-powered platform that personalizes learning and fosters continuous growth.",
+    type: "Learning platform",
+    description: "An AI-powered learning platform designed to make education feel more adaptive and personal.",
     image: "/images/intellicourse1.jpeg",
     href: "/allwork/Intellicourse",
-    role: "Product design + Front-end",
+    role: "Product design + frontend",
     year: "2024",
+    surface: "#e9e4da",
   },
 ];
 
-const LatestWork: React.FC = () => {
-  return (
-    <div className="min-h-screen p-4 sm:p-8 pt-16 sm:pt-20 md:pt-32 bg-background flex flex-col items-center">
-      {/* Header */}
-      <motion.div
-        className="flex flex-col items-start justify-start max-w-7xl w-full mx-auto mb-12 sm:mb-16"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <div className="flex items-center justify-start gap-2 p-2 sm:p-4">
-          <motion.div
-            className="flex items-center justify-center h-min bg-neutral-100 border border-neutral-200 rounded-full px-2 py-1 sm:px-3 sm:py-1.5"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span className="text-neutral-800 text-xs sm:text-sm font-semibold">Work</span>
-          </motion.div>
+function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const cardContent = (
+    <>
+      <div className="relative aspect-[16/10] overflow-hidden border border-black/[0.1]" style={{ backgroundColor: project.surface }}>
+        {project.image ? (
+          <Image
+            src={project.image}
+            alt=""
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035]"
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center">
+            <span className="font-serif text-5xl tracking-[-0.06em] text-gray-900 sm:text-6xl">{project.logoText}</span>
+          </div>
+        )}
+        <div className="pointer-events-none absolute inset-0 bg-black/[0.02] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        <div className="absolute left-4 top-4 flex items-center gap-2 bg-background/90 px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.14em] text-gray-600 backdrop-blur-sm">
+          <span>{String(index + 1).padStart(2, "0")}</span>
+          <span className="text-gray-300">/</span>
+          <span>{project.type}</span>
         </div>
+        <span className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center border border-black/[0.12] bg-background/90 text-gray-800 opacity-0 transition-all duration-300 group-hover:opacity-100 sm:translate-y-1 sm:group-hover:translate-y-0">
+          <ArrowUpRight className="h-4 w-4" strokeWidth={1.5} />
+        </span>
+      </div>
 
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-2 sm:mb-4 pl-2 sm:pl-4">Here you will See</h2>
-        <p className="text-base sm:text-lg md:text-xl font-medium text-gray-600 mb-4 sm:mb-6 pl-2 sm:pl-4">My latest projects.</p>
-      </motion.div>
+      <div className="grid gap-3 border-b border-black/[0.12] py-5 sm:grid-cols-[1fr_auto] sm:gap-6">
+        <div>
+          <h2 className="text-2xl tracking-[-0.035em] text-gray-900 transition-opacity group-hover:opacity-60 sm:text-3xl">{project.name}</h2>
+          <p className="mt-2 max-w-md text-sm leading-relaxed text-gray-500">{project.description}</p>
+        </div>
+        <div className="flex items-start gap-3 font-mono text-[9px] uppercase tracking-[0.14em] text-gray-400 sm:flex-col sm:items-end sm:pt-1">
+          <span>{project.role}</span>
+          <span>{project.year}</span>
+        </div>
+      </div>
+    </>
+  );
 
-      {/* Projects Grid Container aligned to max-w-7xl */}
-      <div className="max-w-7xl w-full mx-auto px-2 sm:px-4">
-        <ProjectList projects={projects} />
+  const className = "group block h-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900";
+
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 22 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-8%" }}
+      transition={{ duration: 0.6, delay: Math.min(index * 0.07, 0.21), ease: [0.16, 1, 0.3, 1] }}
+    >
+      {project.external ? (
+        <a href={project.href} target="_blank" rel="noreferrer" className={className}>
+          {cardContent}
+        </a>
+      ) : (
+        <Link href={project.href} className={className}>
+          {cardContent}
+        </Link>
+      )}
+    </motion.article>
+  );
+}
+
+const LatestWork = () => (
+  <main className="w-full bg-background pb-20 pt-32 sm:pt-36 lg:pb-28">
+    <div className="mx-auto max-w-7xl border-x border-black/[0.08] px-6 sm:px-8 lg:px-12">
+      <motion.header
+        initial={{ opacity: 0, y: 18 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+        className="grid gap-8 border-y border-black/[0.12] py-8 md:grid-cols-[1.2fr_0.8fr] md:items-end md:gap-16 md:py-10"
+      >
+        <div>
+          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-gray-500">Product engineering portfolio</p>
+          <h1 className="mt-4 max-w-3xl font-serif text-5xl leading-[0.9] tracking-[-0.05em] text-gray-950 sm:text-6xl md:text-7xl">
+            Selected work.
+          </h1>
+        </div>
+        <p className="max-w-md text-sm leading-relaxed text-gray-600 sm:text-base">
+          A selection of digital products I&apos;ve designed, built, and refined. Each project notes the part of the work I owned.
+        </p>
+      </motion.header>
+
+      <div className="grid gap-x-8 gap-y-12 py-10 md:grid-cols-2 md:gap-x-12 md:gap-y-16 md:py-14">
+        {projects.map((project, index) => (
+          <ProjectCard key={project.name} project={project} index={index} />
+        ))}
       </div>
     </div>
-  );
-};
+  </main>
+);
 
 export default LatestWork;

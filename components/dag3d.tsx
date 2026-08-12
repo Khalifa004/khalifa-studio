@@ -1,8 +1,7 @@
 "use client";
 
-import Autoplay from "embla-carousel-autoplay";
-import { AnimatePresence, motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";
@@ -14,204 +13,181 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 
-const Skiper54 = () => {
-  const images = [
-    {
-      src: "/images/art-1.jpg",
-      alt: "Max Flyo",
-      title: "Max Flyo",
-    },
-    {
-      src: "/images/art-2.jpg",
-      alt: "Khaz Headphones",
-      title: "Khaz Headphones",
-    },
-    {
-      src: "/images/art-3.jpg",
-      alt: "Madrid",
-      title: "Madrid",
-    },
-    {
-      src: "/images/art-4.jpg",
-      alt: "Dystopian Station",
-      title: "Dystopian Station",
-    },
-    {
-      src: "/images/art-6.jpg",
-      alt: "Drone",
-      title: "Drone",
-    },
-  ];
-  return (
-    <div className="flex h-full w-screen flex-col items-center justify-center overflow-hidden px-8 py-12">
-      <div className="mb-8 text-center">
-        <h1 className="text-4xl font-light tracking-wide text-black/80">
-          Sometimes I do 3-D work
-        </h1>
-        <p className="mt-2 text-sm text-black/60">← Swipe or use arrows to navigate →</p>
-      </div>
-      <div className="w-full max-w-5xl">
-        <Carousel_006
-          images={images}
-          className=""
-          loop={true}
-          showNavigation={true}
-          showPagination={true}
-        />
-      </div>
-    </div>
-  );
+type Artwork = {
+  src: string;
+  alt: string;
+  title: string;
+  discipline: string;
+  year: string;
+  backdrop: string;
 };
 
-interface Carousel_006Props {
-  images: { src: string; alt: string; title: string }[];
-  className?: string;
-  autoplay?: boolean;
-  loop?: boolean;
-  showNavigation?: boolean;
-  showPagination?: boolean;
-}
+const artworks: Artwork[] = [
+  {
+    src: "/images/art-1.jpg",
+    alt: "Max Flyo 3D character study",
+    title: "Max Flyo",
+    discipline: "Character study",
+    year: "2024",
+    backdrop: "#e9e5dd",
+  },
+  {
+    src: "/images/art-2.jpg",
+    alt: "Khaz Headphones 3D product render",
+    title: "Khaz Headphones",
+    discipline: "Product visualization",
+    year: "2024",
+    backdrop: "#ebe9e5",
+  },
+  {
+    src: "/images/art-3.jpg",
+    alt: "Madrid 3D environment study",
+    title: "Madrid",
+    discipline: "Environment study",
+    year: "2023",
+    backdrop: "#e6e2dc",
+  },
+  {
+    src: "/images/art-4.jpg",
+    alt: "Dystopian Station 3D environment study",
+    title: "Dystopian Station",
+    discipline: "World building",
+    year: "2023",
+    backdrop: "#e8e5df",
+  },
+  {
+    src: "/images/art-6.jpg",
+    alt: "Drone 3D product study",
+    title: "Drone",
+    discipline: "Product study",
+    year: "2023",
+    backdrop: "#e7e5e1",
+  },
+];
 
-const Carousel_006 = ({
-  images,
-  className,
-  autoplay = false,
-  loop = true,
-  showNavigation = true,
-  showPagination = true,
-}: Carousel_006Props) => {
+function ArtworkCarousel({ className }: { className?: string }) {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     if (!api) return;
 
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap());
-    });
+    const updateCurrent = () => setCurrent(api.selectedScrollSnap());
+    updateCurrent();
+    api.on("select", updateCurrent);
+    api.on("reInit", updateCurrent);
+
+    return () => {
+      api.off("select", updateCurrent);
+      api.off("reInit", updateCurrent);
+    };
   }, [api]);
 
   return (
     <Carousel
       setApi={setApi}
-      className={cn("w-full pb-12", className)}
-      opts={{
-        loop,
-        slidesToScroll: 1,
-        align: "center",
-      }}
-      plugins={
-        autoplay
-          ? [
-            Autoplay({
-              delay: 2000,
-              stopOnInteraction: true,
-              stopOnMouseEnter: true,
-            }),
-          ]
-          : []
-      }
+      className={cn("w-full", className)}
+      opts={{ align: "start", loop: true, slidesToScroll: 1 }}
     >
-      <CarouselContent className="flex h-[450px] w-full">
-        {images.map((img, index) => (
+      <CarouselContent className="-ml-4">
+        {artworks.map((artwork, index) => (
           <CarouselItem
-            key={index}
-            className="relative flex h-full w-full basis-full items-center justify-center"
+            key={artwork.title}
+            className="basis-[86%] pl-4 sm:basis-[62%] lg:basis-[43%]"
           >
-            <motion.div
-              initial={false}
-              animate={{
-                clipPath:
-                  current !== index
-                    ? "inset(15% 0 15% 0 round 2rem)"
-                    : "inset(0 0 0 0 round 2rem)",
-              }}
-              className="h-[400px] w-[300px] overflow-hidden rounded-3xl"
+            <motion.article
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.45, delay: Math.min(index * 0.06, 0.18) }}
+              className="group h-full"
             >
-              <div className="relative h-full w-full">
+              <div
+                className="relative aspect-[4/3] overflow-hidden p-3 sm:p-4"
+                style={{ backgroundColor: artwork.backdrop }}
+              >
                 <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="h-full w-full object-cover"
+                  src={artwork.src}
+                  alt={artwork.alt}
+                  className="h-full w-full object-contain transition-opacity duration-300 group-hover:opacity-90"
                 />
+                <div className="pointer-events-none absolute inset-0 border border-black/[0.08] transition-colors duration-300 group-hover:border-black/20" />
+                <span className="absolute left-4 top-4 bg-background/90 px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.14em] text-gray-600 backdrop-blur-sm">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
               </div>
-            </motion.div>
-            <AnimatePresence mode="wait">
-              {current === index && (
-                <motion.div
-                  initial={{ opacity: 0, filter: "blur(10px)" }}
-                  animate={{ opacity: 1, filter: "blur(0px)" }}
-                  transition={{ duration: 0.5 }}
-                  className="absolute bottom-0 left-2 flex h-[14%] w-full translate-y-full items-center justify-center p-2 text-center font-medium tracking-tight text-black/20"
-                >
-                  {img.title}
-                </motion.div>
-              )}
-            </AnimatePresence>
+              <div className="flex items-start justify-between gap-4 border-b border-black/[0.12] py-4">
+                <div>
+                  <h3 className="text-lg font-medium tracking-[-0.02em] text-gray-900">{artwork.title}</h3>
+                  <p className="mt-1 font-mono text-[9px] uppercase tracking-[0.14em] text-gray-500">
+                    {artwork.discipline}
+                  </p>
+                </div>
+                <span className="pt-1 font-mono text-[9px] uppercase tracking-[0.14em] text-gray-400">{artwork.year}</span>
+              </div>
+            </motion.article>
           </CarouselItem>
         ))}
       </CarouselContent>
 
-      {showNavigation && (
-        <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-4 pointer-events-none">
+      <div className="mt-8 flex items-center justify-between border-t border-black/[0.12] pt-4">
+        <p className="font-mono text-[9px] uppercase tracking-[0.14em] text-gray-500" aria-live="polite">
+          <span className="text-gray-900">{String(current + 1).padStart(2, "0")}</span>
+          <span className="px-2 text-gray-300">/</span>
+          {String(artworks.length).padStart(2, "0")}
+        </p>
+        <div className="flex items-center gap-2">
           <button
-            aria-label="Previous slide"
+            type="button"
+            aria-label="Previous 3D artwork"
             onClick={() => api?.scrollPrev()}
-            className="pointer-events-auto rounded-full bg-black/60 p-4 hover:bg-black/80 transition-all duration-200 shadow-lg"
+            className="flex h-9 w-9 items-center justify-center border border-black/[0.14] text-gray-700 transition-colors hover:border-black hover:bg-black hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900"
           >
-            <ChevronLeft className="h-6 w-6 text-white" />
+            <ArrowLeft className="h-4 w-4" strokeWidth={1.5} />
           </button>
           <button
-            aria-label="Next slide"
+            type="button"
+            aria-label="Next 3D artwork"
             onClick={() => api?.scrollNext()}
-            className="pointer-events-auto rounded-full bg-black/60 p-4 hover:bg-black/80 transition-all duration-200 shadow-lg"
+            className="flex h-9 w-9 items-center justify-center border border-black/[0.14] text-gray-700 transition-colors hover:border-black hover:bg-black hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900"
           >
-            <ChevronRight className="h-6 w-6 text-white" />
+            <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
           </button>
         </div>
-      )}
-
-      {showPagination && (
-        <div className="absolute -bottom-2 left-1/2 flex -translate-x-1/2 items-center justify-center">
-          <div className="flex items-center justify-center gap-3 bg-background/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg border border-black/10">
-            {Array.from({ length: images.length }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => api?.scrollTo(index)}
-                className={cn(
-                  "h-4 w-4 cursor-pointer rounded-full transition-all duration-200 hover:scale-125",
-                  current === index ? "bg-black shadow-md" : "bg-gray-400 hover:bg-gray-500",
-                )}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
-        </div>
-      )}
+      </div>
     </Carousel>
   );
-};
-
-export function DraggableCardDemo() {
-  return <Skiper54 />;
 }
 
-export { Skiper54, Carousel_006 };
+export function DraggableCardDemo() {
+  return (
+    <section aria-labelledby="three-d-work-heading" className="w-full bg-background py-20 sm:py-24 lg:py-28">
+      <div className="mx-auto max-w-7xl border-x border-black/[0.08] px-6 sm:px-8 lg:px-12">
+        <div className="grid gap-8 border-y border-black/[0.12] py-7 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:gap-12">
+          <div className="max-w-2xl">
+            <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-gray-500">Beyond the interface</p>
+            <h2 id="three-d-work-heading" className="mt-3 font-serif text-4xl leading-none tracking-[-0.04em] text-gray-950 sm:text-5xl">
+              3D explorations
+            </h2>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-gray-600 sm:text-base">
+              A small collection of studies in form, light, and visual storytelling—made to keep my eye for detail sharp beyond product screens.
+            </p>
+          </div>
+          <a
+            href="/artwork"
+            className="group inline-flex w-fit items-center gap-2 border-b border-black pb-1 text-sm font-medium text-gray-900 transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900"
+          >
+            View all explorations
+            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.5} />
+          </a>
+        </div>
 
-/**
- * Skiper 54 Carousel_006 — React + Framer Motion
- * Built with shadcn/ui And Embla Carousel - Read docs to learn more https://ui.shadcn.com/docs/components/carousel https://embla-carousel.com/
- *
- * Illustrations by AarzooAly - https://x.com/AarzooAly
- *
- * License & Usage:
- * - Free to use and modify in both personal and commercial projects.
- * - Attribution to Skiper UI is required when using the free version.
- * - No attribution required with Skiper UI Pro.
- *
- * Feedback and contributions are welcome.
- *
- * Author: @gurvinder-singh02
- * Website: https://gxuri.in
- * Twitter: https://x.com/Gur__vi
- */
+        <div className="pt-8 sm:pt-10">
+          <ArtworkCarousel />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export { ArtworkCarousel };
