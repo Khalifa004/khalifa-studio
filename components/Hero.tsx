@@ -22,13 +22,13 @@ const Hero = () => {
             <div className="mt-16 max-w-3xl md:mt-24">
               <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-gray-500">Designing the useful, not just the new</p>
               <h1 className="mt-5 max-w-3xl font-serif text-5xl leading-[0.93] tracking-[-0.045em] sm:text-6xl md:text-7xl lg:text-[5.4rem]">
-                Apps for study, deep work, and the notes you meant to save.
+                I design and build digital products.
               </h1>
               <p className="mt-8 max-w-xl text-base leading-relaxed text-gray-700 md:text-lg">
-                I&apos;m Khalifa—a product engineer who takes products from first sketch to shipped code.
+                I&apos;m Khalifa—a product engineer working across design and frontend development.
               </p>
               <p className="mt-4 max-w-xl text-sm leading-relaxed text-gray-500">
-                From Figma to frontend, I care about structure, interaction, and the details people notice when they&apos;re actually using something.
+                From first sketch to shipped code, I care about interaction, structure, and the details that hold up in real use.
               </p>
               <div className="mt-10 flex flex-wrap gap-x-7 gap-y-4 text-sm font-medium">
                 <Link href="/allwork" className="group inline-flex items-center gap-2 border-b border-black pb-1 transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900">
