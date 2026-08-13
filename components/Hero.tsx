@@ -22,13 +22,13 @@ const Hero = () => {
             <div className="mt-16 max-w-3xl md:mt-24">
               <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-gray-500">Designing the useful, not just the new</p>
               <h1 className="mt-5 max-w-3xl font-serif text-5xl leading-[0.93] tracking-[-0.045em] sm:text-6xl md:text-7xl lg:text-[5.4rem]">
-                Products for learning, focus, and the loose threads of a day.
+                Apps for study, deep work, and the notes you meant to save.
               </h1>
               <p className="mt-8 max-w-xl text-base leading-relaxed text-gray-700 md:text-lg">
-                I&apos;m Khalifa—a product engineer who designs and builds thoughtful digital experiences for learning, focus, and everyday work.
+                I&apos;m Khalifa—a product engineer who takes products from first sketch to shipped code.
               </p>
               <p className="mt-4 max-w-xl text-sm leading-relaxed text-gray-500">
-                From Figma to frontend, I pair systems thinking with a sharp eye for interaction, motion, and the details that make technology feel human.
+                From Figma to frontend, I care about structure, interaction, and the details people notice when they&apos;re actually using something.
               </p>
               <div className="mt-10 flex flex-wrap gap-x-7 gap-y-4 text-sm font-medium">
                 <Link href="/allwork" className="group inline-flex items-center gap-2 border-b border-black pb-1 transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900">
@@ -69,7 +69,7 @@ const Hero = () => {
                     <h2 className="text-lg font-medium transition-opacity group-hover:opacity-60">Orin</h2>
                     <span aria-hidden="true" className="text-sm text-gray-400 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
                   </a>
-                  <p className="mt-3 text-sm leading-relaxed text-gray-600">A lightweight memory layer for the loose context of a workday.</p>
+                  <p className="mt-3 text-sm leading-relaxed text-gray-600">A Mac app for the notes, links, and tasks that pile up during a workday.</p>
                   <p className="mt-3 font-mono text-[9px] uppercase tracking-[0.14em] text-gray-500">Product design + development</p>
                 </div>
               </article>
