@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 
 const projects = [
-  { number: "01", title: "IntelliCourse", description: "Making adaptive learning feel less transactional.", role: "Lead frontend + interaction design" },
+  { number: "01", title: "NorthStar", description: "A concept for an immersive high-speed rail experience that brings together service design, booking, and VR.", role: "UI/UX design", caseStudy: "/allwork/thenorth" },
   { number: "02", title: "Orin", description: "A Mac app for the notes, links, and tasks that pile up during a workday.", role: "Product design + development", href: "https://orin.khalifa.studio/" },
   { number: "03", title: "Pith", description: "A private voice-to-insight companion that works completely offline.", role: "Product design + development", href: "https://pith.khalifa.studio/", caseStudy: "/allwork/pith" },
 ];

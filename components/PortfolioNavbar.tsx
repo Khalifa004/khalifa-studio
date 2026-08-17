@@ -29,7 +29,7 @@ export default function PortfolioNavbar() {
                   isActive
                     ? "bg-black/[0.07] font-medium text-gray-950"
                     : "text-gray-500 hover:bg-black/[0.04] hover:text-gray-900"
-                } ${link.label === "About" ? "hidden sm:inline" : ""}`}
+                } ${link.label === "About" ? "hidden sm:flex" : ""}`}
               >
                 {link.label}
               </Link>
@@ -37,7 +37,7 @@ export default function PortfolioNavbar() {
           })}
           <a
             href="mailto:khalifa.seck@outlook.com"
-            className="ml-1 hidden rounded-full bg-gray-950 px-4 py-2 text-sm font-medium text-white transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900 xl:inline"
+            className="ml-1 hidden min-h-10 items-center rounded-full bg-gray-950 px-4 py-2 text-sm font-medium text-white transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900 xl:flex"
           >
             Let&apos;s talk ↗
           </a>
