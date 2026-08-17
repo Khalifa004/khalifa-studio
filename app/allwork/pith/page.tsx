@@ -131,8 +131,8 @@ export default function PithCaseStudy() {
               </div>
             </motion.div>
 
-            <motion.figure initial={{ opacity: 0, rotate: 2, scale: 0.97 }} animate={{ opacity: 1, rotate: 0, scale: 1 }} transition={{ duration: 0.8, delay: 0.14, ease: [0.16, 1, 0.3, 1] }} className="relative overflow-hidden border border-white/15 bg-[#0f3a30] p-4 sm:p-6">
-              <div className="relative aspect-[5/4] overflow-hidden border border-white/10">
+            <motion.figure initial={{ opacity: 0, rotate: 2, scale: 0.97 }} animate={{ opacity: 1, rotate: 0, scale: 1 }} transition={{ duration: 0.8, delay: 0.14, ease: [0.16, 1, 0.3, 1] }} className="relative">
+              <div className="relative aspect-[5/4] overflow-hidden">
                 <Image src="/images/pithnotelogo.png" alt="Pith" fill priority sizes="(min-width: 1024px) 36rem, 90vw" className="object-cover opacity-80" />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_35%,rgba(6,44,35,0.88))]" />
                 <div className="absolute bottom-5 left-5 right-5"><p className="text-sm text-[#e7f0ea]">A thought does not need to become public to become useful.</p><VoiceField light /></div>
