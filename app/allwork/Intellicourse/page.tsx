@@ -63,14 +63,14 @@ export default function IntellicourseCaseStudy() {
         <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.015] mix-blend-multiply" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-20">
+      <div className="relative z-10 mx-auto max-w-7xl px-5 pb-16 pt-28 sm:px-8 sm:pt-32 md:px-12 md:pb-20 md:pt-36">
 
         {/* Navigation */}
         <motion.div
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: organicEase, delay: 0.1 }}
-          className="mb-20 md:mb-32 flex justify-between items-center"
+          className="mb-14 flex items-center justify-between md:mb-24"
         >
           <Link href="/allwork" className="group inline-flex items-center gap-3 text-xs uppercase tracking-widest text-gray-500 hover:text-black transition-colors duration-300">
             <ArrowLeft className="w-3 h-3 transition-transform group-hover:-translate-x-1" />
@@ -87,15 +87,15 @@ export default function IntellicourseCaseStudy() {
             {/* Hero Section */}
             <motion.header
               style={{ opacity: heroOpacity, scale: heroScale }}
-              className="mb-32 md:mb-48"
+              className="mb-20 md:mb-32"
             >
-              <div className="flex flex-col md:flex-row md:items-end gap-12 md:gap-24 mb-16">
+              <div className="mb-10 flex flex-col gap-10 md:mb-16 md:flex-row md:items-end md:gap-24">
                 <div className="md:flex-1">
                   <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: organicEase }}
-                    className="text-6xl md:text-9xl font-medium text-gray-900 tracking-tighter leading-none mb-8"
+                    className="mb-6 text-4xl font-medium leading-[0.9] tracking-tighter text-gray-900 sm:text-6xl md:mb-8 md:text-9xl"
                   >
                     IntelliCourse
                   </motion.h1>
@@ -103,13 +103,13 @@ export default function IntellicourseCaseStudy() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, ease: organicEase, delay: 0.2 }}
-                    className="text-lg md:text-xl font-light text-gray-500 max-w-2xl leading-relaxed"
+                    className="max-w-2xl text-base font-light leading-relaxed text-gray-500 sm:text-lg md:text-xl"
                   >
                     AI-powered learning platform that generates courses, adapts to learners, and provides instant assessments.
                   </motion.p>
                 </div>
 
-                <div className="grid grid-cols-2 gap-y-8 gap-x-12">
+                <div className="grid grid-cols-2 gap-x-5 gap-y-6 sm:gap-x-8 sm:gap-y-8">
                   {[
                     { l: "Type", v: "Startup" },
                     { l: "Toolkit", v: "Next.js, TS, Tailwind" },
@@ -150,7 +150,7 @@ export default function IntellicourseCaseStudy() {
               </motion.div>
             </motion.header>
 
-            <main className="space-y-32 md:space-y-48 w-full lg:pb-32">
+            <main className="w-full space-y-20 md:space-y-32 lg:pb-32">
 
               {/* Overview / Role */}
               <Section id="the-mission" className="grid md:grid-cols-[1fr_2fr] gap-12 md:gap-24">
@@ -228,13 +228,13 @@ export default function IntellicourseCaseStudy() {
               </Section>
 
               {/* Team */}
-              <Section id="the-team" className="grid md:grid-cols-2 gap-12 items-center rounded-3xl bg-background border border-black/[0.05] p-8 md:p-12 shadow-sm">
+              <Section id="the-team" className="grid items-center gap-8 rounded-3xl border border-black/[0.05] bg-background p-5 shadow-sm sm:p-8 md:grid-cols-2 md:gap-12 md:p-12">
                 <div>
                   <h2 className="text-2xl font-medium text-gray-900 mb-4">The Team</h2>
                   <p className="text-gray-500 leading-relaxed mb-8">
                     Our current team includes two designers and four software developers, working collaboratively to bring innovative solutions to life.
                   </p>
-                  <div className="flex gap-4">
+                  <div className="flex flex-wrap gap-3">
                     <div className="px-4 py-2 rounded-full border border-black/5 bg-background text-sm text-gray-700">2 Designers</div>
                     <div className="px-4 py-2 rounded-full border border-black/5 bg-background text-sm text-gray-700">4 Developers</div>
                   </div>

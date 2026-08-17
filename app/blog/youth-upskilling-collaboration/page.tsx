@@ -116,7 +116,7 @@ export default function YouthUpskilling() {
                                 One major takeaway was that isolation is the biggest killer of motivation. We proposed a "digital hub" model where learners could form local squads. Even if the learning was digital, the support network had to be physical and local.
                             </p>
                             <p>
-                                This shifted our entire strategy from purely online courses to a hybrid model that empowered local mentors. It was a reminder that you can't solve human problems with just software—you need humans too.
+                                This shifted our entire strategy from purely online courses to a hybrid model that empowered local mentors. It was a reminder that you can't solve human problems with just software. You need humans too.
                             </p>
                         </div>
                     </Section>

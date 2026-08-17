@@ -75,7 +75,7 @@ const organizationData: OrganizationLevel[] = [
   {
     id: 'oncav',
     title: 'Organisation Nationale (ONCAV)',
-    subtitle: 'ONCAV – Organisation Nationale de Coordination des Activités de Vacances',
+    subtitle: 'ONCAV: Organisation Nationale de Coordination des Activités de Vacances',
     positions: [
       { title: 'Président(e) National(e)', name: '[Nom]' },
       { title: 'Vice-président(e) National(e)', name: '[Nom]' },

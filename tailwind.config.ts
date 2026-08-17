@@ -61,7 +61,8 @@ const config = {
 				teal: '#E0F2F1',
 			},
 			fontFamily: {
-				serif: ['var(--font-serif)', 'serif'],
+				sans: ['"Google Sans"', '"Google Sans Text"', 'var(--font-sans-local)', 'Arial', 'sans-serif'],
+				serif: ['"Google Sans"', '"Google Sans Text"', 'var(--font-sans-local)', 'Arial', 'sans-serif'],
 				mono: ['var(--font-mono)', 'monospace'],
 				comfortaa: ['var(--font-comfortaa)', 'sans-serif'],
 			},

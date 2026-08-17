@@ -14,17 +14,9 @@ export default function PortfolioNavbar() {
   const pathname = usePathname();
 
   return (
-    <header className="pointer-events-none fixed inset-x-0 top-0 z-50 px-4 sm:px-6">
-      <div className="pointer-events-auto mx-auto mt-4 flex h-14 max-w-7xl items-center justify-between border border-black/[0.12] bg-[#efede7]/95 px-4 shadow-[0_8px_26px_rgba(20,20,20,0.06)] backdrop-blur-md sm:px-5">
-        <Link
-          href="/"
-          className="group flex min-w-0 items-baseline gap-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900"
-        >
-          <span className="truncate text-sm font-medium tracking-[-0.02em] text-gray-900">Khalifa Seck</span>
-          <span className="hidden font-mono text-[9px] uppercase tracking-[0.14em] text-gray-500 sm:inline">Product engineer</span>
-        </Link>
-
-        <nav aria-label="Main navigation" className="flex items-center gap-3 sm:gap-5">
+    <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-3 pt-4 sm:px-6">
+      <div className="pointer-events-auto flex h-14 w-fit items-center rounded-full border border-black/[0.1] bg-[#f7f7f5]/95 p-1.5 shadow-[0_10px_30px_rgba(0,0,0,0.04)] backdrop-blur-md sm:p-2">
+        <nav aria-label="Main navigation" className="flex items-center gap-0.5 sm:gap-1">
           {links.map((link) => {
             const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
 
@@ -33,10 +25,10 @@ export default function PortfolioNavbar() {
                 key={link.href}
                 href={link.href}
                 aria-current={isActive ? "page" : undefined}
-                className={`border-b pb-0.5 text-xs transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900 sm:text-sm ${
+                className={`flex min-h-10 items-center rounded-full px-2.5 py-1.5 text-xs transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900 sm:px-3 sm:py-2 sm:text-sm ${
                   isActive
-                    ? "border-gray-900 font-medium text-gray-900"
-                    : "border-transparent text-gray-500 hover:border-gray-400 hover:text-gray-900"
+                    ? "bg-black/[0.07] font-medium text-gray-950"
+                    : "text-gray-500 hover:bg-black/[0.04] hover:text-gray-900"
                 } ${link.label === "About" ? "hidden sm:inline" : ""}`}
               >
                 {link.label}
@@ -45,7 +37,7 @@ export default function PortfolioNavbar() {
           })}
           <a
             href="mailto:khalifa.seck@outlook.com"
-            className="hidden border-l border-black/[0.12] pl-5 text-sm font-medium text-gray-900 transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900 lg:inline"
+            className="ml-1 hidden rounded-full bg-gray-950 px-4 py-2 text-sm font-medium text-white transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900 xl:inline"
           >
             Let&apos;s talk ↗
           </a>

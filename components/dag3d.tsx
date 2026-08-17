@@ -89,11 +89,11 @@ function ArtworkCarousel({ className }: { className?: string }) {
       className={cn("w-full", className)}
       opts={{ align: "start", loop: true, slidesToScroll: 1 }}
     >
-      <CarouselContent className="-ml-4">
+      <CarouselContent className="-ml-3">
         {artworks.map((artwork, index) => (
           <CarouselItem
             key={artwork.title}
-            className="basis-[86%] pl-4 sm:basis-[62%] lg:basis-[43%]"
+            className="basis-[88%] pl-3 sm:basis-[61%] lg:basis-[44%]"
           >
             <motion.article
               initial={{ opacity: 0, y: 18 }}
@@ -102,38 +102,34 @@ function ArtworkCarousel({ className }: { className?: string }) {
               transition={{ duration: 0.45, delay: Math.min(index * 0.06, 0.18) }}
               className="group h-full"
             >
-              <div
-                className="relative aspect-[4/3] overflow-hidden p-3 sm:p-4"
-                style={{ backgroundColor: artwork.backdrop }}
-              >
+              <div className="relative aspect-[5/4] overflow-hidden bg-white/[0.08]" style={{ backgroundColor: artwork.backdrop }}>
                 <img
                   src={artwork.src}
                   alt={artwork.alt}
-                  className="h-full w-full object-contain transition-opacity duration-300 group-hover:opacity-90"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />
-                <div className="pointer-events-none absolute inset-0 border border-black/[0.08] transition-colors duration-300 group-hover:border-black/20" />
-                <span className="absolute left-4 top-4 bg-background/90 px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.14em] text-gray-600 backdrop-blur-sm">
+                <span className="absolute left-3 top-3 rounded-full bg-black/55 px-2.5 py-1 text-[10px] text-white backdrop-blur-sm">
                   {String(index + 1).padStart(2, "0")}
                 </span>
               </div>
-              <div className="flex items-start justify-between gap-4 border-b border-black/[0.12] py-4">
+              <div className="flex items-start justify-between gap-4 border-b border-white/20 py-4">
                 <div>
-                  <h3 className="text-lg font-medium tracking-[-0.02em] text-gray-900">{artwork.title}</h3>
-                  <p className="mt-1 font-mono text-[9px] uppercase tracking-[0.14em] text-gray-500">
+                  <h3 className="text-lg font-medium tracking-[-0.04em] text-white">{artwork.title}</h3>
+                  <p className="mt-1 text-xs text-white/60">
                     {artwork.discipline}
                   </p>
                 </div>
-                <span className="pt-1 font-mono text-[9px] uppercase tracking-[0.14em] text-gray-400">{artwork.year}</span>
+                <span className="pt-1 text-xs text-white/45">{artwork.year}</span>
               </div>
             </motion.article>
           </CarouselItem>
         ))}
       </CarouselContent>
 
-      <div className="mt-8 flex items-center justify-between border-t border-black/[0.12] pt-4">
-        <p className="font-mono text-[9px] uppercase tracking-[0.14em] text-gray-500" aria-live="polite">
-          <span className="text-gray-900">{String(current + 1).padStart(2, "0")}</span>
-          <span className="px-2 text-gray-300">/</span>
+      <div className="mt-8 flex items-center justify-between border-t border-white/20 pt-4">
+        <p className="text-xs text-white/55" aria-live="polite">
+          <span className="text-white">{String(current + 1).padStart(2, "0")}</span>
+          <span className="px-2 text-white/30">/</span>
           {String(artworks.length).padStart(2, "0")}
         </p>
         <div className="flex items-center gap-2">
@@ -141,7 +137,7 @@ function ArtworkCarousel({ className }: { className?: string }) {
             type="button"
             aria-label="Previous 3D artwork"
             onClick={() => api?.scrollPrev()}
-            className="flex h-9 w-9 items-center justify-center border border-black/[0.14] text-gray-700 transition-colors hover:border-black hover:bg-black hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 text-white transition-colors hover:bg-white hover:text-gray-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
           >
             <ArrowLeft className="h-4 w-4" strokeWidth={1.5} />
           </button>
@@ -149,7 +145,7 @@ function ArtworkCarousel({ className }: { className?: string }) {
             type="button"
             aria-label="Next 3D artwork"
             onClick={() => api?.scrollNext()}
-            className="flex h-9 w-9 items-center justify-center border border-black/[0.14] text-gray-700 transition-colors hover:border-black hover:bg-black hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 text-white transition-colors hover:bg-white hover:text-gray-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
           >
             <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
           </button>
@@ -162,20 +158,20 @@ function ArtworkCarousel({ className }: { className?: string }) {
 export function DraggableCardDemo() {
   return (
     <section aria-labelledby="three-d-work-heading" className="w-full bg-background py-20 sm:py-24 lg:py-28">
-      <div className="mx-auto max-w-7xl border-x border-black/[0.08] px-6 sm:px-8 lg:px-12">
-        <div className="grid gap-8 border-y border-black/[0.12] py-7 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:gap-12">
+      <div className="mx-auto max-w-[90rem] rounded-[1.5rem] bg-[#20201f] px-6 py-9 sm:px-10 sm:py-12 lg:px-14">
+        <div className="grid gap-8 border-b border-white/20 pb-9 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:gap-12">
           <div className="max-w-2xl">
-            <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-gray-500">Beyond the interface</p>
-            <h2 id="three-d-work-heading" className="mt-3 font-serif text-4xl leading-none tracking-[-0.04em] text-gray-950 sm:text-5xl">
+            <p className="text-sm text-white/55">Beyond the interface</p>
+            <h2 id="three-d-work-heading" className="mt-4 text-[clamp(2.5rem,5.5vw,5.5rem)] font-medium leading-[0.9] tracking-[-0.065em] text-white">
               3D explorations
             </h2>
-            <p className="mt-4 max-w-xl text-sm leading-relaxed text-gray-600 sm:text-base">
-              A small collection of studies in form, light, and visual storytelling—made to keep my eye for detail sharp beyond product screens.
+            <p className="mt-5 max-w-xl text-sm leading-relaxed text-white/65 sm:text-base">
+              A small collection of studies in form, light, and visual storytelling, made to keep my eye for detail sharp beyond product screens.
             </p>
           </div>
           <a
             href="/artwork"
-            className="group inline-flex w-fit items-center gap-2 border-b border-black pb-1 text-sm font-medium text-gray-900 transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900"
+            className="group inline-flex w-fit items-center gap-2 rounded-full border border-white/25 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-white hover:text-gray-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
           >
             View all explorations
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.5} />

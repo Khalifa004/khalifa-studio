@@ -10,22 +10,22 @@ const Footer = () => {
   ];
 
   return (
-    <footer className=" py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-[hsl(0,0%,98%)]">
-        <div className="flex flex-col md:flex-row justify-between items-center">
+    <footer className="py-8 sm:py-10">
+      <div className="mx-auto max-w-[90rem] border-t border-black/[0.1] pt-6">
+        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-4 md:mb-0"
+            className=""
           >
-            <span className="font-body text-sm font-normal text-gray-600">
-              <span className="text-lime-600">© 2024 /</span>
+            <span className="text-sm text-gray-500">
+              <span>© 2024 /</span>
               <span className="px-2">Khalifa. All rights reserved.</span>
             </span>
           </motion.div>
           <motion.div 
-            className="flex gap-6"
+            className="flex gap-5"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -36,7 +36,7 @@ const Footer = () => {
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                className="flex items-center text-gray-600 transition-colors duration-300 hover:text-black"
                 aria-label={link.aria}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}

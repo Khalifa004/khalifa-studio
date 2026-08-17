@@ -27,7 +27,7 @@ interface ProjectListProps {
 
 const ProjectList: React.FC<ProjectListProps> = ({ projects, className }) => {
     return (
-        <div className={cn("grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 w-full", className)}>
+        <div className={cn("grid w-full grid-cols-1 gap-x-7 gap-y-12 md:grid-cols-2 lg:gap-x-10 lg:gap-y-16", className)}>
             {projects.map((project, index) => {
                 return (
                     <motion.div
@@ -40,12 +40,12 @@ const ProjectList: React.FC<ProjectListProps> = ({ projects, className }) => {
                     >
                         <Link 
                             href={project.href} 
-                            className="flex flex-col gap-6 items-start hover:bg-gray-50/50 p-4 md:p-6 rounded-3xl transition-colors duration-500"
+                            className="flex flex-col items-start gap-5"
                             target={project.href.startsWith('http') ? "_blank" : undefined}
                             rel={project.href.startsWith('http') ? "noopener noreferrer" : undefined}
                         >
                             {/* Visual Side (Image or Logo) */}
-                            <div className="relative overflow-hidden rounded-2xl w-full aspect-[4/3] bg-gray-100 border border-black/5 flex-shrink-0">
+                            <div className="relative aspect-[4/3] w-full flex-shrink-0 overflow-hidden rounded-[0.7rem] bg-[#ececea]">
                                 {project.image ? (
                                     <Image
                                         src={project.image}
@@ -63,27 +63,23 @@ const ProjectList: React.FC<ProjectListProps> = ({ projects, className }) => {
                                     </div>
                                 )}
 
-                                {/* Overlay hover effect */}
-                                <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                
-                                {/* Expand icon appearing on hover on desktop */}
-                                <div className="absolute top-4 right-4 md:top-6 md:right-6 bg-white/90 backdrop-blur-md p-3 rounded-full opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out shadow-sm">
+                                <div className="absolute right-4 top-4 flex h-9 w-9 -translate-y-1 items-center justify-center rounded-full bg-white text-gray-900 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                                     <ArrowUpRight className="w-5 h-5 text-gray-900" />
                                 </div>
                             </div>
 
                             {/* Text Side */}
-                            <div className="flex flex-col w-full pt-2">
-                                <div className="flex justify-between items-start mb-3">
-                                    <h3 className="font-serif italic text-2xl md:text-3xl lg:text-4xl text-gray-900 group-hover:text-black transition-colors">
+                            <div className="flex w-full flex-col border-t border-black/[0.1] pt-4">
+                                <div className="mb-3 flex items-start justify-between gap-4">
+                                    <h3 className="text-2xl font-medium tracking-[-0.045em] text-gray-950 transition-colors group-hover:text-gray-500 md:text-3xl">
                                         {project.name}
                                     </h3>
-                                    <span className="font-mono text-[10px] md:text-xs uppercase tracking-wider text-gray-500 px-3 py-1.5 rounded-sm bg-gray-100 border border-black/5">
+                                    <span className="shrink-0 rounded-full bg-black/[0.05] px-3 py-1 text-xs text-gray-600">
                                         {project.price}
                                     </span>
                                 </div>
                                 
-                                <p className="text-gray-500 font-light text-sm md:text-base leading-relaxed">
+                                <p className="text-sm leading-relaxed text-gray-600 md:text-base">
                                     {project.description}
                                 </p>
                                 {(project.role || project.year) && (

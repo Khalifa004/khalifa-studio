@@ -75,7 +75,7 @@ const projects: Project[] = [
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const cardContent = (
     <>
-      <div className="relative aspect-[16/10] overflow-hidden border border-black/[0.1]" style={{ backgroundColor: project.surface }}>
+      <div className="relative aspect-[16/10] overflow-hidden rounded-[0.7rem]" style={{ backgroundColor: project.surface }}>
         {project.image ? (
           <Image
             src={project.image}
@@ -90,19 +90,19 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           </div>
         )}
         <div className="pointer-events-none absolute inset-0 bg-black/[0.02] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-        <div className="absolute left-4 top-4 flex items-center gap-2 bg-background/90 px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.14em] text-gray-600 backdrop-blur-sm">
+        <div className="absolute left-4 top-4 flex items-center gap-2 rounded-full bg-background/90 px-2.5 py-1 text-xs text-gray-600 backdrop-blur-sm">
           <span>{String(index + 1).padStart(2, "0")}</span>
           <span className="text-gray-300">/</span>
           <span>{project.type}</span>
         </div>
-        <span className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center border border-black/[0.12] bg-background/90 text-gray-800 opacity-0 transition-all duration-300 group-hover:opacity-100 sm:translate-y-1 sm:group-hover:translate-y-0">
+        <span className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-background/90 text-gray-800 opacity-0 transition-all duration-300 group-hover:opacity-100 sm:translate-y-1 sm:group-hover:translate-y-0">
           <ArrowUpRight className="h-4 w-4" strokeWidth={1.5} />
         </span>
       </div>
 
-      <div className="grid gap-3 border-b border-black/[0.12] py-5 sm:grid-cols-[1fr_auto] sm:gap-6">
+      <div className="grid gap-3 border-t border-black/[0.1] py-4 sm:grid-cols-[1fr_auto] sm:gap-6">
         <div>
-          <h2 className="text-2xl tracking-[-0.035em] text-gray-900 transition-opacity group-hover:opacity-60 sm:text-3xl">{project.name}</h2>
+          <h2 className="text-2xl font-medium tracking-[-0.05em] text-gray-950 transition-opacity group-hover:opacity-60 sm:text-3xl">{project.name}</h2>
           <p className="mt-2 max-w-md text-sm leading-relaxed text-gray-500">{project.description}</p>
         </div>
         <div className="flex items-start gap-3 font-mono text-[9px] uppercase tracking-[0.14em] text-gray-400 sm:flex-col sm:items-end sm:pt-1">
@@ -136,17 +136,17 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 }
 
 const LatestWork = () => (
-  <main className="w-full bg-background pb-20 pt-32 sm:pt-36 lg:pb-28">
-    <div className="mx-auto max-w-7xl border-x border-black/[0.08] px-6 sm:px-8 lg:px-12">
+  <main className="w-full bg-background pb-20 pt-28 sm:pt-32 lg:pb-28">
+    <div className="mx-auto max-w-[90rem] px-5 sm:px-8">
       <motion.header
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-        className="grid gap-8 border-y border-black/[0.12] py-8 md:grid-cols-[1.2fr_0.8fr] md:items-end md:gap-16 md:py-10"
+        className="grid gap-8 border-b border-black/[0.1] pb-10 md:grid-cols-[1.2fr_0.8fr] md:items-end md:gap-16"
       >
         <div>
           <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-gray-500">Product engineering portfolio</p>
-          <h1 className="mt-4 max-w-3xl font-serif text-5xl leading-[0.9] tracking-[-0.05em] text-gray-950 sm:text-6xl md:text-7xl">
+          <h1 className="mt-4 max-w-3xl text-4xl font-medium leading-[0.9] tracking-[-0.065em] text-gray-950 sm:text-6xl md:text-7xl">
             Selected work.
           </h1>
         </div>

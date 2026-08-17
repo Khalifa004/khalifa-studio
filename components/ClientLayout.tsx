@@ -23,9 +23,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       <PortfolioNavbar />
       {children}
       {/* <CalWidget /> */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-[hsl(0,0%,98%)]">
-        <Footer />
-      </div>
+      <Footer />
     </>
   );
 }

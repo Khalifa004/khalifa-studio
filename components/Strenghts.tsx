@@ -24,21 +24,21 @@ const strengths = [
 
 export function StrengthsSection() {
   return (
-    <section className="w-full bg-background py-20 sm:py-24">
-      <div className="mx-auto max-w-7xl border-y border-black/[0.12] px-6 py-8 sm:px-8 sm:py-10 lg:px-12">
-        <div className="grid gap-8 border-b border-black/[0.12] pb-8 md:grid-cols-[0.8fr_1.2fr] md:items-end md:gap-16">
+    <section className="w-full bg-background py-4 sm:py-8">
+      <div className="rounded-[1.5rem] bg-[#20201f] px-6 py-10 text-white sm:px-10 sm:py-14 lg:px-14">
+        <div className="grid gap-10 border-b border-white/15 pb-10 md:grid-cols-[1.15fr_0.85fr] md:items-end md:gap-16">
           <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-gray-500">How I contribute</p>
-            <h2 className="mt-4 font-serif text-4xl leading-[0.95] tracking-[-0.04em] text-gray-900 sm:text-5xl">
+            <p className="text-sm text-white/55">How I contribute</p>
+            <h2 className="mt-5 max-w-3xl text-[clamp(2.5rem,5vw,5rem)] font-medium leading-[0.9] tracking-[-0.07em] text-white">
               Product work that gets all the way to the browser.
             </h2>
           </div>
-          <p className="max-w-xl text-sm leading-relaxed text-gray-600 sm:text-base">
+          <p className="max-w-xl text-sm leading-relaxed text-white/65 sm:text-base">
             I&apos;m at my best where product design and frontend development overlap: figuring out the experience, then doing the work to make it real.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {strengths.map((item, index) => (
             <motion.div
               key={index}
@@ -46,12 +46,13 @@ export function StrengthsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group border-b border-black/[0.12] py-7 md:border-r md:px-6 md:last:border-r-0 lg:min-h-[16rem] lg:border-b-0 lg:px-7"
+              className="group border-b border-white/15 py-7 md:border-r md:border-white/15 md:px-6 md:last:border-r-0 lg:min-h-[14rem] lg:border-b-0 lg:px-7"
             >
-              <h3 className="text-xl font-medium tracking-[-0.025em] text-gray-900">
+              <span className="text-xs text-white/45">0{index + 1}</span>
+              <h3 className="mt-7 text-xl font-medium tracking-[-0.04em] text-white">
                 {item.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-gray-500">
+              <p className="mt-3 text-sm leading-relaxed text-white/60">
                 {item.description}
               </p>
             </motion.div>

@@ -18,7 +18,7 @@ type BlogPost = {
 
 const posts: BlogPost[] = [
   {
-    title: "Building IntelliCourse — My Journey into AI-Powered Learning",
+    title: "Building IntelliCourse: My Journey into AI-Powered Learning",
     date: "August 2025",
     href: "/blog/building-intellicourse",
     category: "Product build",
@@ -31,7 +31,7 @@ const posts: BlogPost[] = [
     date: "April 2025",
     href: "/blog/global-ai-summit-kigali",
     category: "Field note",
-    excerpt: "Invited by Mastercard Foundation as a High-Impact Engineer—reflecting on AI in education and who gets to shape its future.",
+    excerpt: "Invited by Mastercard Foundation as a High-Impact Engineer, reflecting on AI in education and who gets to shape its future.",
     avatar: "/mastercard.webp",
     avatarLabel: "Mastercard Foundation",
   },
@@ -49,7 +49,7 @@ const posts: BlogPost[] = [
     date: "November 2024",
     href: "/blog/pomora",
     category: "Product build",
-    excerpt: "The thinking behind a calmer focus tool—where structure, feedback, and a little delight make concentration easier to return to.",
+    excerpt: "The thinking behind a calmer focus tool, where structure, feedback, and a little delight make concentration easier to return to.",
     avatar: "/images/pomoralogo.svg",
     avatarClass: "object-contain p-1.5",
     avatarLabel: "Pomora",
@@ -91,16 +91,16 @@ export default function Blog() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.45 }}
     >
-      <div className="mx-auto max-w-7xl border-x border-black/[0.08] px-6 pb-20 pt-32 sm:px-8 md:pb-28 lg:px-12 lg:pt-40">
+      <div className="mx-auto max-w-[90rem] px-5 pb-20 pt-28 sm:px-8 sm:pt-32 md:pb-28">
         <motion.header
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="grid gap-10 border-b border-black/[0.12] pb-14 md:grid-cols-[1.1fr_0.9fr] md:items-end md:gap-20"
+          className="grid gap-10 border-b border-black/[0.1] pb-14 md:grid-cols-[1.3fr_0.7fr] md:items-end md:gap-20"
         >
           <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.17em] text-gray-500">Notes from the work</p>
-            <h1 className="mt-6 max-w-3xl font-serif text-5xl leading-[0.9] tracking-[-0.055em] sm:text-6xl md:text-7xl">
+            <p className="text-sm text-gray-500">Notes from the work</p>
+            <h1 className="mt-5 max-w-5xl text-[clamp(3rem,8vw,8rem)] font-medium leading-[0.9] tracking-[-0.07em] text-gray-950">
               Writing about the work behind the work.
             </h1>
           </div>
@@ -108,15 +108,15 @@ export default function Blog() {
             <p className="max-w-md text-base leading-relaxed text-gray-600">
               Product notes, field observations, and reflections on the systems, people, and experiments that shape how I design and build.
             </p>
-            <div className="mt-8 flex items-center gap-7 font-mono text-[10px] uppercase tracking-[0.15em] text-gray-500">
+            <div className="mt-8 flex items-center gap-4 text-xs text-gray-500">
               <span>07 essays</span>
               <span className="h-px w-7 bg-black/15" />
-              <span>2023—2025</span>
+              <span>2023 to 2025</span>
             </div>
           </div>
         </motion.header>
 
-        <section className="mt-4 border-t border-black/[0.12]" aria-label="Writing">
+        <section className="mt-12 border-t border-black/[0.1]" aria-label="Writing">
           {posts.map((post, index) => (
             <motion.article
               key={post.href}
@@ -124,16 +124,16 @@ export default function Blog() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.6, delay: Math.min(index * 0.05, 0.25), ease: [0.16, 1, 0.3, 1] }}
-              className="border-b border-black/[0.12]"
+              className="border-b border-black/[0.1]"
             >
               <Link
                 href={post.href}
                 aria-label={`Read ${post.title}`}
-                className="group grid gap-5 py-7 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900 sm:grid-cols-[2.5rem_3rem_minmax(0,1fr)_auto] sm:items-start sm:gap-5 sm:py-9"
+                className="group grid gap-5 py-8 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900 sm:grid-cols-[2.5rem_3rem_minmax(0,1fr)_auto] sm:items-start sm:gap-5 sm:py-11"
               >
-                <span className="font-mono text-[10px] tracking-[0.16em] text-gray-400">{String(index + 1).padStart(2, "0")}</span>
+                <span className="text-xs text-gray-400">{String(index + 1).padStart(2, "0")}</span>
 
-                <span className="relative h-10 w-10 overflow-hidden rounded-full border border-black/10 bg-white">
+                <span className="relative h-10 w-10 overflow-hidden rounded-full bg-white">
                   <Image
                     src={post.avatar}
                     alt={post.avatarLabel}
@@ -144,12 +144,12 @@ export default function Blog() {
                 </span>
 
                 <div className="sm:pr-8">
-                  <div className="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[9px] uppercase tracking-[0.15em] text-gray-500">
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-gray-500">
                     <span>{post.category}</span>
                     <span className="hidden h-px w-4 bg-black/15 sm:block" />
                     <span>{post.date}</span>
                   </div>
-                  <h2 className="mt-4 max-w-3xl font-serif text-2xl leading-[1.02] tracking-[-0.035em] text-gray-900 transition-colors group-hover:text-gray-500 sm:text-3xl md:text-4xl">
+                  <h2 className="mt-4 max-w-4xl text-3xl font-medium leading-[0.96] tracking-[-0.055em] text-gray-950 transition-colors group-hover:text-gray-500 sm:text-4xl md:text-5xl">
                     {post.title}
                   </h2>
                   <p className="mt-4 max-w-2xl text-sm leading-relaxed text-gray-600 sm:text-base">{post.excerpt}</p>

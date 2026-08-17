@@ -42,7 +42,7 @@ export default function EchoBoardPage() {
         <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.015] mix-blend-multiply" />
       </div>
 
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12 py-12 md:py-24">
+      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-5 pb-16 pt-28 sm:px-8 sm:pt-32 md:px-12 md:pb-24 md:pt-36">
 
         {/* Navigation */}
         <motion.div
@@ -78,14 +78,14 @@ export default function EchoBoardPage() {
                     <div className="px-3 py-1 rounded-full border border-black/5 bg-background/50 backdrop-blur-sm">
                       <span className="text-[10px] uppercase tracking-widest text-gray-900">Solo Project</span>
                     </div>
-                    <span className="text-gray-400 text-xs uppercase tracking-wider">Aug 2025 – Present</span>
+                    <span className="text-gray-400 text-xs uppercase tracking-wider">Aug 2025 to Present</span>
                   </motion.div>
 
                   <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: organicEase, delay: 0.1 }}
-                    className="text-5xl md:text-8xl font-serif text-gray-900 tracking-tight leading-[0.9] mb-8"
+                    className="mb-6 text-4xl font-serif leading-[0.9] tracking-tight text-gray-900 sm:text-5xl md:mb-8 md:text-8xl"
                   >
                     EchoBoard
                   </motion.h1>

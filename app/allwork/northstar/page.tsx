@@ -35,7 +35,7 @@ const experiencePillars: Array<{ number: string; title: string; body: string; ic
   {
     number: "02",
     title: "Make the journey visible",
-    body: "A calm, spatial route view gives people a sense of where they are before they arrive. Progress is treated as part of the experience—not a status update.",
+    body: "A calm, spatial route view gives people a sense of where they are before they arrive. Progress is treated as part of the experience, not a status update.",
     icon: MapPinned,
   },
   {
@@ -100,7 +100,7 @@ export default function NorthStarCaseStudy() {
           <div className="mt-16 grid items-end gap-14 lg:mt-24 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}>
               <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#b7c5dd]">Future mobility · product concept</p>
-              <h1 className="mt-6 font-serif text-[clamp(4.2rem,10vw,8.6rem)] leading-[0.8] tracking-[-0.075em]">NorthStar</h1>
+              <h1 className="mt-6 font-serif text-[clamp(3.25rem,10vw,8.6rem)] leading-[0.84] tracking-[-0.07em]">NorthStar</h1>
               <p className="mt-10 max-w-2xl text-2xl font-light leading-snug tracking-[-0.02em] text-[#dbe4f3] sm:text-3xl">A more considered way to move between the cities that shape a life.</p>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-[#b7c5dd]">NorthStar is a future-rail concept that asks a simple question: what if an intercity journey felt as intentional as the destination?</p>
               <a href="#the-process" className="mt-10 inline-flex items-center gap-2 border-b border-[#f4f0e8] pb-1 text-sm font-medium text-[#f4f0e8] transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
@@ -142,7 +142,7 @@ export default function NorthStarCaseStudy() {
         <motion.div {...reveal}><SectionLabel number="01">The opportunity</SectionLabel></motion.div>
         <motion.div {...reveal}>
           <h2 className="max-w-3xl font-serif text-4xl leading-[0.98] tracking-[-0.05em] sm:text-5xl md:text-6xl">Too far to drive. Too close to fly. Too important to feel like an afterthought.</h2>
-          <div className="mt-10 grid gap-8 border-t border-[#c6cfdb] pt-7 md:grid-cols-2"><p className="text-base leading-relaxed text-[#526179]">The Windsor–Québec corridor connects cities with a huge amount of cultural, economic, and personal exchange. Yet the experience of moving through it often feels fragmented and designed around schedules rather than people.</p><p className="text-base leading-relaxed text-[#526179]">NorthStar became an exploration of rail as a connected service: one that helps someone choose, prepare, travel, and arrive with more confidence and less friction.</p></div>
+          <div className="mt-10 grid gap-8 border-t border-[#c6cfdb] pt-7 md:grid-cols-2"><p className="text-base leading-relaxed text-[#526179]">The Windsor to Québec corridor connects cities with a huge amount of cultural, economic, and personal exchange. Yet the experience of moving through it often feels fragmented and designed around schedules rather than people.</p><p className="text-base leading-relaxed text-[#526179]">NorthStar became an exploration of rail as a connected service: one that helps someone choose, prepare, travel, and arrive with more confidence and less friction.</p></div>
         </motion.div>
       </section>
 

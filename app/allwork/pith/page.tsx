@@ -146,14 +146,14 @@ export default function PithCaseStudy() {
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             >
               <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#afc5bb]">Private voice → structured insight</p>
-              <h1 className="mt-6 max-w-3xl font-serif text-[clamp(4.5rem,11vw,9.5rem)] leading-[0.78] tracking-[-0.075em]">
+              <h1 className="mt-6 max-w-3xl font-serif text-[clamp(3.25rem,11vw,9.5rem)] leading-[0.84] tracking-[-0.07em]">
                 Pith
               </h1>
               <p className="mt-10 max-w-2xl text-2xl font-light leading-snug tracking-[-0.02em] text-[#dce9e2] sm:text-3xl">
                 A private place to think out loud before the thought disappears.
               </p>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-[#afc5bb]">
-                Pith is an on-device iOS experience that turns raw voice into structured insight—without sending a personal journal, a meeting, or a private conversation to the cloud.
+                Pith is an on-device iOS experience that turns raw voice into structured insight without sending a personal journal, a meeting, or a private conversation to the cloud.
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
                 <a
@@ -230,7 +230,7 @@ export default function PithCaseStudy() {
           </h2>
           <div className="mt-10 grid gap-8 border-t border-[#b7c8c1] pt-7 md:grid-cols-2">
             <p className="text-base leading-relaxed text-[#486159]">
-              Voice notes are fast, intimate, and almost frictionless—but they often become an unsearchable pile of audio. Cloud transcription solves retrieval, but asks people to trade away context that may be deeply personal.
+              Voice notes are fast, intimate, and almost frictionless, but they often become an unsearchable pile of audio. Cloud transcription solves retrieval, but asks people to trade away context that may be deeply personal.
             </p>
             <p className="text-base leading-relaxed text-[#486159]">
               Pith reframes the problem: capture without performance, then return a useful shape. The product had to feel as private as a journal while being more helpful than a transcript.
@@ -248,7 +248,7 @@ export default function PithCaseStudy() {
                 Designing an experience that earns the right to listen.
               </h2>
               <p className="mt-6 max-w-2xl text-base leading-relaxed text-[#486159]">
-                I treated Pith as a sequence of emotional states, not a collection of screens. Each decision moves someone from an unformed thought to a clearer next step—without adding anxiety or exposing their context.
+                I treated Pith as a sequence of emotional states, not a collection of screens. Each decision moves someone from an unformed thought to a clearer next step without adding anxiety or exposing their context.
               </p>
             </div>
           </motion.div>

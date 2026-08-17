@@ -85,7 +85,7 @@ const LatestProducts: React.FC = () => {
   // Centralized blog data - same as in app/blog/page.tsx
   const allBlogPosts: BlogPost[] = [
     {
-      title: 'Building IntelliCourse — My Journey into AI-Powered Learning',
+      title: 'Building IntelliCourse: My Journey into AI-Powered Learning',
       date: 'August 08, 2025',
       href: '/blog/building-intellicourse',
     },
@@ -122,19 +122,16 @@ const LatestProducts: React.FC = () => {
 
   return (
     <motion.main
-      className="relative flex justify-center items-center flex-col w-full min-h-[160px] overflow-x-hidden bg-background"
+      className="relative flex w-full flex-col overflow-x-hidden bg-background"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 bg-gray-50 opacity-30" />
-      <div className="absolute inset-0" />
-      <div className="relative flex flex-col items-center justify-start gap-4 sm:gap-6 md:gap-8 w-full max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-6 md:py-12 z-10">
-        <section className="flex flex-col items-start justify-start gap-3 sm:gap-4 md:gap-6 w-full">
+      <div className="relative mx-auto flex w-full max-w-[90rem] flex-col gap-16 py-20 sm:py-28">
+        <section className="flex w-full flex-col gap-6">
           <div className="flex justify-between items-center w-full">
             <motion.p
-              className="text-sm sm:text-base font-medium text-gray-900"
+              className="text-sm text-gray-500"
               variants={itemVariants}
             >
               Latest Work
@@ -142,31 +139,19 @@ const LatestProducts: React.FC = () => {
             <motion.div variants={itemVariants}>
               <Link
                 href="/allwork"
-                className="text-xs sm:text-sm text-gray-500 hover:text-gray-900 transition-colors duration-300"
+                className="text-sm font-medium text-gray-950 underline decoration-black/25 underline-offset-4 transition-colors hover:decoration-black"
               >
                 See all work →
               </Link>
             </motion.div>
           </div>
 
-          <div className="w-full mt-8 md:mt-12">
+          <div className="w-full">
             <ProjectList projects={products} />
           </div>
         </section>
 
-        <motion.div
-          className="h-px w-full bg-gradient-to-r from-transparent via-gray-200 to-transparent"
-          variants={itemVariants}
-        />
-
         <StrengthsSection />
-
-        <motion.div
-          className="h-px w-full bg-gradient-to-r from-transparent via-gray-200 to-transparent"
-          variants={itemVariants}
-        />
-
-
       </div>
     </motion.main>
   );
