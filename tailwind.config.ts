@@ -61,10 +61,10 @@ const config = {
 				teal: '#E0F2F1',
 			},
 			fontFamily: {
-				sans: ['"Google Sans"', '"Google Sans Text"', 'var(--font-sans-local)', 'Arial', 'sans-serif'],
-				serif: ['"Google Sans"', '"Google Sans Text"', 'var(--font-sans-local)', 'Arial', 'sans-serif'],
-				mono: ['var(--font-mono)', 'monospace'],
-				comfortaa: ['var(--font-comfortaa)', 'sans-serif'],
+				sans: ['"Nohemi"', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+				serif: ['"Nohemi"', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+				mono: ['"Nohemi"', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+				comfortaa: ['"Nohemi"', '"Helvetica Neue"', 'Arial', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

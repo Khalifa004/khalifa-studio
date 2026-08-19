@@ -48,9 +48,49 @@ html {
    ========================================================================== */
 
 @font-face {
-  font-family: 'Satoshi';
-  src: url('/fonts/Satoshi-Variable.woff2') format('woff2');
-  font-weight: 300 900;
+  font-family: "Nohemi";
+  src: url("https://db.onlinewebfonts.com/t/743b0cfc11c35fde3e3c091ce0fd1e13.woff2") format("woff2");
+  font-weight: 100;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nohemi";
+  src: url("https://db.onlinewebfonts.com/t/3295314e055fdc8efa7b9c614782bbbc.woff2") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nohemi";
+  src: url("https://db.onlinewebfonts.com/t/29ddb4605533a38e086b48fa105e0d12.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nohemi";
+  src: url("https://db.onlinewebfonts.com/t/340730b16e1fc32fe6c5e2ce1d020a54.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nohemi";
+  src: url("https://db.onlinewebfonts.com/t/2acd1ac6664b7b1a1545cc36d0680783.woff2") format("woff2");
+  font-weight: 600 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nohemi";
+  src: url("https://db.onlinewebfonts.com/t/842ce049595bf10c384cf50b825ed8c2.woff2") format("woff2");
+  font-weight: 800 900;
   font-display: swap;
   font-style: normal;
 }
@@ -65,11 +105,14 @@ html {
     --foreground: 0 0% 3.9%;
     --border: 0 0% 80%;
     --scrollbar-width: 0px;
+    --pencil-lime: #c7ff1a;
   }
 }
 
 body {
-  font-family: "Google Sans", "Google Sans Text", var(--font-sans-local), "Helvetica Neue", Arial, sans-serif;
+  font-family: "Nohemi", "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 0.01em;
+  font-kerning: normal;
   background: hsl(var(--background));
   color: hsl(var(--foreground));
   width: 100%;
@@ -77,4 +120,58 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+/* The previous typeface was designed with very tight display tracking. Nohemi
+   needs a little more air so large headings remain legible. */
+.tracking-tight,
+.tracking-tighter,
+[class*="tracking-[-"] {
+  letter-spacing: 0.01em !important;
+}
+
+/* A hand-drawn lime stroke highlights the actual linked label, never its card. */
+.pencil-link,
+a[href]:not(:has(> :is(div, article, section, figure, picture, ul, ol, dl))),
+a[href] :is(h1, h2, h3, h4, h5, h6) {
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 0.13em;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 0.18em;
+}
+
+.pencil-link:hover,
+.pencil-link:focus-visible,
+a[href]:not(:has(> :is(div, article, section, figure, picture, ul, ol, dl))):hover,
+a[href]:not(:has(> :is(div, article, section, figure, picture, ul, ol, dl))):focus-visible,
+a[href]:hover :is(h1, h2, h3, h4, h5, h6),
+a[href]:focus-visible :is(h1, h2, h3, h4, h5, h6) {
+  animation: pencil-underline-draw 360ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pencil-underline-draw {
+  0% {
+    text-decoration-color: transparent;
+    text-decoration-thickness: 0.03em;
+  }
+  45% {
+    text-decoration-color: color-mix(in srgb, var(--pencil-lime) 60%, transparent);
+    text-decoration-thickness: 0.16em;
+  }
+  100% {
+    text-decoration-color: var(--pencil-lime);
+    text-decoration-thickness: 0.13em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pencil-link:hover,
+  .pencil-link:focus-visible,
+  a[href]:not(:has(> :is(div, article, section, figure, picture, ul, ol, dl))):hover,
+  a[href]:not(:has(> :is(div, article, section, figure, picture, ul, ol, dl))):focus-visible,
+  a[href]:hover :is(h1, h2, h3, h4, h5, h6),
+  a[href]:focus-visible :is(h1, h2, h3, h4, h5, h6) {
+    animation-duration: 1ms;
+  }
 }

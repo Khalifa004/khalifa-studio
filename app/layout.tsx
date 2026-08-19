@@ -1,27 +1,8 @@
-import localFont from "next/font/local";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import ClientLayout from "@/components/ClientLayout";
-
-const sansFont = localFont({
-  src: "../public/fonts/Satoshi-Variable.woff2",
-  variable: "--font-sans-local",
-  display: "swap",
-});
-
-const monoFont = localFont({
-  src: "../public/fonts/GeistMonoVF.woff",
-  variable: "--font-mono",
-  display: "swap",
-});
-
-const accentFont = localFont({
-  src: "../public/fonts/Satoshi-Variable.woff2",
-  variable: "--font-comfortaa",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: {
@@ -54,7 +35,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="light">
-      <body className={`min-h-screen bg-background w-full overflow-x-clip ${sansFont.variable} ${monoFont.variable} ${accentFont.variable}`}>
+      <body className="min-h-screen w-full overflow-x-clip bg-background">
         <ClientLayout>
           {children}
           <Analytics />
