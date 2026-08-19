@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import ArrowMark from "./ArrowMark";
 
 interface Project {
   name: string;
@@ -131,8 +132,8 @@ const HoverExpand: React.FC<HoverExpandProps> = ({ projects, className }) => {
                         {project.description}
                       </p>
                       {isMobile && expandedProject === index && (
-                        <p className="text-white/80 text-xs mt-2 font-medium">
-                          Tap again to view project →
+                        <p className="text-white/80 text-xs mt-2 font-medium inline-flex items-center gap-2">
+                          Tap again to view project <ArrowMark className="h-3 w-3" />
                         </p>
                       )}
                     </motion.div>

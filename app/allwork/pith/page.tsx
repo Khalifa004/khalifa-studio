@@ -1,6 +1,7 @@
 "use client";
 
-import { ArrowLeft, ArrowUpRight, LockKeyhole, MessageCircle, Mic, Pause, Plane, Play, ShieldCheck } from "lucide-react";
+import { ArrowLeft, LockKeyhole, MessageCircle, Mic, Pause, Plane, Play, ShieldCheck } from "lucide-react";
+import ArrowMark from "@/components/ArrowMark";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -126,7 +127,7 @@ export default function PithCaseStudy() {
               <p className="mt-10 max-w-xl text-2xl leading-[1.05] tracking-[-0.04em] text-[#e3eee7] sm:text-3xl">A private place to think out loud before the thought disappears.</p>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-[#afc5bb]">Pith is an on-device iOS experience that turns raw voice into structured insight without sending a personal journal, a meeting, or a private conversation to the cloud.</p>
               <div className="mt-9 flex flex-wrap gap-3">
-                <a href="https://pith.khalifa.studio/" target="_blank" rel="noreferrer" className="group inline-flex items-center gap-2 rounded-full bg-[#f7f3eb] px-5 py-3 text-sm font-medium text-[#062c23] transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Visit the live product <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></a>
+                <a href="https://pith.khalifa.studio/" target="_blank" rel="noreferrer" className="group inline-flex items-center gap-2 rounded-full bg-[#f7f3eb] px-5 py-3 text-sm font-medium text-[#062c23] transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Visit the live product <ArrowMark direction="up-right" className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></a>
                 <a href="#story" className="inline-flex items-center rounded-full border border-[#739087] px-5 py-3 text-sm text-[#e4eee8] transition-colors hover:border-white hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Read the story</a>
               </div>
             </motion.div>
@@ -220,7 +221,7 @@ export default function PithCaseStudy() {
       <section className="border-t border-[#b7c8c1] bg-[#dfe7df]">
         <div className="mx-auto flex max-w-[84rem] flex-col justify-between gap-8 px-5 py-16 sm:px-8 md:flex-row md:items-end md:py-20 lg:px-12">
           <div><p className="text-sm text-[#5c746d]">The live product</p><h2 className="mt-4 text-4xl font-medium leading-[0.9] tracking-[-0.065em] sm:text-5xl">Let your thoughts breathe.</h2><p className="mt-5 max-w-xl text-base leading-relaxed text-[#486159]">Explore Pith, an offline voice-to-insight companion built for the thoughts you would rather keep to yourself.</p></div>
-          <a href="https://pith.khalifa.studio/" target="_blank" rel="noreferrer" className="group inline-flex w-fit items-center gap-2 rounded-full bg-[#062c23] px-5 py-3 text-sm font-medium text-[#f7f3eb] transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#062c23]">Visit Pith <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></a>
+          <a href="https://pith.khalifa.studio/" target="_blank" rel="noreferrer" className="group inline-flex w-fit items-center gap-2 rounded-full bg-[#062c23] px-5 py-3 text-sm font-medium text-[#f7f3eb] transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#062c23]">Visit Pith <ArrowMark direction="up-right" className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></a>
         </div>
       </section>
     </main>

@@ -1,6 +1,7 @@
 "use client";
 
-import { ArrowLeft, ArrowUpRight, Compass, MousePointer2, Workflow } from "lucide-react";
+import { ArrowLeft, Compass, MousePointer2, Workflow } from "lucide-react";
+import ArrowMark from "@/components/ArrowMark";
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -79,7 +80,7 @@ export default function NorthStarCaseStudy() {
               <p className="mt-10 max-w-xl text-[clamp(1.65rem,3vw,2.55rem)] font-light leading-[1.05] tracking-[-0.045em] text-[#e8edf6]">A more considered way to move between the cities that shape a life.</p>
               <p className="mt-6 max-w-lg text-base leading-relaxed text-[#b9c4d9]">NorthStar is a future-rail concept that asks a simple question: what if an intercity journey felt as intentional as the destination?</p>
               <a href="#the-idea" className="mt-9 inline-flex items-center gap-2 border-b border-[#f6f2e9] pb-1.5 text-sm font-medium transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
-                Take the route <ArrowUpRight className="h-4 w-4" />
+                Take the route <ArrowMark direction="up-right" className="h-3.5 w-3.5" />
               </a>
             </motion.div>
 
@@ -175,7 +176,7 @@ export default function NorthStarCaseStudy() {
       </section>
 
       <section className="bg-[#df493d] text-[#fff8f0]">
-        <FadeIn className="mx-auto flex max-w-7xl flex-col justify-between gap-9 px-5 py-16 sm:px-8 md:flex-row md:items-end md:py-20 lg:px-12"><div><p className="text-[10px] font-medium uppercase tracking-[0.16em] text-[#ffe1d9]">Next stop</p><h2 className="mt-4 max-w-2xl text-[clamp(2.5rem,5vw,4.7rem)] leading-[0.94] tracking-[-0.065em]">See more selected work.</h2></div><Link href="/allwork" className="group inline-flex w-fit items-center gap-3 border-b border-[#fff8f0] pb-2 text-base font-medium transition-opacity hover:opacity-65 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">View all work <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></Link></FadeIn>
+        <FadeIn className="mx-auto flex max-w-7xl flex-col justify-between gap-9 px-5 py-16 sm:px-8 md:flex-row md:items-end md:py-20 lg:px-12"><div><p className="text-[10px] font-medium uppercase tracking-[0.16em] text-[#ffe1d9]">Next stop</p><h2 className="mt-4 max-w-2xl text-[clamp(2.5rem,5vw,4.7rem)] leading-[0.94] tracking-[-0.065em]">See more selected work.</h2></div><Link href="/allwork" className="group inline-flex w-fit items-center gap-3 border-b border-[#fff8f0] pb-2 text-base font-medium transition-opacity hover:opacity-65 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">View all work <ArrowMark direction="up-right" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></Link></FadeIn>
       </section>
     </main>
   );
