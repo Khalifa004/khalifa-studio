@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import ArrowMark from "./ArrowMark";
 
 const links = [
   { href: "/", label: "Home" },
@@ -37,9 +38,9 @@ export default function PortfolioNavbar() {
           })}
           <a
             href="mailto:khalifa.seck@outlook.com"
-            className="ml-1 hidden min-h-10 items-center rounded-full bg-gray-950 px-4 py-2 text-sm font-medium text-white transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900 xl:flex"
+            className="group ml-1 hidden min-h-10 items-center gap-2 rounded-full bg-gray-950 px-4 py-2 text-sm font-medium text-white transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900 xl:flex"
           >
-            Let&apos;s talk ↗
+            Let&apos;s talk <ArrowMark direction="up-right" className="h-3 w-3 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>
         </nav>
       </div>

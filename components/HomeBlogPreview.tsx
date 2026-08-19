@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import ArrowMark from "./ArrowMark";
 
 const blogPreviews = [
   {
@@ -36,7 +36,7 @@ export default function HomeBlogPreview() {
             </motion.h2>
           </div>
           <Link href="/blog" className="group inline-flex items-center gap-2 rounded-full border border-black/[0.12] px-4 py-2.5 text-sm font-medium text-gray-950 transition-colors hover:border-black">
-            Read all posts <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            Read all posts <ArrowMark direction="up-right" className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </Link>
         </div>
 
@@ -55,7 +55,7 @@ export default function HomeBlogPreview() {
                 <p className="text-sm leading-relaxed text-gray-600 md:pt-1">{post.excerpt}</p>
                 <div className="flex items-center gap-2 md:flex-col md:items-end md:gap-3">
                   {post.tags.map((tag) => <span key={tag} className="rounded-full bg-black/[0.05] px-2.5 py-1 text-[10px] text-gray-600">{tag}</span>)}
-                  <ArrowUpRight className="ml-auto h-5 w-5 text-gray-400 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 md:mt-5" />
+                  <ArrowMark direction="up-right" className="ml-auto h-4 w-4 text-gray-400 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 md:mt-5" />
                 </div>
               </Link>
             </motion.article>

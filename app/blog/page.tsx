@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import ArrowMark from "@/components/ArrowMark";
 
 type BlogPost = {
   title: string;
@@ -156,7 +156,7 @@ export default function Blog() {
                 </div>
 
                 <span className="hidden items-center gap-2 self-center text-sm font-medium text-gray-700 transition-transform group-hover:translate-x-1 sm:inline-flex">
-                  Read <ArrowUpRight className="h-4 w-4" />
+                  Read <ArrowMark direction="up-right" className="h-3.5 w-3.5" />
                 </span>
               </Link>
             </motion.article>

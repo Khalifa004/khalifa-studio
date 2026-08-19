@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import ArrowMark from "./ArrowMark";
 
 interface Project {
     name: string;
@@ -78,7 +78,7 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ projects, className }) => {
 
                                 {/* Expand icon appearing on hover */}
                                 <div className="absolute top-4 right-4 md:top-6 md:right-6 bg-white/90 backdrop-blur-md p-3 rounded-full opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out shadow-sm">
-                                    <ArrowUpRight className="w-5 h-5 text-gray-900" />
+                                    <ArrowMark direction="up-right" className="h-4 w-4 text-gray-900" />
                                 </div>
                             </div>
 

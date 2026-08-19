@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { StrengthsSection } from "./Strenghts";
 import ProjectList from "./ProjectList";
+import ArrowMark from "./ArrowMark";
 
 interface Product {
   name: string;
@@ -139,9 +140,9 @@ const LatestProducts: React.FC = () => {
             <motion.div variants={itemVariants}>
               <Link
                 href="/allwork"
-                className="text-sm font-medium text-gray-950 underline decoration-black/25 underline-offset-4 transition-colors hover:decoration-black"
+                className="group inline-flex items-center gap-2 text-sm font-medium text-gray-950 underline decoration-black/25 underline-offset-4 transition-colors hover:decoration-black"
               >
-                See all work →
+                See all work <ArrowMark className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
               </Link>
             </motion.div>
           </div>

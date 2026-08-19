@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
+import ArrowMark from "./ArrowMark";
 
 const projects = [
   { number: "01", title: "NorthStar", description: "A concept for an immersive high-speed rail experience that brings together service design, booking, and VR.", role: "UI/UX design", caseStudy: "/allwork/thenorth" },
@@ -34,8 +35,8 @@ const Hero = () => {
           </motion.h1>
 
           <motion.div {...entrance(0.16)} className="mt-7 flex flex-wrap items-center justify-center gap-3 text-sm font-medium">
-            <Link href="/allwork" className="inline-flex items-center gap-2 rounded-full bg-gray-950 px-5 py-3 text-white transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900">View selected work <span aria-hidden="true">↗</span></Link>
-            <a href="mailto:khalifa.seck@outlook.com" className="inline-flex items-center gap-2 rounded-full border border-black/15 px-5 py-3 text-gray-800 transition-colors hover:border-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900">Start a conversation <span aria-hidden="true">↗</span></a>
+            <Link href="/allwork" className="group inline-flex items-center gap-2.5 rounded-full bg-gray-950 px-5 py-3 text-white transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900">View selected work <ArrowMark direction="up-right" className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></Link>
+            <a href="mailto:khalifa.seck@outlook.com" className="group inline-flex items-center gap-2.5 rounded-full border border-black/15 px-5 py-3 text-gray-800 transition-colors hover:border-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900">Start a conversation <ArrowMark direction="up-right" className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></a>
           </motion.div>
         </div>
 
@@ -49,7 +50,7 @@ const Hero = () => {
                 <article key={project.number} className="border-t border-black/[0.1] py-6 first:border-t-0 sm:border-l sm:border-t-0 sm:px-6 sm:first:border-l-0 sm:first:pl-0 sm:last:pr-0">
                   <span className="text-xs text-gray-400">{project.number} / 03</span>
                   <h2 className="mt-8 text-2xl font-medium tracking-[-0.05em] text-gray-950">
-                    {project.href ? <a href={project.href} target="_blank" rel="noreferrer" className="transition-opacity hover:opacity-55">{project.title}<span className="ml-1 text-gray-400">↗</span></a> : project.title}
+                    {project.href ? <a href={project.href} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-1.5 transition-opacity hover:opacity-55">{project.title}<ArrowMark direction="up-right" className="h-3 w-3 text-gray-400 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></a> : project.title}
                   </h2>
                   <p className="mt-3 text-sm leading-relaxed text-gray-600">{project.description}</p>
                   <p className="mt-6 text-xs text-gray-500">{project.role}</p>

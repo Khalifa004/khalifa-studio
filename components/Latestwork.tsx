@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import ArrowMark from "./ArrowMark";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -96,7 +96,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           <span>{project.type}</span>
         </div>
         <span className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-background/90 text-gray-800 opacity-0 transition-all duration-300 group-hover:opacity-100 sm:translate-y-1 sm:group-hover:translate-y-0">
-          <ArrowUpRight className="h-4 w-4" strokeWidth={1.5} />
+          <ArrowMark direction="up-right" className="h-3.5 w-3.5" />
         </span>
       </div>
 

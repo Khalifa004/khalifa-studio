@@ -5,7 +5,7 @@ import React from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import ArrowMark from "./ArrowMark";
 
 interface Project {
     name: string;
@@ -64,7 +64,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ projects, className }) => {
                                 )}
 
                                 <div className="absolute right-4 top-4 flex h-9 w-9 -translate-y-1 items-center justify-center rounded-full bg-white text-gray-900 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                                    <ArrowUpRight className="w-5 h-5 text-gray-900" />
+                                    <ArrowMark direction="up-right" className="h-4 w-4 text-gray-900" />
                                 </div>
                             </div>
 
