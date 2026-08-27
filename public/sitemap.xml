@@ -21,6 +21,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://khalifa.studio/allwork/byone</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://khalifa.studio/blog</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

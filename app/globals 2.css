@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   Base Reset
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================================================
+   HTML & Body Styles
+   ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: hsl(var(--background));
+}
+
+/* ==========================================================================
+   Custom Scrollbar - Hidden
+   ========================================================================== */
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for IE and Edge */
+html {
+  -ms-overflow-style: none;
+}
+
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Variable.woff2') format('woff2');
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* ==========================================================================
+   CSS Variables
+   ========================================================================== */
+
+@layer base {
+  :root {
+    --background: 0 0% 97%;
+    --foreground: 0 0% 3.9%;
+    --border: 0 0% 80%;
+    --scrollbar-width: 0px;
+  }
+}
+
+body {
+  font-family: "Google Sans", "Google Sans Text", var(--font-sans-local), "Helvetica Neue", Arial, sans-serif;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}

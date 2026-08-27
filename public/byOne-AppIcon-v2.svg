@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- byOne: a small, steady path forward. Source artwork for the app icon. -->
+  <path
+    d="M371 652h57c45 0 81-36 81-81V470c0-45 36-81 81-81h147"
+    fill="none"
+    stroke="#242321"
+    stroke-width="68"
+    stroke-linecap="round"
+    stroke-linejoin="round"/>
+  <circle cx="286" cy="652" r="28" fill="#F47A24"/>
+</svg>

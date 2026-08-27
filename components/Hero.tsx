@@ -3,11 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
+import { FaApple } from "react-icons/fa";
 import ArrowMark from "./ArrowMark";
 
 const projects = [
   { number: "01", title: "NorthStar", description: "A concept for an immersive high-speed rail experience that brings together service design, booking, and VR.", role: "UI/UX design", caseStudy: "/allwork/thenorth" },
-  { number: "02", title: "Orin", description: "A Mac app for the notes, links, and tasks that pile up during a workday.", role: "Product design + development", href: "https://orin.khalifa.studio/" },
+  { number: "02", title: "byOne", description: "A local-first workout tracker for building a real training habit, one focused session at a time.", role: "Product design + iOS", caseStudy: "/allwork/byone", appStore: "https://apps.apple.com/app/byone-gym-workout-tracker/id6804019100" },
   { number: "03", title: "Pith", description: "A private voice-to-insight companion that works completely offline.", role: "Product design + development", href: "https://pith.khalifa.studio/", caseStudy: "/allwork/pith" },
 ];
 
@@ -54,7 +55,7 @@ const Hero = () => {
                   </h2>
                   <p className="mt-3 text-sm leading-relaxed text-gray-600">{project.description}</p>
                   <p className="mt-6 text-xs text-gray-500">{project.role}</p>
-                  {project.caseStudy && <Link href={project.caseStudy} className="mt-5 inline-block text-sm font-medium text-gray-950 underline decoration-black/25 underline-offset-4 transition-colors hover:decoration-black">Read the case study</Link>}
+                  {(project.caseStudy || project.appStore) && <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-3">{project.caseStudy && <Link href={project.caseStudy} className="text-sm font-medium text-gray-950 underline decoration-black/25 underline-offset-4 transition-colors hover:decoration-black">Read the case study</Link>}{project.appStore && <a href={project.appStore} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-1.5 rounded-full bg-gray-950 px-3 py-2 text-xs font-medium text-white transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-900"><FaApple className="h-3.5 w-3.5" aria-hidden="true" />Try byOne <ArrowMark direction="up-right" className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></a>}</div>}
                 </article>
               ))}
             </div>

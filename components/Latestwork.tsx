@@ -15,10 +15,22 @@ type Project = {
   year: string;
   surface: string;
   logoText?: string;
+  imageFit?: "cover" | "contain";
   external?: boolean;
 };
 
 const projects: Project[] = [
+  {
+    name: "byOne",
+    type: "iOS app",
+    description: "A local-first workout tracker that turns a training plan into a calmer gym session and an honest view of progress.",
+    image: "/byOne-AppIcon-v2.svg",
+    imageFit: "contain",
+    href: "/allwork/byone",
+    role: "Product design + iOS",
+    year: "2026",
+    surface: "#f3e0ce",
+  },
   {
     name: "Northstar",
     type: "Case study",
@@ -82,7 +94,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             alt=""
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035]"
+            className={`${project.imageFit === "contain" ? "object-contain p-[15%]" : "object-cover"} transition-transform duration-700 ease-out group-hover:scale-[1.035]`}
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center">
